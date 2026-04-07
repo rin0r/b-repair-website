@@ -10,41 +10,44 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          bg: "#0a0f1e",
-          surface: "#111827",
-          card: "#1a2236",
-          border: "#1e3a5f",
-          accent: "#0ea5e9",
-          "accent-dark": "#0284c7",
-          "accent-glow": "#38bdf8",
-          muted: "#94a3b8",
-          text: "#e2e8f0",
+          // VERKAUFSPSYCHOLOGIE: Primärfarben gemäss Webdesign-Psychologie-Dokument
+          primary:  "#0D1B2A",   // Dunkelnavigation, Headlines, dunkle Sektionen
+          accent:   "#00D4AA",   // Teal – Kompetenz + Vertrauen (Primär-CTA)
+          orange:   "#FF6B35",   // Orange – Dringlichkeit, Express-Hinweise
+          bg:       "#F5F0E8",   // Warmes Cream – Lesbarkeit, Handwerklichkeit
+          gray:     "#6B7280",   // Muted Text
+          // Karten & Oberflächen
+          card:     "#FFFFFF",
+          surface:  "#EDE8DF",   // Leicht dunkleres Cream für Abschnitte
+          border:   "#D4CFC6",   // Subtile Trenner
+          // Semantische Aliases (Rückwärtskompatibilität mit bestehenden Klassen)
+          text:     "#0D1B2A",
+          muted:    "#6B7280",
+          "accent-dark": "#00B894",
+          "accent-glow": "#00D4AA",
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        // VERKAUFSPSYCHOLOGIE: Barlow Condensed = technisch-kraftvoll, spart Platz
+        // Lato = freundlich-professionell, sehr lesbar
+        headline: ["Barlow Condensed", "system-ui", "sans-serif"],
+        sans:     ["Lato", "system-ui", "sans-serif"],
+        mono:     ["JetBrains Mono", "Menlo", "monospace"],
       },
-      backgroundImage: {
-        "grid-pattern":
-          "linear-gradient(rgba(14,165,233,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.05) 1px, transparent 1px)",
-      },
-      backgroundSize: {
-        grid: "40px 40px",
+      fontSize: {
+        // Mindest-Body-Size 16px gemäss Vorgabe
+        base: ["16px", { lineHeight: "1.6" }],
       },
       animation: {
-        "fade-in": "fadeIn 0.6s ease-out forwards",
-        "slide-up": "slideUp 0.6s ease-out forwards",
-        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "fade-in":  "fadeIn 0.5s ease-out forwards",
+        "slide-up": "slideUp 0.5s ease-out forwards",
+        pulse:      "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
-        fadeIn: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
+        fadeIn:  { from: { opacity: "0" }, to: { opacity: "1" } },
         slideUp: {
-          from: { opacity: "0", transform: "translateY(20px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
+          from: { opacity: "0", transform: "translateY(16px)" },
+          to:   { opacity: "1", transform: "translateY(0)" },
         },
       },
     },
