@@ -30,7 +30,7 @@ const services = [
 
 const comparisonRows = [
   { label: "Reparaturzeit",        us: "≤ 2 Stunden",      apple: "1–5 Tage",    others: "Unbekannt" },
-  { label: "Display iPhone 14",    us: "CHF 349.–",         apple: "CHF 399.–+",  others: "CHF 240–259.–" },
+  { label: "Display iPhone 14",    us: "CHF 349.–",         apple: "CHF 399.–+",  others: "CHF 370–420.–" },
   { label: "Garantie",             us: "6 Monate",          apple: "90 Tage",     others: "3 Monate" },
   { label: "Kostenlose Diagnose",  us: "✓ Immer gratis",    apple: "✗",           others: "Teils" },
   { label: "Alle Marken",          us: "✓ iPhone & Android", apple: "Nur Apple",   others: "Teils" },
