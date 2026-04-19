@@ -162,21 +162,21 @@ export default function LeistungenPage() {
                 <div className="flex gap-3">
                   <AlertCircle className="w-5 h-5 text-brand-orange flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-sans font-bold text-sm" style={{ color: "#F5F0E8" }}>Problem</div>
+                    <div className="font-sans font-bold text-sm" style={{ color: "#F9FAFB" }}>Problem</div>
                     <p className="font-sans text-sm leading-relaxed" style={{ color: "#8899AA" }}>Andere sagen: "Nicht mehr reparierbar." Hersteller ersetzen die ganze Platine zum Vollpreis.</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Lightbulb className="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-sans font-bold text-sm" style={{ color: "#F5F0E8" }}>Unsere Lösung</div>
+                    <div className="font-sans font-bold text-sm" style={{ color: "#F9FAFB" }}>Unsere Lösung</div>
                     <p className="font-sans text-sm leading-relaxed" style={{ color: "#8899AA" }}>Mikrolöten bedeutet: Reparatur auf Bauteil-Ebene. Wir identifizieren das defekte Bauteil unter dem Mikroskop und ersetzen nur dieses – statt die ganze Platine.</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <Shield className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <div className="font-sans font-bold text-sm" style={{ color: "#F5F0E8" }}>Beweis</div>
+                    <div className="font-sans font-bold text-sm" style={{ color: "#F9FAFB" }}>Beweis</div>
                     <p className="font-sans text-sm leading-relaxed" style={{ color: "#8899AA" }}>IPC-zertifiziert. 95% Erfolgsrate bei Platinen-Reparaturen. 6 Monate Garantie.</p>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export default function LeistungenPage() {
               ].map(({ val, label, sub }) => (
                 <div key={label} className="p-5 rounded-2xl border border-white/10 bg-white/5">
                   <div className="font-headline text-4xl text-brand-accent mb-1">{val}</div>
-                  <div className="font-headline text-lg" style={{ color: "#F5F0E8" }}>{label}</div>
+                  <div className="font-headline text-lg" style={{ color: "#F9FAFB" }}>{label}</div>
                   <div className="font-sans text-xs mt-1" style={{ color: "#8899AA" }}>{sub}</div>
                 </div>
               ))}

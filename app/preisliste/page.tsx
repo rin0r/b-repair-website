@@ -261,8 +261,8 @@ function PriceTable({ rows }: { rows: Row[] }) {
               <td
                 className="sticky left-0 px-4 py-3 font-sans font-semibold whitespace-nowrap"
                 style={{
-                  backgroundColor: row.isCurrent ? "rgba(0,212,170,0.08)" : i % 2 === 0 ? "#ffffff" : "#EDE8DF80",
-                  color: "#0D1B2A",
+                  backgroundColor: row.isCurrent ? "rgba(61,158,140,0.08)" : i % 2 === 0 ? "#ffffff" : "#F4F5F780",
+                  color: "#111827",
                 }}
               >
                 <span className="flex items-center gap-2">

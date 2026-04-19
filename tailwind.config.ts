@@ -10,32 +10,26 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          // VERKAUFSPSYCHOLOGIE: Primärfarben gemäss Webdesign-Psychologie-Dokument
-          primary:  "#0D1B2A",   // Dunkelnavigation, Headlines, dunkle Sektionen
-          accent:   "#00D4AA",   // Teal – Kompetenz + Vertrauen (Primär-CTA)
-          orange:   "#FF6B35",   // Orange – Dringlichkeit, Express-Hinweise
-          bg:       "#F5F0E8",   // Warmes Cream – Lesbarkeit, Handwerklichkeit
-          gray:     "#6B7280",   // Muted Text
-          // Karten & Oberflächen
-          card:     "#FFFFFF",
-          surface:  "#EDE8DF",   // Leicht dunkleres Cream für Abschnitte
-          border:   "#D4CFC6",   // Subtile Trenner
-          // Semantische Aliases (Rückwärtskompatibilität mit bestehenden Klassen)
-          text:     "#0D1B2A",
-          muted:    "#6B7280",
-          "accent-dark": "#00B894",
-          "accent-glow": "#00D4AA",
+          primary:      "#111827",   // Fast-Schwarz – Headlines, dunkle Sektionen
+          accent:       "#3D9E8C",   // Teal – Buttons, Links, Highlights
+          "accent-dark":"#2E8070",   // Dunkleres Teal – Hover-State
+          "accent-light":"#EAF5F3",  // Sehr helles Teal – Badges, Backgrounds
+          bg:           "#FFFFFF",   // Reines Weiss – Haupthintergrund
+          surface:      "#F4F5F7",   // Leicht dunkleres Weiss – Sektionswechsel
+          card:         "#FFFFFF",   // Karten-Hintergrund
+          border:       "#E5E7EB",   // Subtile Trennlinien
+          gray:         "#6B7280",   // Muted Text
+          muted:        "#6B7280",   // Alias
+          text:         "#111827",   // Alias Primary
+          orange:       "#F59E0B",   // Bernstein – Coming-Soon Badges
         },
       },
       fontFamily: {
-        // VERKAUFSPSYCHOLOGIE: Barlow Condensed = technisch-kraftvoll, spart Platz
-        // Lato = freundlich-professionell, sehr lesbar
         headline: ["Barlow Condensed", "system-ui", "sans-serif"],
         sans:     ["Lato", "system-ui", "sans-serif"],
         mono:     ["JetBrains Mono", "Menlo", "monospace"],
       },
       fontSize: {
-        // Mindest-Body-Size 16px gemäss Vorgabe
         base: ["16px", { lineHeight: "1.6" }],
       },
       animation: {

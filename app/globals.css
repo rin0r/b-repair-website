@@ -10,14 +10,14 @@
 /* ─── DESIGN TOKENS ──────────────────────────────────────────────────── */
 :root {
   /* VERKAUFSPSYCHOLOGIE: Farbpalette nach Webdesign-Psychologie-Dokument */
-  --color-primary:  #0D1B2A;   /* Hauptfarbe: dunkel, seriös, vertrauenswürdig */
-  --color-accent:   #00D4AA;   /* Akzent: Teal – Innovation + Gesundheit + Technik */
-  --color-bg:       #F5F0E8;   /* Hintergrund: Cream – Wärme, nicht klinisch */
-  --color-orange:   #FF6B35;   /* Orange: Dringlichkeit, Express, Aufmerksamkeit */
+  --color-primary:  #111827;   /* Hauptfarbe: dunkel, seriös, vertrauenswürdig */
+  --color-accent:   #3D9E8C;   /* Akzent: Teal – Innovation + Gesundheit + Technik */
+  --color-bg:       #FFFFFF;   /* Hintergrund: Reines Weiss */
+  --color-orange:   #F59E0B;   /* Orange/Bernstein: Dringlichkeit, Express, Aufmerksamkeit */
   --color-gray:     #6B7280;   /* Muted: lesbar, dezent */
   --color-card:     #FFFFFF;
-  --color-surface:  #EDE8DF;
-  --color-border:   #D4CFC6;
+  --color-surface:  #F4F5F7;
+  --color-border:   #E5E7EB;
 
   /* Legacy-Aliases für bestehenden Code */
   --bg:         var(--color-bg);
@@ -25,7 +25,7 @@
   --card:       var(--color-card);
   --border:     var(--color-border);
   --accent:     var(--color-accent);
-  --accent-dark: #00B894;
+  --accent-dark: #2E8070;
   --muted:      var(--color-gray);
   --text:       var(--color-primary);
 }
@@ -77,15 +77,15 @@ h1, h2, h3, h4, h5, h6 {
   .font-headline { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 800; }
   .font-price    { font-family: 'JetBrains Mono', monospace; }
 
-  /* VERKAUFSPSYCHOLOGIE: Glow-Effekte auf Akzentfarbe #00D4AA umgestellt */
+  /* Glow-Effekte auf Akzentfarbe #3D9E8C */
   .glow {
-    box-shadow: 0 0 20px rgba(0, 212, 170, 0.35), 0 0 40px rgba(0, 212, 170, 0.12);
+    box-shadow: 0 0 20px rgba(61, 158, 140, 0.35), 0 0 40px rgba(61, 158, 140, 0.12);
   }
   .glow-sm {
-    box-shadow: 0 0 10px rgba(0, 212, 170, 0.25);
+    box-shadow: 0 0 10px rgba(61, 158, 140, 0.25);
   }
   .glow-orange {
-    box-shadow: 0 0 16px rgba(255, 107, 53, 0.35);
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
   }
 
   /* Grid-Hintergrund (angepasst auf neues Farbsystem) */
@@ -109,12 +109,12 @@ h1, h2, h3, h4, h5, h6 {
   /* Dunkle Sektion (Mikrolöten-Spotlight) */
   .section-dark {
     background-color: var(--color-primary);
-    color: #F5F0E8;
+    color: #F9FAFB;
   }
   .section-dark h1,
   .section-dark h2,
   .section-dark h3 {
-    color: #F5F0E8;
+    color: #F9FAFB;
   }
 }
 
