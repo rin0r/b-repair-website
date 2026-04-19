@@ -404,7 +404,7 @@ export default function Home() {
                 src="https://maps.google.com/maps?q=Bürglenweg+24,+3627+Heimberg,+Schweiz&output=embed&hl=de"
                 width="100%"
                 height="100%"
-                style={{ border: 0, display: "block", minHeight: 400, filter: "grayscale(25%) contrast(0.92) brightness(1.04)" }}
+                style={{ border: 0, display: "block", minHeight: 400, filter: "grayscale(100%) sepia(40%) hue-rotate(120deg) saturate(0.55) brightness(1.08) contrast(0.9)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
