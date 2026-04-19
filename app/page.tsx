@@ -396,25 +396,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ FAQ ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">FAQ</span>
-            <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary">Häufige Fragen</h2>
-          </div>
-          <div className="space-y-3">
-            {faqs.map(({ q, a }) => (
-              <details key={q} className="group p-5 rounded-2xl bg-white border border-brand-border hover:border-brand-accent/40 transition-colors shadow-sm">
-                <summary className="flex items-center justify-between gap-3">
-                  <span className="font-headline text-lg text-brand-primary">{q}</span>
-                  <ChevronRight className="w-5 h-5 text-brand-gray flex-shrink-0 group-open:rotate-90 transition-transform" />
-                </summary>
-                <p className="mt-3 font-sans text-brand-gray text-sm leading-relaxed border-t border-brand-border pt-3">{a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
+      {/* ══ MAPS ══════════════════════════════════════════════════════ */}
+      <section className="w-full">
+        <iframe
+          src="https://maps.google.com/maps?q=Bürglenweg+24,+3627+Heimberg,+Schweiz&output=embed&hl=de"
+          width="100%"
+          height="480"
+          style={{ border: 0, display: "block" }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="B-repair&service Standort"
+        />
       </section>
 
       {/* ══ FINAL CTA ═════════════════════════════════════════════════ */}
