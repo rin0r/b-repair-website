@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Wrench, ChevronDown } from "lucide-react";
+import { Menu, X, Wrench, ChevronDown, ArrowRight } from "lucide-react";
 import { repairDropdownLinks } from "@/lib/repairData";
 
 const navLinksLeft  = [{ href: "/",          label: "Home" },
@@ -144,21 +144,14 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* CTA + phone + burger */}
+          {/* CTA + burger */}
           <div className="flex items-center gap-3">
             <Link
-              href="/kontakt"
-              className="cta-btn hidden sm:flex gap-2 px-5 py-2.5 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow-sm"
+              href="/preisrechner"
+              className="cta-btn hidden sm:flex gap-1.5 px-5 py-2.5 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow-sm"
             >
-              Anfrage starten
+              Preis prüfen <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
-              href="tel:+41764020306"
-              className="hidden md:flex items-center gap-1.5 text-sm text-brand-gray hover:text-brand-primary transition-colors font-sans"
-              aria-label="Anrufen"
-            >
-              <span className="text-xs">+41 76 402 03 06</span>
-            </a>
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl text-brand-gray hover:text-brand-primary hover:bg-brand-surface transition-colors"
@@ -241,10 +234,10 @@ export default function Navbar() {
 
               <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-brand-border">
                 <Link
-                  href="/kontakt"
-                  className="cta-btn px-4 rounded-xl bg-brand-accent text-brand-primary text-sm font-bold"
+                  href="/preisrechner"
+                  className="cta-btn px-4 rounded-xl bg-brand-accent text-brand-primary text-sm font-bold gap-1"
                 >
-                  Anfrage starten
+                  Preis prüfen <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <a
                   href="https://wa.me/41764020306"
