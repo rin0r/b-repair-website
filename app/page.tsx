@@ -5,6 +5,7 @@ import {
   MapPin, Clock, Shield, Star, Zap, ChevronRight, Package,
 } from "lucide-react";
 import PreisrechnerWidget from "@/components/PreisrechnerWidget";
+import OpenStatus from "@/components/OpenStatus";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 
@@ -436,11 +437,7 @@ export default function Home() {
                     <Clock className="w-5 h-5 text-brand-accent flex-shrink-0" />
                     <span className="font-headline text-xl text-brand-primary">Öffnungszeiten</span>
                   </div>
-                  {/* Open/Closed badge – rendered statically; Mo–Fr open */}
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-sans font-bold bg-green-100 text-green-700 border border-green-200">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    Geöffnet
-                  </span>
+                  <OpenStatus />
                 </div>
                 <div className="space-y-2">
                   {[
