@@ -2,8 +2,9 @@ import Link from "next/link";
 import {
   Smartphone, Battery, Wifi, Camera, Mic, Wrench, Droplets,
   Cpu, Monitor, HardDrive, CheckCircle2, ArrowRight, Phone,
-  MapPin, Clock, Shield, Star, Zap, ChevronRight, Building2, Package,
+  MapPin, Clock, Shield, Star, Zap, ChevronRight, Package,
 } from "lucide-react";
+import PreisrechnerWidget from "@/components/PreisrechnerWidget";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 
@@ -325,59 +326,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ B2B ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-brand-accent/40 bg-brand-accent/10 text-brand-primary text-xs font-bold mb-4">
-                <Building2 className="w-3.5 h-3.5 text-brand-accent" />
-                B2B – Für Unternehmen & Werkstätten
-              </div>
-              <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary mb-4">
-                Firmengeräte schnell wieder einsatzbereit
-              </h2>
-              <p className="font-sans text-brand-gray leading-relaxed mb-6">
-                KMU, IT-Dienstleister, Werkstätten – wir sind Ihr Partner für schnelle, diskrete Firmengeräte-Reparaturen.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Prioritäts-Reparatur für Firmengeräte",
-                  "Mengenrabatte ab 5 Geräten",
-                  "Rechnung auf Firmennamen",
-                  "NDA & Datenschutz auf Anfrage",
-                  "Vor-Ort-Service nach Vereinbarung",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-brand-gray">
-                    <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/kontakt"
-                className="cta-btn gap-2 px-6 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow"
-              >
-                B2B-Anfrage stellen <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="space-y-4">
-              {[
-                { icon: Smartphone, title: "Firmen-Smartphones",   desc: "Alle Marken, schnelle Abwicklung, Sammelrechnungen." },
-                { icon: Monitor,    title: "Laptops & Tablets",     desc: "MacBook, Surface, iPad – professionelle Reparatur." },
-                { icon: Cpu,        title: "Komplexe Platinenschäden", desc: "Mikrolöten, Spezialfälle – keine Weiterverweisung." },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex items-start gap-4 p-5 rounded-2xl bg-white border border-brand-border hover:border-brand-accent/40 transition-colors shadow-sm">
-                  <div className="w-10 h-10 rounded-xl bg-brand-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-5 h-5 text-brand-accent" />
-                  </div>
-                  <div>
-                    <div className="font-headline text-lg text-brand-primary mb-0.5">{title}</div>
-                    <div className="font-sans text-brand-gray text-xs">{desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {/* ══ PREISRECHNER ══════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-28 bg-brand-surface border-y border-brand-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] block mb-2">
+              Preisrechner
+            </span>
+            <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary">
+              Preis sofort berechnen
+            </h2>
+            <p className="font-sans text-brand-gray text-sm mt-2">
+              In 3 Schritten zum geschätzten Reparaturpreis – direkt hier, ohne Umweg.
+            </p>
+          </div>
+          <div className="max-w-2xl mx-auto bg-white rounded-3xl border border-brand-border shadow-sm p-6 sm:p-10">
+            <PreisrechnerWidget />
           </div>
         </div>
       </section>
