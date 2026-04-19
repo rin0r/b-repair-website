@@ -398,13 +398,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-6 items-stretch">
 
-            {/* Map */}
-            <div className="lg:w-1/2 rounded-2xl overflow-hidden border border-brand-border shadow-sm flex-shrink-0" style={{ minHeight: 340 }}>
+            {/* Map – 2/3 width */}
+            <div className="lg:w-2/3 rounded-2xl overflow-hidden border border-brand-border shadow-sm flex-shrink-0" style={{ minHeight: 400 }}>
               <iframe
                 src="https://maps.google.com/maps?q=Bürglenweg+24,+3627+Heimberg,+Schweiz&output=embed&hl=de"
                 width="100%"
                 height="100%"
-                style={{ border: 0, display: "block", minHeight: 340 }}
+                style={{ border: 0, display: "block", minHeight: 400, filter: "grayscale(25%) contrast(0.92) brightness(1.04)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -412,8 +412,8 @@ export default function Home() {
               />
             </div>
 
-            {/* Info blocks */}
-            <div className="lg:w-1/2 flex flex-col gap-4">
+            {/* Info blocks – 1/3 width */}
+            <div className="lg:w-1/3 flex flex-col gap-4">
 
               {/* Block 1 – Adresse & Telefon */}
               <div className="flex-1 p-6 rounded-2xl bg-brand-surface border border-brand-border">
