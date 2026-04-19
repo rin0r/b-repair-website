@@ -192,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* ══ SERVICES ══════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: "#F8FAFB" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">Was wir reparieren</span>
@@ -227,22 +227,19 @@ export default function Home() {
       </section>
 
       {/* ══ MIKROLÖTEN SPOTLIGHT ══════════════════════════════════════ */}
-      {/* VERKAUFSPSYCHOLOGIE: Dunkle Sektion = visueller Kontrast → Aufmerksamkeit.
-          "Was andere aufgeben" = Alleinstellungsmerkmal, erzeugt Neugier + Vertrauen.
-          Unterscheidet B-repair klar von jedem Standardanbieter. */}
-      <section className="section-dark py-20 lg:py-28">
+      <section className="py-20 lg:py-28" style={{ background: "#EAF5F3" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-brand-accent/40 bg-brand-accent/10 text-brand-accent text-xs font-bold mb-5 uppercase tracking-wide">
-                <Cpu className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-brand-accent/40 bg-brand-accent/10 text-brand-primary text-xs font-bold mb-5 uppercase tracking-wide">
+                <Cpu className="w-3.5 h-3.5 text-brand-accent" />
                 Unser Spezialgebiet
               </div>
-              <h2 className="font-headline text-4xl sm:text-5xl mb-4">
+              <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary mb-4">
                 Was andere aufgeben –{" "}
                 <span className="text-brand-accent">reparieren wir.</span>
               </h2>
-              <p className="font-sans leading-relaxed mb-6" style={{ color: "#B0C4D8" }}>
+              <p className="font-sans text-brand-gray leading-relaxed mb-6">
                 Mikrolöten bedeutet: Reparatur auf Platinen-Ebene – einzelne Bauteile werden unter dem Mikroskop identifiziert und ersetzt. Das können wir, weil wir IPC-zertifiziert sind und die nötige Ausrüstung besitzen.
               </p>
               <ul className="space-y-3 mb-8">
@@ -253,7 +250,7 @@ export default function Home() {
                   "MacBook-Platinen-Reparatur",
                   "Wasserschaden auf Platinen-Ebene",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 font-sans text-sm" style={{ color: "#B0C4D8" }}>
+                  <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-brand-gray">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
                     {item}
                   </li>
@@ -270,15 +267,15 @@ export default function Home() {
             {/* Visual */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { val: "IPC",    label: "Zertifiziert",          sub: "geprüfte Qualitätsstandards" },
+                { val: "IPC",    label: "Zertifiziert",            sub: "geprüfte Qualitätsstandards" },
                 { val: "100×",   label: "Mikroskop-Vergrösserung", sub: "für präzise Lötreparaturen" },
                 { val: "0.1mm",  label: "Genauigkeit",             sub: "bei BGA & Microsoldering" },
                 { val: "95%",    label: "Erfolgsrate",             sub: "bei Platinen-Reparaturen" },
               ].map(({ val, label, sub }) => (
-                <div key={label} className="p-5 rounded-2xl border border-white/10 bg-white/5">
+                <div key={label} className="p-5 rounded-2xl bg-white border border-brand-border shadow-sm">
                   <div className="font-headline text-3xl text-brand-accent mb-1">{val}</div>
-                  <div className="font-headline text-base text-white">{label}</div>
-                  <div className="font-sans text-xs mt-1" style={{ color: "#8899AA" }}>{sub}</div>
+                  <div className="font-headline text-base text-brand-primary">{label}</div>
+                  <div className="font-sans text-xs text-brand-gray mt-1">{sub}</div>
                 </div>
               ))}
             </div>
@@ -289,7 +286,7 @@ export default function Home() {
       {/* ══ VERGLEICH ═════════════════════════════════════════════════ */}
       {/* VERKAUFSPSYCHOLOGIE: Vergleichstabelle nutzt Ankerprinzip (Apple als teurer Anker)
           und macht B-repair's Vorteile ohne Behauptungen sichtbar. */}
-      <section className="py-20 bg-brand-surface border-y border-brand-border">
+      <section className="py-20 border-y border-brand-border" style={{ background: "#F4F5F7" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">Warum B-repair?</span>
@@ -327,7 +324,7 @@ export default function Home() {
       </section>
 
       {/* ══ PREISRECHNER ══════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-28 bg-brand-surface border-y border-brand-border">
+      <section className="py-20 lg:py-28 border-y border-brand-border" style={{ background: "#FFFFFF" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] block mb-2">
@@ -373,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* ══ PROZESS ═══════════════════════════════════════════════════ */}
-      <section className="py-20 lg:py-24 bg-brand-surface border-y border-brand-border">
+      <section className="py-20 lg:py-24 border-y border-brand-border" style={{ background: "#F4F5F7" }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">So einfach geht&apos;s</span>
@@ -411,21 +408,17 @@ export default function Home() {
       </section>
 
       {/* ══ FINAL CTA ═════════════════════════════════════════════════ */}
-      {/* VERKAUFSPSYCHOLOGIE: Abschluss-CTA wiederholt das Primärangebot (kostenlos).
-          Dunkler Hintergrund = dunkle Sektion erzeugt letzten Kontrast vor Footer. */}
-      <section className="section-dark py-24 lg:py-32 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full blur-[120px] pointer-events-none" style={{ background: "rgba(0,212,170,0.06)" }} />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-24 lg:py-32" style={{ background: "#EAF5F3" }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">Bereit?</span>
-          <h2 className="font-headline text-5xl sm:text-6xl lg:text-7xl mb-4">
+          <h2 className="font-headline text-5xl sm:text-6xl lg:text-7xl text-brand-primary mb-4">
             Kostenlose Diagnose.<br />
             <span className="text-brand-accent">Jetzt anfragen.</span>
           </h2>
-          <p className="font-sans text-lg mb-10 max-w-xl mx-auto" style={{ color: "#8899AA" }}>
+          <p className="font-sans text-brand-gray text-lg mb-10 max-w-xl mx-auto">
             Kein Risiko. Kein Termin nötig. 6 Monate Garantie.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            {/* WCAG AA: Dunkle Schrift auf hellem Akzent, WCAG Ratio > 4.5:1 */}
             <a
               href="tel:+41764020306"
               className="cta-btn gap-2 px-8 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-lg hover:bg-brand-accent-dark transition-all glow hover:scale-[1.02]"
@@ -445,7 +438,7 @@ export default function Home() {
               WhatsApp schreiben
             </a>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center text-xs font-sans" style={{ color: "#8899AA" }}>
+          <div className="flex flex-wrap gap-4 justify-center text-xs font-sans text-brand-gray">
             <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-brand-accent" /> Mo–Fr 09–18:30 · Sa 10–16</span>
             <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-brand-accent" /> Bürglenweg 24, Heimberg</span>
             <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-brand-accent" /> 6 Monate Garantie</span>
