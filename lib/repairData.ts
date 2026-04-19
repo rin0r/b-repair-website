@@ -20,11 +20,19 @@ export type BrandSeries = {
   rows: Row[];
 };
 
+export type PopularItem = {
+  model: string;
+  repair: string;
+  price: string;    // e.g. "CHF\u00A099.–" or "Gratis" or "Auf Anfrage"
+  from?: boolean;   // true → shows "ab" prefix on price
+};
+
 export type BrandConfig = {
   name: string;
   intro: string;
   series: BrandSeries[];
   hasOnRequest: boolean;
+  popularItems: PopularItem[];
   faq: FAQ[];
 };
 
@@ -222,6 +230,15 @@ export const brandConfig: Record<string, BrandConfig> = {
     intro: "Displaybruch, Akkuproblem oder Wasserschaden? Bei B-repair&service in Heimberg bekommen Sie Ihr iPhone schnell und zuverlässig repariert – oft in unter 2 Stunden. Transparente Fixpreise, 6 Monate Garantie und kostenlose Diagnose inklusive.",
     series: [{ label: "Alle Modelle", rows: iphoneRows }],
     hasOnRequest: false,
+    popularItems: [
+      { model: "iPhone 8",         repair: "Display",             price: "CHF\u00A099.–" },
+      { model: "iPhone 11",        repair: "Display",             price: "CHF\u00A0139.–" },
+      { model: "iPhone 13 Pro",    repair: "Display",             price: "CHF\u00A0349.–" },
+      { model: "iPhone 15 Pro Max",repair: "Display",             price: "CHF\u00A0529.–" },
+      { model: "iPhone 16 Pro Max",repair: "Display",             price: "CHF\u00A0499.–" },
+      { model: "Alle Modelle",     repair: "Akku-Wechsel",        price: "CHF\u00A079.–",  from: true },
+      { model: "Alle Modelle",     repair: "Kostenlose Diagnose", price: "Gratis" },
+    ],
     faq: [
       { q: "Wie lange dauert eine iPhone-Display-Reparatur?", a: "Die meisten Display-Reparaturen sind bei uns in 30–60 Minuten erledigt. Bei OLED-Displays der Pro-Serie kann es bis zu 2 Stunden dauern. Sie warten bequem bei uns oder kommen einfach später abholen." },
       { q: "Verliere ich meine Daten bei der Reparatur?", a: "Nein. Bei Display- und Akku-Reparaturen bleiben Ihre Daten vollständig erhalten. Bei tiefgreifenderen Eingriffen empfehlen wir vorab ein iCloud-Backup – wir beraten Sie gerne." },
@@ -236,6 +253,14 @@ export const brandConfig: Record<string, BrandConfig> = {
     intro: "Gebrochener iPad-Bildschirm oder schwacher Akku? B-repair&service repariert alle iPad-Generationen – von iPad 2 bis iPad Pro der neuesten Generation. Schnell, professionell und zu fairen Fixpreisen in Heimberg bei Thun.",
     series: [{ label: "Alle Modelle", rows: ipadRows }],
     hasOnRequest: false,
+    popularItems: [
+      { model: "iPad 6",              repair: "Display",             price: "CHF\u00A0129.–" },
+      { model: "iPad Air (3. Gen)",   repair: "Display",             price: "CHF\u00A0229.–" },
+      { model: "iPad Pro 11\"",       repair: "Display",             price: "CHF\u00A0279.–", from: true },
+      { model: "iPad Pro 12.9\"",     repair: "Display",             price: "CHF\u00A0269.–", from: true },
+      { model: "Alle Modelle",        repair: "Akku-Wechsel",        price: "CHF\u00A099.–",  from: true },
+      { model: "Alle Modelle",        repair: "Kostenlose Diagnose", price: "Gratis" },
+    ],
     faq: [
       { q: "Können Sie auch iPad Pro-Displays reparieren?", a: "Ja, wir reparieren alle iPad Pro-Varianten inklusive der 12.9\"- und 11\"-Modelle. Liquid-Retina-Displays werden fachmännisch ausgetauscht." },
       { q: "Wie lange dauert eine iPad-Reparatur?", a: "Einfache Display- oder Akku-Tausche dauern 1–3 Stunden. Grössere Modelle (iPad Pro 12.9\") können etwas mehr Zeit benötigen. Wir informieren Sie beim Eincheck über die genaue Dauer." },
@@ -253,6 +278,14 @@ export const brandConfig: Record<string, BrandConfig> = {
       { label: "Galaxy Note",    rows: samsungNoteRows },
     ],
     hasOnRequest: false,
+    popularItems: [
+      { model: "Galaxy A54",       repair: "Display",             price: "CHF\u00A0199.–" },
+      { model: "Galaxy S22",       repair: "Display",             price: "CHF\u00A0329.–" },
+      { model: "Galaxy S24 5G",    repair: "Display",             price: "CHF\u00A0339.–" },
+      { model: "Galaxy S25 Ultra", repair: "Display",             price: "CHF\u00A0499.–" },
+      { model: "Alle Modelle",     repair: "Akku-Wechsel",        price: "CHF\u00A079.–",  from: true },
+      { model: "Alle Modelle",     repair: "Kostenlose Diagnose", price: "Gratis" },
+    ],
     faq: [
       { q: "Reparieren Sie auch Samsung AMOLED-Displays?", a: "Ja, wir reparieren AMOLED- und Super AMOLED-Displays aller Galaxy-Modelle. Für S-Ultra-Modelle verwenden wir Premium-Displays mit identischer Farbdarstellung." },
       { q: "Was kostet ein Samsung Display-Tausch?", a: "Je nach Modell beginnen die Preise ab CHF 139.– (ältere A-Serie) bis CHF 499.– (Galaxy S24/S25 Ultra). Die genauen Preise finden Sie in den Tabellen oben." },
@@ -267,6 +300,14 @@ export const brandConfig: Record<string, BrandConfig> = {
     intro: "Huawei P- oder Mate-Serie defekt? B-repair&service repariert Huawei-Smartphones professionell in Heimberg bei Thun. Display, Akku, Ladebuchse oder Kamera – mit hochwertigen Ersatzteilen und 6 Monaten Garantie.",
     series: [{ label: "Alle Modelle", rows: huaweiRows }],
     hasOnRequest: false,
+    popularItems: [
+      { model: "Huawei P30",      repair: "Display",             price: "CHF\u00A0239.–" },
+      { model: "Huawei P30 Pro",  repair: "Display",             price: "CHF\u00A0279.–" },
+      { model: "Huawei P40",      repair: "Display",             price: "CHF\u00A0279.–" },
+      { model: "Huawei P40 Pro",  repair: "Display",             price: "CHF\u00A0349.–" },
+      { model: "Alle Modelle",    repair: "Akku-Wechsel",        price: "CHF\u00A089.–",  from: true },
+      { model: "Alle Modelle",    repair: "Kostenlose Diagnose", price: "Gratis" },
+    ],
     faq: [
       { q: "Welche Huawei-Modelle reparieren Sie?", a: "Wir reparieren die P-Serie (P20 bis P40) und Mate-Serie (Mate 20 bis Mate 20 Pro). Für andere Modelle fragen Sie uns einfach an – wir helfen gerne." },
       { q: "Gibt es Probleme mit der Displaykalibrierung nach dem Tausch?", a: "Bei Huawei-Geräten ist die Displaykalibrierung wichtig. Wir verwenden kompatible Displays und kalibrieren diese nach dem Einbau sorgfältig." },
@@ -280,6 +321,11 @@ export const brandConfig: Record<string, BrandConfig> = {
     intro: "OnePlus-Smartphone defekt? Ob Display, Akku oder Ladebuchse – B-repair&service in Heimberg bei Thun repariert OnePlus-Geräte zu fairen Preisen. Kostenlose Diagnose inklusive, verbindlicher Fixpreis nach der Prüfung.",
     series: [],
     hasOnRequest: true,
+    popularItems: [
+      { model: "Alle Modelle", repair: "Display",             price: "Auf Anfrage" },
+      { model: "Alle Modelle", repair: "Akku-Wechsel",        price: "Auf Anfrage" },
+      { model: "Alle Modelle", repair: "Kostenlose Diagnose", price: "Gratis" },
+    ],
     faq: [
       { q: "Welche OnePlus-Modelle reparieren Sie?", a: "Wir reparieren OnePlus-Geräte aller gängigen Serien – von OnePlus 6 bis zu aktuellen OnePlus 12/13-Modellen. Kontaktieren Sie uns für eine genaue Auskunft zu Ihrem Modell." },
       { q: "Warum stehen keine Fixpreise für OnePlus online?", a: "OnePlus-Ersatzteile variieren stark je nach Modell und Verfügbarkeit. Nach einer kostenlosen Diagnose erhalten Sie von uns einen verbindlichen Fixpreis – ohne Überraschungen." },

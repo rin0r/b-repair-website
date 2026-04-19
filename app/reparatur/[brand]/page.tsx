@@ -79,14 +79,12 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
 
           {/* CTA buttons */}
           <div className="flex flex-wrap gap-3 mb-8">
-            {!brand.hasOnRequest && (
-              <a
-                href="#preise"
-                className="cta-btn gap-2 px-6 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow-sm"
-              >
-                Preise prüfen <ArrowRight className="w-4 h-4" />
-              </a>
-            )}
+            <a
+              href="#preise"
+              className="cta-btn gap-2 px-6 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow-sm"
+            >
+              Preise prüfen <ArrowRight className="w-4 h-4" />
+            </a>
             <a
               href="https://wa.me/41764020306"
               target="_blank"
@@ -97,14 +95,6 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
               {whatsappSvg}
               WhatsApp schreiben
             </a>
-            {brand.hasOnRequest && (
-              <Link
-                href="/kontakt"
-                className="cta-btn gap-2 px-6 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow-sm"
-              >
-                Angebot anfragen <ArrowRight className="w-4 h-4" />
-              </Link>
-            )}
           </div>
 
           {/* Trust pills */}
@@ -123,68 +113,26 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
       </section>
 
       {/* ── Price Table ──────────────────────────────────────────── */}
-      {!brand.hasOnRequest && brand.series.length > 0 && (
-        <section id="preise" className="py-14 bg-brand-surface border-y border-brand-border scroll-mt-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8">
-              <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] block mb-1">
-                Fixpreise inkl. MwSt. · Kostenlose Diagnose
-              </span>
-              <h2 className="font-headline text-3xl sm:text-4xl text-brand-primary">
-                Preisübersicht {brand.name}
-              </h2>
-              <p className="font-sans text-brand-gray text-sm mt-1">
-                Alle Preise in CHF. Modell nicht dabei?{" "}
-                <a href="tel:+41764020306" className="text-brand-accent hover:underline font-bold">
-                  Einfach anfragen.
-                </a>
-              </p>
-            </div>
-            <BrandPriceTable series={brand.series} />
+      <section id="preise" className="py-14 bg-brand-surface border-y border-brand-border scroll-mt-20">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center">
+            <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] block mb-2">
+              Meistgefragte Reparaturen
+            </span>
+            <h2 className="font-headline text-3xl sm:text-4xl text-brand-primary">
+              Preisübersicht {brand.name}
+            </h2>
+            <p className="font-sans text-brand-gray text-sm mt-2">
+              Modell nicht dabei?{" "}
+              <a href="tel:+41764020306" className="text-brand-accent hover:underline font-bold">
+                Einfach anfragen.
+              </a>
+            </p>
           </div>
-        </section>
-      )}
+          <BrandPriceTable items={brand.popularItems} />
+        </div>
+      </section>
 
-      {/* OnePlus: on-request card */}
-      {brand.hasOnRequest && (
-        <section id="preise" className="py-14 bg-brand-surface border-y border-brand-border scroll-mt-20">
-          <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="p-8 rounded-2xl bg-white border border-brand-border shadow-sm text-center">
-              <div className="w-14 h-14 rounded-2xl bg-brand-accent/10 flex items-center justify-center mx-auto mb-5">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-brand-accent">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </div>
-              <h2 className="font-headline text-3xl text-brand-primary mb-2">Preis auf Anfrage</h2>
-              <p className="font-sans text-brand-gray text-sm leading-relaxed mb-7">
-                OnePlus-Ersatzteile variieren je nach Modell. Nach einer{" "}
-                <strong className="text-brand-primary">kostenlosen Diagnose</strong> erhalten Sie einen
-                verbindlichen Fixpreis – ohne Überraschungen.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a
-                  href="https://wa.me/41764020306"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-btn gap-2 px-6 rounded-xl text-white font-sans font-bold text-sm hover:opacity-90 transition-opacity"
-                  style={{ background: "#25D366" }}
-                >
-                  {whatsappSvg}
-                  WhatsApp schreiben
-                </a>
-                <Link
-                  href="/kontakt"
-                  className="cta-btn gap-2 px-6 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all"
-                >
-                  Anfrage senden <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* ── Ablauf ───────────────────────────────────────────────── */}
       <section className="py-16 lg:py-24">
