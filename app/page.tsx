@@ -394,17 +394,82 @@ export default function Home() {
       </section>
 
       {/* ══ MAPS ══════════════════════════════════════════════════════ */}
-      <section className="w-full">
-        <iframe
-          src="https://maps.google.com/maps?q=Bürglenweg+24,+3627+Heimberg,+Schweiz&output=embed&hl=de"
-          width="100%"
-          height="480"
-          style={{ border: 0, display: "block" }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="B-repair&service Standort"
-        />
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+
+            {/* Map */}
+            <div className="lg:w-1/2 rounded-2xl overflow-hidden border border-brand-border shadow-sm flex-shrink-0" style={{ minHeight: 340 }}>
+              <iframe
+                src="https://maps.google.com/maps?q=Bürglenweg+24,+3627+Heimberg,+Schweiz&output=embed&hl=de"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: "block", minHeight: 340 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="B-repair&service Standort"
+              />
+            </div>
+
+            {/* Info blocks */}
+            <div className="lg:w-1/2 flex flex-col gap-4">
+
+              {/* Block 1 – Adresse & Telefon */}
+              <div className="flex-1 p-6 rounded-2xl bg-brand-surface border border-brand-border">
+                <div className="flex items-center gap-2 mb-4">
+                  <MapPin className="w-5 h-5 text-brand-accent flex-shrink-0" />
+                  <span className="font-headline text-xl text-brand-primary">Standort</span>
+                </div>
+                <p className="font-sans font-bold text-brand-primary text-base mb-1">B-repair&service</p>
+                <p className="font-sans text-brand-gray text-sm mb-4">Bürglenweg 24, 3627 Heimberg</p>
+                <a href="tel:+41764020306" className="inline-flex items-center gap-2 font-sans font-bold text-brand-primary text-base hover:text-brand-accent transition-colors">
+                  <Phone className="w-4 h-4 text-brand-accent" />
+                  +41 76 402 03 06
+                </a>
+              </div>
+
+              {/* Block 2 – Öffnungszeiten */}
+              <div className="flex-1 p-6 rounded-2xl bg-brand-surface border border-brand-border">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-brand-accent flex-shrink-0" />
+                    <span className="font-headline text-xl text-brand-primary">Öffnungszeiten</span>
+                  </div>
+                  {/* Open/Closed badge – rendered statically; Mo–Fr open */}
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-sans font-bold bg-green-100 text-green-700 border border-green-200">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    Geöffnet
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  {[
+                    { day: "Mo – Fr", time: "09:00 – 18:30" },
+                    { day: "Samstag", time: "10:00 – 16:00" },
+                    { day: "Sonntag", time: "Geschlossen" },
+                  ].map(({ day, time }) => (
+                    <div key={day} className="flex justify-between text-sm font-sans">
+                      <span className="text-brand-gray">{day}</span>
+                      <span className={time === "Geschlossen" ? "text-red-500 font-bold" : "text-brand-primary font-bold"}>{time}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Block 3 – Route planen */}
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Bürglenweg+24,+3627+Heimberg,+Schweiz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-btn gap-2 px-6 rounded-2xl bg-brand-accent text-brand-primary font-sans font-bold text-base hover:bg-brand-accent-dark transition-all glow-sm"
+              >
+                <MapPin className="w-5 h-5" />
+                Route planen
+              </a>
+
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ══ FINAL CTA ═════════════════════════════════════════════════ */}
