@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Wrench, ChevronDown } from "lucide-react";
 import { repairDropdownLinks } from "@/lib/repairData";
 
-const navLinks = [
-  { href: "/ueber-uns", label: "Über uns & Team" },
-];
+const navLinksLeft  = [{ href: "/",          label: "Home" },
+                       { href: "/ueber-uns", label: "Über uns" }];
+const navLinksRight = [{ href: "/kontakt",   label: "Kontakt" }];
 
 export default function Navbar() {
   const [open, setOpen]         = useState(false);
@@ -67,6 +67,24 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
 
+            {/* Home + Über uns */}
+            {navLinksLeft.map((link) => {
+              const active = link.href === "/" ? pathname === "/" : pathname === link.href || pathname.startsWith(link.href + "/");
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-2 rounded-lg text-sm font-sans font-bold transition-all duration-200 ${
+                    active
+                      ? "text-brand-accent bg-brand-accent/10"
+                      : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+
             {/* Reparatur dropdown */}
             <div ref={dropRef} className="relative">
               <button
@@ -107,9 +125,9 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Other nav links */}
-            {navLinks.map((link) => {
-              const active = pathname === link.href || pathname.startsWith(link.href + "/");
+            {/* Kontakt */}
+            {navLinksRight.map((link) => {
+              const active = pathname === link.href;
               return (
                 <Link
                   key={link.href}
@@ -156,7 +174,25 @@ export default function Navbar() {
           <div className="lg:hidden border-t border-brand-border bg-white/98 backdrop-blur-md -mx-4 sm:-mx-6 px-4 sm:px-6 pb-5">
             <div className="pt-3 flex flex-col gap-1">
 
-              {/* Reparatur accordion in mobile */}
+              {/* Home + Über uns */}
+              {navLinksLeft.map((link) => {
+                const active = link.href === "/" ? pathname === "/" : pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`px-4 py-3.5 rounded-xl text-sm font-sans font-bold transition-all ${
+                      active
+                        ? "text-brand-accent bg-brand-accent/10"
+                        : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+
+              {/* Reparatur accordion */}
               <div>
                 <button
                   onClick={() => setMobileRep(!mobileRep)}
@@ -188,22 +224,20 @@ export default function Navbar() {
                 )}
               </div>
 
-              {navLinks.map((link) => {
-                const active = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-4 py-3.5 rounded-xl text-sm font-sans font-bold transition-all ${
-                      active
-                        ? "text-brand-accent bg-brand-accent/10"
-                        : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
+              {/* Kontakt */}
+              {navLinksRight.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-3.5 rounded-xl text-sm font-sans font-bold transition-all ${
+                    pathname === link.href
+                      ? "text-brand-accent bg-brand-accent/10"
+                      : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
               <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-brand-border">
                 <Link
