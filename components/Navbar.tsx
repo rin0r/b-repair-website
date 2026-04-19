@@ -1,26 +1,22 @@
 "use client";
 
-// VERKAUFSPSYCHOLOGIE: Navigation nach Webdesign-Psychologie-Vorgaben umgestellt.
-// "Startseite" entfernt (Logo = Home-Link, spart Platz).
-// Aktionsorientierte Labels ("Reparaturen" statt "Leistungen", "Anfrage starten" als CTA-Button).
-// Sticky Navigation: Nutzer verliert nie den Zugang zum CTA-Button.
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Wrench } from "lucide-react";
+import { Menu, X, Wrench, ChevronDown } from "lucide-react";
+import { repairDropdownLinks } from "@/lib/repairData";
 
 const navLinks = [
-  // VERKAUFSPSYCHOLOGIE: Aktionswörter in der Navigation erhöhen Klickrate
-  { href: "/leistungen",  label: "Reparaturen" },
-  { href: "/preisliste",  label: "Preise & Garantie" },
-  { href: "/ueber-uns",   label: "Über uns & Team" },
+  { href: "/ueber-uns", label: "Über uns & Team" },
 ];
 
 export default function Navbar() {
-  const [open, setOpen]       = useState(false);
+  const [open, setOpen]         = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname              = usePathname();
+  const [dropOpen, setDropOpen] = useState(false);
+  const [mobileRep, setMobileRep] = useState(false);
+  const pathname                = usePathname();
+  const dropRef                 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,10 +24,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [pathname]);
+  // Close mobile menu on route change
+  useEffect(() => { setOpen(false); setDropOpen(false); setMobileRep(false); }, [pathname]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropRef.current && !dropRef.current.contains(e.target as Node)) {
+        setDropOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const isRepairActive = pathname.startsWith("/reparatur");
 
   return (
-    // VERKAUFSPSYCHOLOGIE: Sticky Navbar – CTA "Anfrage starten" immer sichtbar
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
@@ -42,7 +51,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
 
-          {/* Logo = Link zur Startseite (kein separater "Startseite"-Nav-Link) */}
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group" aria-label="B-repair&service – Startseite">
             <div className="w-9 h-9 rounded-xl bg-brand-primary flex items-center justify-center group-hover:bg-brand-accent transition-colors">
               <Wrench className="w-5 h-5 text-white" />
@@ -55,8 +64,50 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop-Navigation */}
+          {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
+
+            {/* Reparatur dropdown */}
+            <div ref={dropRef} className="relative">
+              <button
+                onClick={() => setDropOpen(!dropOpen)}
+                onMouseEnter={() => setDropOpen(true)}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-sans font-bold transition-all duration-200 ${
+                  isRepairActive
+                    ? "text-brand-accent bg-brand-accent/10"
+                    : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
+                }`}
+              >
+                Reparatur
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${dropOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {dropOpen && (
+                <div
+                  onMouseLeave={() => setDropOpen(false)}
+                  className="absolute top-full left-0 mt-1.5 w-56 bg-white border border-brand-border rounded-2xl shadow-lg overflow-hidden z-50"
+                >
+                  {repairDropdownLinks.map((link) => {
+                    const active = pathname === link.href;
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`flex items-center px-4 py-3 text-sm font-sans font-bold transition-colors ${
+                          active
+                            ? "text-brand-accent bg-brand-accent/8"
+                            : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            {/* Other nav links */}
             {navLinks.map((link) => {
               const active = pathname === link.href || pathname.startsWith(link.href + "/");
               return (
@@ -75,17 +126,14 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* CTA: "Anfrage starten" als Button (primär) */}
+          {/* CTA + phone + burger */}
           <div className="flex items-center gap-3">
-            {/* VERKAUFSPSYCHOLOGIE: Aktionsorientierter CTA "Anfrage starten" in Akzentfarbe,
-                immer sichtbar → erhöht Conversion deutlich gegenüber passivem "Kontakt" */}
             <Link
               href="/kontakt"
               className="cta-btn hidden sm:flex gap-2 px-5 py-2.5 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow-sm"
             >
               Anfrage starten
             </Link>
-            {/* Telefon als sekundäres Element */}
             <a
               href="tel:+41764020306"
               className="hidden md:flex items-center gap-1.5 text-sm text-brand-gray hover:text-brand-primary transition-colors font-sans"
@@ -93,7 +141,6 @@ export default function Navbar() {
             >
               <span className="text-xs">+41 76 402 03 06</span>
             </a>
-
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden w-10 h-10 flex items-center justify-center rounded-xl text-brand-gray hover:text-brand-primary hover:bg-brand-surface transition-colors"
@@ -104,10 +151,43 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile-Menü */}
+        {/* Mobile menu */}
         {open && (
           <div className="lg:hidden border-t border-brand-border bg-white/98 backdrop-blur-md -mx-4 sm:-mx-6 px-4 sm:px-6 pb-5">
             <div className="pt-3 flex flex-col gap-1">
+
+              {/* Reparatur accordion in mobile */}
+              <div>
+                <button
+                  onClick={() => setMobileRep(!mobileRep)}
+                  className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-sans font-bold transition-all ${
+                    isRepairActive
+                      ? "text-brand-accent bg-brand-accent/10"
+                      : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
+                  }`}
+                >
+                  Reparatur
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileRep ? "rotate-180" : ""}`} />
+                </button>
+                {mobileRep && (
+                  <div className="ml-4 mt-1 flex flex-col gap-0.5 border-l-2 border-brand-border pl-4">
+                    {repairDropdownLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`px-3 py-2.5 rounded-lg text-sm font-sans font-bold transition-all ${
+                          pathname === link.href
+                            ? "text-brand-accent bg-brand-accent/10"
+                            : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               {navLinks.map((link) => {
                 const active = pathname === link.href;
                 return (
@@ -124,8 +204,8 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+
               <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-brand-border">
-                {/* WCAG AA: min. 48px Höhe für Touch-Targets */}
                 <Link
                   href="/kontakt"
                   className="cta-btn px-4 rounded-xl bg-brand-accent text-brand-primary text-sm font-bold"
@@ -140,11 +220,12 @@ export default function Navbar() {
                   style={{ background: "#25D366" }}
                   aria-label="WhatsApp"
                 >
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white mr-1.5"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white mr-1.5">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
                   WhatsApp
                 </a>
               </div>
-              {/* Telefon auf Mobile klickbar (WCAG: tel: Link) */}
               <a
                 href="tel:+41764020306"
                 className="cta-btn mt-1 w-full rounded-xl border border-brand-border text-brand-gray text-sm font-sans hover:bg-brand-surface transition-colors"
