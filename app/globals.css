@@ -88,13 +88,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
   }
 
-  /* Grid-Hintergrund (angepasst auf neues Farbsystem) */
-  .bg-grid {
-    background-image:
-      linear-gradient(rgba(13, 27, 42, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(13, 27, 42, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
+  /* Grid-Hintergrund entfernt */
+  .bg-grid {}
 
   /* WCAG AA: Mindest-Touch-Target 48px für Mobile */
   .cta-btn {
