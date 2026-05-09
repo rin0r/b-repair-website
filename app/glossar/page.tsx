@@ -158,7 +158,7 @@ export default function GlossarPage() {
                     >
                       <summary className="flex items-center justify-between px-5 py-4 cursor-pointer select-none">
                         <div className="flex flex-wrap items-center gap-2.5">
-                          <h2 className="font-headline text-xl text-brand-primary leading-none">
+                          <h2 className="font-headline !font-semibold text-xl text-brand-primary leading-none">
                             {term}
                           </h2>
                           {type && (
