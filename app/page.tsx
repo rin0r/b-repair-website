@@ -441,27 +441,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ VERSANDSERVICE COMING SOON ════════════════════════════════ */}
+      {/* ══ VERSANDSERVICE ════════════════════════════════════════════ */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-brand-accent/40 bg-brand-accent/5 p-6 sm:p-8">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="relative overflow-hidden rounded-2xl border border-brand-accent/30 bg-brand-accent/5 p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
               <div className="w-12 h-12 rounded-xl bg-brand-accent/15 flex items-center justify-center flex-shrink-0">
                 <Package className="w-6 h-6 text-brand-accent" />
               </div>
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="font-headline text-xl text-brand-primary">Versandservice</h3>
-                  <span className="px-2 py-0.5 rounded-full bg-brand-orange/20 border border-brand-orange/30 text-brand-orange text-[10px] font-bold uppercase tracking-wide">Coming Soon</span>
-                </div>
-                <p className="font-sans text-brand-gray text-sm">Bald können Sie Ihr Gerät aus der ganzen Schweiz einsenden. Versichert, schnell, sicher.</p>
+                <h3 className="font-headline text-xl text-brand-primary mb-1">Versandservice – aus der ganzen Schweiz</h3>
+                <p className="font-sans text-brand-gray text-sm leading-relaxed">
+                  Sie müssen nicht persönlich vorbeikommen. Senden Sie Ihr Gerät versichert per Post ein –
+                  wir reparieren es und schicken es schnell & sicher zurück. Für Kunden aus Zürich, Basel,
+                  Genf oder woanders in der Schweiz.
+                </p>
               </div>
-              <a
-                href="mailto:info@b-repair.ch?subject=Versandservice%20Vormerken"
-                className="cta-btn flex-shrink-0 px-5 rounded-xl border-2 border-brand-accent text-brand-accent font-sans font-bold text-sm hover:bg-brand-accent/10 transition-colors"
+              <Link
+                href="/kontakt"
+                className="cta-btn flex-shrink-0 gap-2 px-5 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-sm hover:bg-brand-accent-dark transition-all glow-sm"
               >
-                Vormerken lassen
-              </a>
+                Gerät einsenden
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
