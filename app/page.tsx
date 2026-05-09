@@ -3,6 +3,7 @@ import {
   Smartphone, Battery, Wifi, Camera, Mic, Wrench, Droplets,
   Cpu, Monitor, HardDrive, CheckCircle2, ArrowRight, Phone,
   MapPin, Clock, Shield, Star, Zap, ChevronRight, Package,
+  Crosshair, Database, Layers,
 } from "lucide-react";
 import PreisrechnerWidget from "@/components/PreisrechnerWidget";
 import OpenStatus from "@/components/OpenStatus";
@@ -46,6 +47,52 @@ const faqs = [
   { q: "Welche Garantie gibt es?",        a: "6 Monate auf alle Reparaturen – doppelt so lang wie bei den meisten Mitbewerbern." },
   { q: "Gehen meine Daten verloren?",     a: "Bei Display- und Akku-Reparaturen bleiben alle Daten erhalten. Ihre Daten werden nie ohne Ihre Erlaubnis gelesen." },
   { q: "Reparieren Sie auch iPads und Laptops?",  a: "Ja – iPhones, iPads, Android-Smartphones, MacBooks und Windows-Laptops. Preis auf Anfrage." },
+];
+
+const mikroloetLeistungen = [
+  {
+    icon: Crosshair,
+    title: "Kurzschluss-Diagnose",
+    desc: "Platinen-Kurzschlüsse präzise lokalisieren und beheben – von toten Ladekreisen bis zum kompletten Mainboard-Defekt.",
+    tag: "Board-Level",
+  },
+  {
+    icon: Cpu,
+    title: "IC-Chip Austausch",
+    desc: "BGA- und QFN-Chips werden unter dem Präzisionsmikroskop mit Heissluftstation gelötet und ersetzt.",
+    tag: "BGA / QFN",
+  },
+  {
+    icon: Battery,
+    title: "Ladeport & Power-IC",
+    desc: "Ladeprobleme auf Bauteil-Ebene: Tristar, Hydra, USB-IC und defekte Ladekreise reparieren wir – nicht ersetzen.",
+    tag: "Platinen-Level",
+  },
+  {
+    icon: Database,
+    title: "Datenrettung Chip-Ebene",
+    desc: "NAND- und eMMC-Speicherchips direkt auslesen – auch wenn das Gerät nicht mehr bootet oder der Bildschirm schwarz bleibt.",
+    tag: "1–5 Tage",
+  },
+  {
+    icon: Droplets,
+    title: "Wasserschaden Platinen",
+    desc: "Ultraschall-Reinigung, Korrosionsentfernung und direkter Bauteilersatz auf der Platine – nicht nur aussen reinigen.",
+    tag: "Tiefenreinigung",
+  },
+  {
+    icon: Monitor,
+    title: "MacBook Logic Board",
+    desc: "GPU-Ausfälle, Backlight-Fehler, Kurzschlüsse – wir reparieren MacBook- und Windows-Laptop-Platinen auf Bauteil-Ebene.",
+    tag: "macOS / Windows",
+  },
+];
+
+const mikroloetStats = [
+  { val: "IPC",    label: "Zertifiziert",            sub: "Geprüfte Qualitätsstandards" },
+  { val: "100×",   label: "Mikroskop-Vergr.",         sub: "Für feinste Lötreparaturen" },
+  { val: "0.1mm",  label: "Lötpräzision",             sub: "Bei BGA & QFN-Bauteilen" },
+  { val: "95%",    label: "Erfolgsrate",               sub: "Bei Platinen-Reparaturen" },
 ];
 
 /* ─── PAGE ────────────────────────────────────────────────────────── */
@@ -227,31 +274,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ MIKROLÖTEN SPOTLIGHT ══════════════════════════════════════ */}
-      <section className="py-20 lg:py-28" style={{ background: "#EAF5F3" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-brand-accent/40 bg-brand-accent/10 text-brand-primary text-xs font-bold mb-5 uppercase tracking-wide">
-                <Cpu className="w-3.5 h-3.5 text-brand-accent" />
-                Unser Spezialgebiet
+      {/* ══ MIKROLÖTEN ════════════════════════════════════════════════ */}
+      <section className="relative py-20 lg:py-32 overflow-hidden section-dark">
+        {/* Decorative glow */}
+        <div className="absolute top-0 left-1/4 w-[600px] h-72 bg-brand-accent/8 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-72 bg-brand-orange/6 rounded-full blur-[110px] pointer-events-none" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Header */}
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-accent/40 bg-brand-accent/10 text-brand-accent text-xs font-bold mb-5 uppercase tracking-widest">
+              <Cpu className="w-3.5 h-3.5" />
+              Unser Spezialgebiet · Selten im Grossraum Thun
+            </div>
+            <h2 className="font-headline text-4xl sm:text-5xl lg:text-6xl text-white mb-5">
+              Mikrolöten –{" "}
+              <span className="text-brand-accent">was andere ablehnen,</span>
+              <br />
+              reparieren wir.
+            </h2>
+            <p className="font-sans text-gray-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              Platinen-Reparatur auf Bauteil-Ebene, unter dem Präzisionsmikroskop, IPC-zertifiziert.
+              Kaum ein Anbieter im Grossraum Thun bietet dieses Niveau.
+            </p>
+          </div>
+
+          {/* Capability grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
+            {mikroloetLeistungen.map(({ icon: Icon, title, desc, tag }) => (
+              <div
+                key={title}
+                className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-brand-accent/50 hover:bg-white/8 transition-all duration-300"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-brand-accent/15 flex items-center justify-center group-hover:bg-brand-accent/25 transition-colors flex-shrink-0">
+                    <Icon className="w-5 h-5 text-brand-accent" />
+                  </div>
+                  <span className="text-[10px] font-bold font-sans uppercase tracking-widest text-brand-accent/70 border border-brand-accent/20 rounded-md px-2 py-0.5">
+                    {tag}
+                  </span>
+                </div>
+                <h3 className="font-headline text-xl text-white mb-2">{title}</h3>
+                <p className="font-sans text-gray-400 text-sm leading-relaxed">{desc}</p>
               </div>
-              <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary mb-4">
-                Was andere aufgeben –{" "}
-                <span className="text-brand-accent">reparieren wir.</span>
-              </h2>
-              <p className="font-sans text-brand-gray leading-relaxed mb-6">
-                Mikrolöten bedeutet: Reparatur auf Platinen-Ebene – einzelne Bauteile werden unter dem Mikroskop identifiziert und ersetzt. Das können wir, weil wir IPC-zertifiziert sind und die nötige Ausrüstung besitzen.
+            ))}
+          </div>
+
+          {/* Divider */}
+          <div className="flex items-center gap-4 mb-14">
+            <div className="flex-1 h-px bg-white/10" />
+            <span className="font-sans text-gray-500 text-xs uppercase tracking-widest whitespace-nowrap">
+              Selten — weil aufwändig
+            </span>
+            <div className="flex-1 h-px bg-white/10" />
+          </div>
+
+          {/* Bottom: explanation + stats */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="font-headline text-3xl sm:text-4xl text-white mb-4">
+                Was ist Mikrolöten?
+              </h3>
+              <p className="font-sans text-gray-400 leading-relaxed mb-6">
+                Mikrolöten (Microsoldering) bedeutet: Reparatur von Smartphone- und Laptop-Platinen
+                auf Bauteil-Ebene. Einzelne Chips, Kondensatoren, Widerstände und Leiterbahnen
+                werden unter einem Präzisionsmikroskop identifiziert, ausgelötet und ersetzt.
+                Das erfordert spezielles Equipment, Zertifizierung und jahrelange Erfahrung –
+                weshalb so wenige Anbieter dies wirklich beherrschen.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Reparatur von iPhone-Ladeplatinen",
-                  "Kurzschluss-Diagnose & Behebung",
-                  "IC-Chip-Austausch (BGA, QFN)",
-                  "MacBook-Platinen-Reparatur",
-                  "Wasserschaden auf Platinen-Ebene",
+                  "Geräte reparieren, die andere Shops ablehnen",
+                  "Daten retten, die verloren schienen",
+                  "Günstiger als ein neues Gerät oder Platinentausch",
+                  "IPC-zertifiziert – geprüfte Qualitätsstandards",
+                  "Kostenlose Diagnose & transparente Preise vor der Reparatur",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-brand-gray">
+                  <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-gray-300">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
                     {item}
                   </li>
@@ -259,28 +359,25 @@ export default function Home() {
               </ul>
               <Link
                 href="/kontakt"
-                className="cta-btn gap-2 px-7 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-base hover:bg-brand-accent-dark transition-all glow"
+                className="cta-btn gap-2 px-7 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-base hover:bg-brand-accent-dark transition-all glow hover:scale-[1.02]"
               >
                 Mikrolöt-Anfrage stellen
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
-            {/* Visual */}
+
+            {/* Stat cards */}
             <div className="grid grid-cols-2 gap-4">
-              {[
-                { val: "IPC",    label: "Zertifiziert",            sub: "geprüfte Qualitätsstandards" },
-                { val: "100×",   label: "Mikroskop-Vergrösserung", sub: "für präzise Lötreparaturen" },
-                { val: "0.1mm",  label: "Genauigkeit",             sub: "bei BGA & Microsoldering" },
-                { val: "95%",    label: "Erfolgsrate",             sub: "bei Platinen-Reparaturen" },
-              ].map(({ val, label, sub }) => (
-                <div key={label} className="p-5 rounded-2xl bg-white border border-brand-border shadow-sm">
-                  <div className="font-headline text-3xl text-brand-accent mb-1">{val}</div>
-                  <div className="font-headline text-base text-brand-primary">{label}</div>
-                  <div className="font-sans text-xs text-brand-gray mt-1">{sub}</div>
+              {mikroloetStats.map(({ val, label, sub }) => (
+                <div key={label} className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
+                  <div className="font-headline text-4xl sm:text-5xl text-brand-accent mb-1">{val}</div>
+                  <div className="font-headline text-lg text-white">{label}</div>
+                  <div className="font-sans text-xs text-gray-400 mt-1">{sub}</div>
                 </div>
               ))}
             </div>
           </div>
+
         </div>
       </section>
 
