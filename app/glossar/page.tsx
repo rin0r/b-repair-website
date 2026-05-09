@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -149,26 +150,31 @@ export default function GlossarPage() {
                 </div>
 
                 {/* Terms in this letter */}
-                <div className="space-y-3 ml-14">
+                <div className="space-y-2 ml-14">
                   {glossar[letter].map(({ term, type, def }) => (
-                    <div
+                    <details
                       key={term}
-                      className="p-5 rounded-xl border border-brand-border bg-white hover:border-brand-accent/30 hover:bg-brand-accent/3 transition-colors"
+                      className="group rounded-xl border border-brand-border bg-white hover:border-brand-accent/30 transition-colors overflow-hidden"
                     >
-                      <div className="flex flex-wrap items-center gap-2.5 mb-2">
-                        <h2 className="font-headline text-xl text-brand-primary leading-none">
-                          {term}
-                        </h2>
-                        {type && (
-                          <span className={`inline-flex px-2 py-0.5 rounded-md border text-[10px] font-bold font-sans uppercase tracking-wide ${typeColor[type] ?? "bg-gray-100 text-gray-500 border-gray-200"}`}>
-                            {type}
-                          </span>
-                        )}
+                      <summary className="flex items-center justify-between px-5 py-4 cursor-pointer select-none">
+                        <div className="flex flex-wrap items-center gap-2.5">
+                          <h2 className="font-headline text-xl text-brand-primary leading-none">
+                            {term}
+                          </h2>
+                          {type && (
+                            <span className={`inline-flex px-2 py-0.5 rounded-md border text-[10px] font-bold font-sans uppercase tracking-wide ${typeColor[type] ?? "bg-gray-100 text-gray-500 border-gray-200"}`}>
+                              {type}
+                            </span>
+                          )}
+                        </div>
+                        <ChevronDown className="w-4 h-4 text-brand-gray flex-shrink-0 ml-3 transition-transform duration-200 group-open:rotate-180" />
+                      </summary>
+                      <div className="px-5 pb-5 border-t border-brand-border/60">
+                        <p className="font-sans text-brand-gray text-sm leading-relaxed pt-4">
+                          {def}
+                        </p>
                       </div>
-                      <p className="font-sans text-brand-gray text-sm leading-relaxed">
-                        {def}
-                      </p>
-                    </div>
+                    </details>
                   ))}
                 </div>
               </div>
