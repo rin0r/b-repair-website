@@ -105,7 +105,7 @@ export default function Footer() {
             <h3 className="text-white font-sans font-bold mb-3 text-xs uppercase tracking-wider">Öffnungszeiten</h3>
             <ul className="space-y-1.5">
               {[
-                { d: "Mo – Fr", t: "09:00 – 18:30" },
+                { d: "Mo – Fr", t: "09:00 – 18:00" },
                 { d: "Samstag", t: "10:00 – 16:00" },
                 { d: "Sonntag", t: "Geschlossen" },
               ].map(({ d, t }) => (

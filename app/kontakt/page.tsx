@@ -14,11 +14,11 @@ import {
 } from "lucide-react";
 
 const openingHours = [
-  { day: "Montag", time: "09:00 – 18:30" },
-  { day: "Dienstag", time: "09:00 – 18:30" },
-  { day: "Mittwoch", time: "09:00 – 18:30" },
-  { day: "Donnerstag", time: "09:00 – 18:30" },
-  { day: "Freitag", time: "09:00 – 18:30" },
+  { day: "Montag", time: "09:00 – 18:00" },
+  { day: "Dienstag", time: "09:00 – 18:00" },
+  { day: "Mittwoch", time: "09:00 – 18:00" },
+  { day: "Donnerstag", time: "09:00 – 18:00" },
+  { day: "Freitag", time: "09:00 – 18:00" },
   { day: "Samstag", time: "10:00 – 16:00" },
   { day: "Sonntag", time: "Geschlossen" },
 ];

@@ -323,7 +323,7 @@ export default function PreisrechnerWidget() {
               Bürglenweg 24, 3627 Heimberg
             </div>
             <p className="font-sans text-brand-gray/60 text-xs mt-1">
-              Mo – Fr 09:00 – 18:30 · Sa 10:00 – 16:00
+              Mo – Fr 09:00 – 18:00 · Sa 10:00 – 16:00
             </p>
           </div>
 

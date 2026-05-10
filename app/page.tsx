@@ -176,7 +176,7 @@ export default function Home() {
                 <h3 className="font-headline text-xl text-brand-primary mb-4">Heute geöffnet</h3>
                 <div className="space-y-2.5 mb-6">
                   {[
-                    { day: "Mo – Fr", time: "09:00 – 18:30", today: true },
+                    { day: "Mo – Fr", time: "09:00 – 18:00", today: true },
                     { day: "Samstag", time: "10:00 – 16:00", today: false },
                     { day: "Sonntag", time: "Geschlossen",    today: false },
                   ].map(({ day, time, today }) => (
@@ -551,7 +551,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-2">
                   {[
-                    { day: "Mo – Fr", time: "09:00 – 18:30" },
+                    { day: "Mo – Fr", time: "09:00 – 18:00" },
                     { day: "Samstag", time: "10:00 – 16:00" },
                     { day: "Sonntag", time: "Geschlossen" },
                   ].map(({ day, time }) => (
@@ -611,7 +611,7 @@ export default function Home() {
             </a>
           </div>
           <div className="flex flex-wrap gap-4 justify-center text-xs font-sans text-brand-gray">
-            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-brand-accent" /> Mo–Fr 09–18:30 · Sa 10–16</span>
+            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-brand-accent" /> Mo–Fr 09–18 · Sa 10–16</span>
             <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-brand-accent" /> Bürglenweg 24, Heimberg</span>
             <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-brand-accent" /> 6 Monate Garantie</span>
           </div>

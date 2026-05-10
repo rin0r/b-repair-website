@@ -23,8 +23,8 @@ function getStatus(): { open: boolean; label: string } {
 
   let open = false;
   if (!isSunday && !isSaturday) {
-    // Mo–Fr: 09:00–18:30
-    open = time >= 9 * 60 && time < 18 * 60 + 30;
+    // Mo–Fr: 09:00–18:00
+    open = time >= 9 * 60 && time < 18 * 60;
   } else if (isSaturday) {
     // Sa: 10:00–16:00
     open = time >= 10 * 60 && time < 16 * 60;
