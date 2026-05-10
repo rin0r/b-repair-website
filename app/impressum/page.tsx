@@ -4,7 +4,6 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Impressum | B-repair&service",
   description: "Impressum und rechtliche Angaben von B-repair&service, Heimberg.",
-  robots: { index: false },
 };
 
 export default function ImpressumPage() {
@@ -61,31 +60,19 @@ export default function ImpressumPage() {
         </div>
 
         {/* Urheberrecht */}
-        <div className="mb-10">
+        <div className="mb-12">
           <h2 className="font-headline text-2xl text-brand-primary mb-3">Urheberrecht</h2>
           <p className="font-sans text-brand-gray text-sm leading-relaxed">
             Die auf dieser Website veröffentlichten Inhalte und Werke unterliegen dem Schweizer Urheberrecht. Jede Vervielfältigung, Bearbeitung, Verbreitung oder sonstige Verwertung ausserhalb der Grenzen des Urheberrechts bedarf der ausdrücklichen schriftlichen Zustimmung von B-repair&service.
           </p>
         </div>
 
-        {/* Datenschutz */}
-        <div className="mb-12">
-          <h2 className="font-headline text-2xl text-brand-primary mb-3">Datenschutz</h2>
-          <p className="font-sans text-brand-gray text-sm leading-relaxed mb-3">
-            Der Betrieb dieser Website erfolgt unter Einhaltung des Schweizer Datenschutzgesetzes (DSG) sowie der Europäischen Datenschutz-Grundverordnung (DSGVO), soweit anwendbar.
-          </p>
-          <p className="font-sans text-brand-gray text-sm leading-relaxed mb-3">
-            Beim Besuch dieser Website werden technisch notwendige Daten (Server-Logs) gespeichert. Über das Kontaktformular übermittelte Daten werden ausschliesslich zur Bearbeitung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.
-          </p>
-          <p className="font-sans text-brand-gray text-sm leading-relaxed">
-            Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten. Anfragen richten Sie bitte an{" "}
-            <a href="mailto:info@b-repair.ch" className="text-brand-accent hover:underline">info@b-repair.ch</a>.
-          </p>
-        </div>
-
-        <div className="pt-6 border-t border-brand-border">
+        <div className="pt-6 border-t border-brand-border flex flex-wrap gap-6 items-center">
           <Link href="/" className="font-sans text-sm text-brand-accent hover:underline">
             ← Zurück zur Startseite
+          </Link>
+          <Link href="/datenschutz" className="font-sans text-sm text-brand-gray hover:text-brand-accent transition-colors">
+            Datenschutzerklärung →
           </Link>
         </div>
 

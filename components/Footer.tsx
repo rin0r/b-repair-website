@@ -127,7 +127,8 @@ export default function Footer() {
           </p>
           <p className="font-sans text-[11px]" style={{ color: "#6B8099" }}>
             Bürglenweg 24, 3627 Heimberg · Schweiz ·{" "}
-            <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
+            <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>{" "}·{" "}
+            <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
           </p>
         </div>
       </div>
