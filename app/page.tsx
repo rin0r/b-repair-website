@@ -503,7 +503,7 @@ export default function Home() {
 
               {/* Block 3 – Route planen */}
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=Bürglenweg+24,+3627+Heimberg,+Schweiz"
+                href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-btn gap-2 px-6 rounded-2xl bg-brand-accent text-brand-primary font-sans font-bold text-base hover:bg-brand-accent-dark transition-all glow-sm"

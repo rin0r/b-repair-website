@@ -115,7 +115,7 @@ export default function KontaktPage() {
               </a>
 
               <a
-                href="https://maps.google.com/?q=Bürglenweg+24+3627+Heimberg"
+                href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-5 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-accent/50 transition-all group"
@@ -155,7 +155,7 @@ export default function KontaktPage() {
               {/* Map embed placeholder */}
               <div className="rounded-2xl bg-brand-card border border-brand-border overflow-hidden h-44 flex items-center justify-center">
                 <a
-                  href="https://maps.google.com/?q=Bürglenweg+24+3627+Heimberg"
+                  href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-2 text-brand-muted hover:text-brand-accent transition-colors"

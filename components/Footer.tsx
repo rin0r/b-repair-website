@@ -95,7 +95,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://maps.google.com/?q=Bürglenweg+24+3627+Heimberg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-xs font-sans hover:text-brand-accent transition-colors" style={{ color: "#8899AA" }}>
+                <a href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-xs font-sans hover:text-brand-accent transition-colors" style={{ color: "#8899AA" }}>
                   <MapPin className="w-3.5 h-3.5 text-brand-accent flex-shrink-0 mt-0.5" />
                   <span>Bürglenweg 24<br />3627 Heimberg</span>
                 </a>
