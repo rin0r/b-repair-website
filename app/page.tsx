@@ -51,7 +51,7 @@ const reviews = [
 const faqs = [
   { q: "Brauche ich einen Termin?",      a: "Nein – Sie können jederzeit während der Öffnungszeiten vorbeikommen. Für Mikrolöten und Datenrettung empfehlen wir kurze Voranmeldung per Telefon oder WhatsApp." },
   { q: "Wie lange dauert eine Reparatur?",  a: "Display und Akku: 30–90 Min. Wasserschäden, Mikrolötungen und Datenrettungen: 1–5 Werktage je nach Aufwand." },
-  { q: "Was kostet die Diagnose?",        a: "Die Erstdiagnose ist immer kostenlos. Sie erfahren den genauen Fixpreis vor der Reparatur – keine Überraschungen." },
+  { q: "Was kostet die Diagnose?",        a: "Die Diagnose ist kostenlos und entfällt bei Reparatur bei uns. Sie erfahren den genauen Fixpreis vor der Reparatur – keine Überraschungen." },
   { q: "Welche Garantie gibt es?",        a: "6 Monate auf alle Reparaturen – doppelt so lang wie bei den meisten Mitbewerbern." },
   { q: "Gehen meine Daten verloren?",     a: "Bei Display- und Akku-Reparaturen bleiben alle Daten erhalten. Ihre Daten werden nie ohne Ihre Erlaubnis gelesen." },
   { q: "Reparieren Sie auch iPads und Laptops?",  a: "Ja – iPhones, iPads, Android-Smartphones, MacBooks und Windows-Laptops. Preis auf Anfrage." },
@@ -173,7 +173,7 @@ export default function Home() {
                   Jedes Element hebt eine andere Vertrauensdimension hervor. */}
               <div className="flex flex-wrap gap-x-5 gap-y-2">
                 {[
-                  "Kostenlose Erstdiagnose",
+                  "Diagnose kostenlos – entfällt bei Reparatur",
                   "6 Monate Garantie",
                   "2.000+ Reparaturen",
                   "IPC-zertifiziert",
@@ -326,7 +326,7 @@ export default function Home() {
                   "Daten retten, die verloren schienen",
                   "Günstiger als ein neues Gerät oder Platinentausch",
                   "IPC-zertifiziert – geprüfte Qualitätsstandards",
-                  "Kostenlose Diagnose & transparente Preise vor der Reparatur",
+                  "Diagnose kostenlos – entfällt bei Reparatur bei uns",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-gray-300">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
@@ -428,7 +428,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { n: "01", t: "Vorbeikommen",         d: "Kein Termin nötig – einfach während den Öffnungszeiten." },
-              { n: "02", t: "Kostenlose Diagnose",  d: "Wir prüfen Ihr Gerät und nennen den Fixpreis." },
+              { n: "02", t: "Kostenlose Diagnose",  d: "Wir prüfen Ihr Gerät und nennen den Fixpreis – entfällt bei Reparatur bei uns." },
               { n: "03", t: "Express-Reparatur",    d: "Die meisten Reparaturen in unter 2 Stunden abgeschlossen." },
               { n: "04", t: "Garantie geniessen",   d: "Gerät abholen und 6 Monate Garantie geniessen." },
             ].map(({ n, t, d }) => (

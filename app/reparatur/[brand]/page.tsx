@@ -26,7 +26,7 @@ const steps = [
   {
     num: "02",
     title: "Kostenlose Diagnose",
-    desc: "Wir prüfen Ihr Gerät sorgfältig und informieren Sie über den Schaden, die Reparaturmöglichkeiten und den Fixpreis.",
+    desc: "Wir prüfen Ihr Gerät und nennen den Fixpreis – entfällt bei Reparatur bei uns.",
   },
   {
     num: "03",

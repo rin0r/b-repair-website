@@ -343,7 +343,7 @@ export default function PreislistePage() {
                 </p>
                 <p className="font-sans text-brand-gray text-sm mt-1 leading-relaxed">
                   Was Sie hier sehen, zahlen Sie – ohne Überraschung.{" "}
-                  <strong className="text-brand-primary">Diagnose immer kostenlos.</strong>{" "}
+                  <strong className="text-brand-primary">Diagnose kostenlos – entfällt bei Reparatur bei uns.</strong>{" "}
                   Kein Kostenvoranschlag, kein Mindesthonorar, keine Bearbeitungsgebühr.
                 </p>
               </div>

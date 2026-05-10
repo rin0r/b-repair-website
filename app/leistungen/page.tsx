@@ -303,7 +303,7 @@ export default function LeistungenPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { n: "01", t: "Vorbeikommen",        d: "Kein Termin nötig. Bürglenweg 24, Heimberg." },
-              { n: "02", t: "Kostenlose Diagnose", d: "Wir prüfen und nennen den Fixpreis. Keine Überraschungen." },
+              { n: "02", t: "Kostenlose Diagnose", d: "Wir prüfen und nennen den Fixpreis – entfällt bei Reparatur bei uns." },
               { n: "03", t: "Express-Reparatur",   d: "Meiste Reparaturen in unter 2 Stunden." },
               { n: "04", t: "6 Mon. Garantie",     d: "Gerät abholen und sorgenfrei nutzen." },
             ].map(({ n, t, d }) => (
