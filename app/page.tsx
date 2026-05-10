@@ -15,10 +15,9 @@ import StatsCounter from "@/components/StatsCounter";
 // VERKAUFSPSYCHOLOGIE: Kennzahlen nach Webdesign-Psychologie-Vorgabe.
 // Zahlen erzeugen Vertrauen (Social Proof + Autorität).
 const stats = [
-  { value: "4+",      label: "Jahre Erfahrung",         sub: "seit 2021 in Heimberg" },
-  { value: "2'000+",  label: "reparierte Geräte",       sub: "erfolgreich abgeschlossen" },
-  { value: "98%",     label: "Kundenzufriedenheit",     sub: "laut Kundenbewertungen" },
-  { value: "IPC",     label: "zertifiziert",             sub: "geprüfte Qualitätsstandards" },
+  { value: "4+",    label: "Jahre Erfahrung",   sub: "seit 2021 in Heimberg" },
+  { value: "500+",  label: "reparierte Geräte", sub: "erfolgreich abgeschlossen" },
+  { value: "IPC",   label: "zertifiziert",       sub: "geprüfte Qualitätsstandards" },
 ];
 
 const services = [
