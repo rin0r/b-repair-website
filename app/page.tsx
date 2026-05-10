@@ -591,7 +591,7 @@ export default function Home() {
       </section>
 
       {/* ══ FINAL CTA ═════════════════════════════════════════════════ */}
-      <section className="py-24 lg:py-32" style={{ background: "#EAF5F3" }}>
+      <section className="py-24 lg:py-32" style={{ background: "#ECFEFF" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">Bereit?</span>
           <h2 className="font-headline text-5xl sm:text-6xl lg:text-7xl text-brand-primary mb-4">

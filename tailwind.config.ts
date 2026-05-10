@@ -10,17 +10,17 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          primary:      "#111827",   // Fast-Schwarz – Headlines, dunkle Sektionen
-          accent:       "#3D9E8C",   // Teal – Buttons, Links, Highlights
-          "accent-dark":"#2E8070",   // Dunkleres Teal – Hover-State
-          "accent-light":"#EAF5F3",  // Sehr helles Teal – Badges, Backgrounds
+          primary:      "#252B36",   // Anthrazit-Dunkelgrau – Headlines, dunkle Sektionen
+          accent:       "#06B6D4",   // Electric Cyan – Buttons, Links, Highlights
+          "accent-dark":"#0891B2",   // Dunkleres Cyan – Hover-State
+          "accent-light":"#ECFEFF",  // Sehr helles Cyan – Badges, Backgrounds
           bg:           "#FFFFFF",   // Reines Weiss – Haupthintergrund
-          surface:      "#F4F5F7",   // Leicht dunkleres Weiss – Sektionswechsel
+          surface:      "#F4F6F8",   // Leicht dunkleres Weiss – Sektionswechsel
           card:         "#FFFFFF",   // Karten-Hintergrund
-          border:       "#E5E7EB",   // Subtile Trennlinien
+          border:       "#E2E6EA",   // Subtile Trennlinien
           gray:         "#6B7280",   // Muted Text
           muted:        "#6B7280",   // Alias
-          text:         "#111827",   // Alias Primary
+          text:         "#252B36",   // Alias Primary
           orange:       "#F59E0B",   // Bernstein – Coming-Soon Badges
         },
       },

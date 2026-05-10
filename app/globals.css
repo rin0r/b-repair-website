@@ -9,15 +9,14 @@
 
 /* ─── DESIGN TOKENS ──────────────────────────────────────────────────── */
 :root {
-  /* VERKAUFSPSYCHOLOGIE: Farbpalette nach Webdesign-Psychologie-Dokument */
-  --color-primary:  #111827;   /* Hauptfarbe: dunkel, seriös, vertrauenswürdig */
-  --color-accent:   #3D9E8C;   /* Akzent: Teal – Innovation + Gesundheit + Technik */
+  --color-primary:  #252B36;   /* Anthrazit-Dunkelgrau: seriös, technisch, modern */
+  --color-accent:   #06B6D4;   /* Electric Cyan: Energie, Technik, Innovation */
   --color-bg:       #FFFFFF;   /* Hintergrund: Reines Weiss */
   --color-orange:   #F59E0B;   /* Orange/Bernstein: Dringlichkeit, Express, Aufmerksamkeit */
   --color-gray:     #6B7280;   /* Muted: lesbar, dezent */
   --color-card:     #FFFFFF;
-  --color-surface:  #F4F5F7;
-  --color-border:   #E5E7EB;
+  --color-surface:  #F4F6F8;
+  --color-border:   #E2E6EA;
 
   /* Legacy-Aliases für bestehenden Code */
   --bg:         var(--color-bg);
@@ -25,7 +24,7 @@
   --card:       var(--color-card);
   --border:     var(--color-border);
   --accent:     var(--color-accent);
-  --accent-dark: #2E8070;
+  --accent-dark: #0891B2;
   --muted:      var(--color-gray);
   --text:       var(--color-primary);
 }
@@ -77,12 +76,12 @@ h1, h2, h3, h4, h5, h6 {
   .font-headline { font-family: 'Barlow Condensed', system-ui, sans-serif; font-weight: 800; }
   .font-price    { font-family: 'JetBrains Mono', monospace; }
 
-  /* Glow-Effekte auf Akzentfarbe #3D9E8C */
+  /* Glow-Effekte auf Akzentfarbe #06B6D4 */
   .glow {
-    box-shadow: 0 0 20px rgba(61, 158, 140, 0.35), 0 0 40px rgba(61, 158, 140, 0.12);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.40), 0 0 40px rgba(6, 182, 212, 0.15);
   }
   .glow-sm {
-    box-shadow: 0 0 10px rgba(61, 158, 140, 0.25);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.30);
   }
   .glow-orange {
     box-shadow: 0 0 16px rgba(245, 158, 11, 0.35);
