@@ -434,7 +434,7 @@ export default function Home() {
             ].map(({ n, t, d }) => (
               <div key={n} className="p-5 rounded-2xl bg-white border border-brand-border shadow-sm">
                 <div className="font-headline text-6xl text-brand-accent/20 mb-3 leading-none">{n}</div>
-                <h3 className="font-headline text-xl text-brand-primary mb-2">{t}</h3>
+                <h3 className="font-headline text-base text-brand-primary mb-2 whitespace-nowrap">{t}</h3>
                 <p className="font-sans text-brand-gray text-sm leading-relaxed">{d}</p>
               </div>
             ))}
