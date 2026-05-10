@@ -120,7 +120,10 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="font-sans text-[11px]" style={{ color: "#6B8099" }}>
-            © {new Date().getFullYear()} B-repair&service. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} B-repair&service. Alle Rechte vorbehalten. · Made by{" "}
+            <a href="https://www.netchamps.de/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              Netchamps
+            </a>
           </p>
           <p className="font-sans text-[11px]" style={{ color: "#6B8099" }}>
             Bürglenweg 24, 3627 Heimberg · Schweiz
