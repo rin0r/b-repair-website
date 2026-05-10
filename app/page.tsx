@@ -24,13 +24,28 @@ const services = [
   { icon: Wifi,       title: "Software & Diagnose",  time: "30–60 Min",  desc: "Abstürze, Viren, Betriebssystem – kostenlose Erstdiagnose.",             accent: "text-purple-600" },
 ];
 
-const comparisonRows = [
-  { label: "Reparaturzeit",        us: "≤ 2 Stunden",        apple: "1–5 Tage"    },
-  { label: "Display iPhone 14",    us: "CHF 349.–",           apple: "CHF 399.–+"  },
-  { label: "Garantie",             us: "6 Monate",            apple: "90 Tage"     },
-  { label: "Alle Marken",          us: "✓ iPhone & Android",  apple: "Nur Apple"   },
-  { label: "Fixpreise online",     us: "✓ Transparent",       apple: "✗"           },
-  { label: "Mikrolöten",           us: "✓ Spezialist",        apple: "✗"           },
+const reviews = [
+  {
+    name: "Ramu Darwisch",
+    initial: "R",
+    color: "bg-purple-600",
+    ago: "vor 3 Monaten",
+    text: "Schneller Austausch mit originalem Akku. (iPhone 14) Top Qualität, alles funktioniert einwandfrei und die Akkuleistung ist wieder bei 100%. Absolut empfehlenswert!",
+  },
+  {
+    name: "Frank Schulze",
+    initial: "F",
+    color: "bg-violet-600",
+    ago: "vor 7 Monaten",
+    text: "Display und Akku wurden schnell und zuverlässig gewechselt. Funktioniert alles einwandfrei. Sehr freundlicher Kontakt. Kann man nur weiterempfehlen! Top!",
+  },
+  {
+    name: "Toni",
+    initial: "T",
+    color: "bg-emerald-700",
+    ago: "vor 3 Monaten",
+    text: "Top Microsoldering-Service, Board-Defekt repariert und alle Daten gerettet. Schnell und professionell. Sehr empfehlenswert!",
+  },
 ];
 
 const faqs = [
@@ -354,43 +369,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ VERGLEICH ═════════════════════════════════════════════════ */}
-      {/* VERKAUFSPSYCHOLOGIE: Vergleichstabelle nutzt Ankerprinzip (Apple als teurer Anker)
-          und macht B-repair's Vorteile ohne Behauptungen sichtbar. */}
-      <section className="py-20 border-y border-brand-border" style={{ background: "#F4F5F7" }}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">Warum B-repair?</span>
-            <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary">
-              Schnell <span className="text-brand-accent">&</span> Günstig – gleichzeitig
-            </h2>
-          </div>
-          <div className="overflow-x-auto rounded-2xl border border-brand-border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-white border-b border-brand-border">
-                  <th className="text-left px-5 py-4 text-brand-gray font-sans font-bold text-xs uppercase tracking-wider">Kriterium</th>
-                  <th className="px-5 py-4 text-center">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-accent text-brand-primary text-xs font-bold font-sans">
-                      <Wrench className="w-3 h-3" /> B-repair
-                    </span>
-                  </th>
-                  <th className="px-5 py-4 text-center text-brand-gray font-sans font-bold text-xs">Hersteller-Service</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.map((row, i) => (
-                  <tr key={row.label} className={`border-b border-brand-border/60 ${i % 2 === 0 ? "bg-white" : "bg-brand-surface/50"}`}>
-                    <td className="px-5 py-3.5 font-sans text-brand-gray text-xs font-semibold">{row.label}</td>
-                    <td className="px-5 py-3.5 text-center font-price text-brand-accent font-bold text-xs">{row.us}</td>
-                    <td className="px-5 py-3.5 text-center font-sans text-red-500 text-xs">{row.apple}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
 
       {/* ══ PREISRECHNER ══════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 border-y border-brand-border" style={{ background: "#FFFFFF" }}>
@@ -535,6 +513,37 @@ export default function Home() {
               </a>
 
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ BEWERTUNGEN ═══════════════════════════════════════════════ */}
+      <section className="py-20 lg:py-24 bg-white border-y border-brand-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">Google Bewertungen</span>
+            <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary">Was Kunden sagen</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {reviews.map((r) => (
+              <div key={r.name} className="p-6 rounded-2xl border border-brand-border bg-white hover:border-brand-accent/30 hover:shadow-md transition-all">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-10 h-10 rounded-full ${r.color} flex items-center justify-center text-white font-bold font-sans text-sm flex-shrink-0`}>
+                    {r.initial}
+                  </div>
+                  <div>
+                    <div className="font-sans font-bold text-brand-primary text-sm">{r.name}</div>
+                    <div className="font-sans text-brand-gray text-xs">{r.ago}</div>
+                  </div>
+                </div>
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <p className="font-sans text-brand-gray text-sm leading-relaxed">{r.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
