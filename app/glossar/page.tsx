@@ -34,7 +34,7 @@ const glossar: Record<string, Term[]> = {
     { term: "Fixpreis", type: "Service", def: "Fester Reparaturpreis, der vor Beginn der Arbeit kommuniziert wird – ohne versteckte Zusatzkosten. Bei B-repair gilt ausschliesslich Fixpreispolitik: Sie kennen den Preis, bevor wir anfangen." },
   ],
   G: [
-    { term: "Garantie", type: "Service", def: "Gewährleistung für durchgeführte Reparaturen. B-repair bietet 6 Monate Garantie auf alle Reparaturen – doppelt so lang wie die meisten Mitbewerber und doppelt so lang wie der Apple-Reparaturservice." },
+    { term: "Garantie", type: "Service", def: "Gewährleistung für durchgeführte Reparaturen. B-repair bietet 6 Monate Garantie auf alle Reparaturen." },
   ],
   I: [
     { term: "IC (Integrated Circuit)", type: "Elektronik", def: "Integrierter Schaltkreis, umgangssprachlich als «Chip» bezeichnet. Auf dem Logic Board eines Smartphones befinden sich Dutzende ICs für verschiedene Funktionen: Laden, Audio, Kommunikation, Kamera und mehr." },
