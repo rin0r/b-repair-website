@@ -39,7 +39,7 @@ export default function DatenschutzPage() {
         <Section title="2. Welche Daten wir erheben und warum">
           <p><strong className="text-brand-primary">a) Server-Logs (Websitebesuch)</strong></p>
           <p>
-            Beim Aufruf dieser Website speichert unser Hosting-Anbieter Vercel Inc. technisch notwendige Daten in Server-Logfiles: IP-Adresse (anonymisiert), Browsertyp, Betriebssystem, Referrer-URL, Datum und Uhrzeit des Zugriffs, aufgerufene Seite.
+            Beim Aufruf dieser Website speichert unser Hosting-Anbieter Hostinger International Ltd. technisch notwendige Daten in Server-Logfiles: IP-Adresse (anonymisiert), Browsertyp, Betriebssystem, Referrer-URL, Datum und Uhrzeit des Zugriffs, aufgerufene Seite.
           </p>
           <p>
             <strong className="text-brand-primary">Zweck:</strong> Technischer Betrieb und Sicherheit der Website.<br />
@@ -59,7 +59,7 @@ export default function DatenschutzPage() {
 
           <p className="mt-2"><strong className="text-brand-primary">c) Cookies</strong></p>
           <p>
-            Diese Website verwendet keine Tracking- oder Marketing-Cookies. Vercel kann technisch notwendige Session-Cookies setzen, die nach dem Schliessen des Browsers automatisch gelöscht werden. Es werden keine Cookies für Analyse- oder Werbezwecke eingesetzt.
+            Diese Website verwendet keine Tracking- oder Marketing-Cookies. Hostinger kann technisch notwendige Session-Cookies setzen, die nach dem Schliessen des Browsers automatisch gelöscht werden. Es werden keine Cookies für Analyse- oder Werbezwecke eingesetzt.
           </p>
         </Section>
 
@@ -75,9 +75,9 @@ export default function DatenschutzPage() {
               </thead>
               <tbody className="divide-y divide-brand-border">
                 <tr>
-                  <td className="px-4 py-3 font-semibold text-brand-primary">Vercel Inc.</td>
+                  <td className="px-4 py-3 font-semibold text-brand-primary">Hostinger International Ltd.</td>
                   <td className="px-4 py-3 text-brand-gray">Website-Hosting & Auslieferung</td>
-                  <td className="px-4 py-3 text-brand-gray">USA</td>
+                  <td className="px-4 py-3 text-brand-gray">Litauen (EU)</td>
                 </tr>
                 <tr className="bg-brand-surface/40">
                   <td className="px-4 py-3 font-semibold text-brand-primary">Formspree Inc.</td>
@@ -91,11 +91,14 @@ export default function DatenschutzPage() {
 
         <Section title="4. Datenübertragung ins Ausland">
           <p>
-            Vercel Inc. und Formspree Inc. haben ihren Sitz in den USA. Die Datenübertragung erfolgt auf Basis von Standardvertragsklauseln (SCC) der Europäischen Kommission sowie dem Swiss-US Data Privacy Framework. Beide Anbieter haben entsprechende Datenschutzvereinbarungen (DPA) unterzeichnet.
+            Hostinger International Ltd. hat seinen Sitz in Litauen (EU) und unterliegt der DSGVO. Eine Übertragung in Drittländer findet durch Hostinger nicht statt.
+          </p>
+          <p>
+            Formspree Inc. hat seinen Sitz in den USA. Die Datenübertragung erfolgt auf Basis von Standardvertragsklauseln (SCC) der Europäischen Kommission sowie dem Swiss-US Data Privacy Framework. Formspree hat eine entsprechende Datenschutzvereinbarung (DPA) unterzeichnet.
           </p>
           <p>
             Weitere Informationen finden Sie in den Datenschutzrichtlinien der jeweiligen Anbieter:
-            Vercel (<a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline">vercel.com/legal/privacy-policy</a>) und
+            Hostinger (<a href="https://www.hostinger.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline">www.hostinger.com/privacy-policy</a>) und
             Formspree (<a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:underline">formspree.io/legal/privacy-policy</a>).
           </p>
         </Section>
