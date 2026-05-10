@@ -98,6 +98,12 @@ export default function Home() {
           Subheadline verankert Expertise durch "seit 2021" + "IPC-zertifiziert".
           Primär-CTA gratis → senkt Hemmschwelle maximal. */}
       <section className="relative min-h-[100svh] flex items-center bg-grid overflow-hidden">
+        {/* Hero background image – very faint through white overlay */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{ backgroundImage: "url('/images/hero-bg.png')" }}
+        />
+        <div className="absolute inset-0 bg-white/90 pointer-events-none" />
         {/* Subtile Hintergrund-Akzente */}
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-brand-accent/6 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-orange/5 rounded-full blur-[80px] pointer-events-none" />
