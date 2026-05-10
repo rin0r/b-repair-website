@@ -129,7 +129,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <div className="mt-12 p-7 rounded-2xl bg-brand-accent/5 border border-brand-accent/20">
             <h3 className="font-headline text-2xl text-brand-primary mb-2">Fragen? Wir helfen.</h3>
             <p className="font-sans text-brand-gray text-sm mb-5">
-              Kostenlose Diagnose – kein Termin nötig. Einfach vorbeikommen oder anrufen.
+              Diagnose kostenlos – entfällt bei Reparatur bei uns. Einfach vorbeikommen, kein Termin nötig.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link

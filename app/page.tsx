@@ -548,7 +548,7 @@ export default function Home() {
             <span className="text-brand-accent">Jetzt anfragen.</span>
           </h2>
           <p className="font-sans text-brand-gray text-lg mb-10 max-w-xl mx-auto">
-            Kein Risiko. Kein Termin nötig. 6 Monate Garantie.
+            Diagnose kostenlos – entfällt bei Reparatur bei uns. Kein Termin nötig.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a

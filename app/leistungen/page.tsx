@@ -321,7 +321,7 @@ export default function LeistungenPage() {
       <section className="py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary mb-4">Bereit?</h2>
-          <p className="font-sans text-brand-gray text-sm mb-8">Kostenlose Diagnose – kein Termin nötig.</p>
+          <p className="font-sans text-brand-gray text-sm mb-8">Diagnose kostenlos – entfällt bei Reparatur bei uns. Kein Termin nötig.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/kontakt"
