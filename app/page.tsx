@@ -9,6 +9,7 @@ import {
 import PreisrechnerWidget from "@/components/PreisrechnerWidget";
 import OpenStatus from "@/components/OpenStatus";
 import BrandMarquee from "@/components/BrandMarquee";
+import HeroHoursCard from "@/components/HeroHoursCard";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 
@@ -172,48 +173,7 @@ export default function Home() {
 
             {/* Info-Card rechts */}
             <div className="hidden lg:block">
-              <div className="p-7 rounded-2xl bg-white border border-brand-border shadow-xl shadow-brand-primary/8">
-                <h3 className="font-headline text-xl text-brand-primary mb-4">Heute geöffnet</h3>
-                <div className="space-y-2.5 mb-6">
-                  {[
-                    { day: "Mo – Fr", time: "09:00 – 18:00", today: true },
-                    { day: "Samstag", time: "10:00 – 16:00", today: false },
-                    { day: "Sonntag", time: "Geschlossen",    today: false },
-                  ].map(({ day, time, today }) => (
-                    <div key={day} className="flex justify-between items-center text-sm">
-                      <span className="flex items-center gap-2 text-brand-gray font-sans">
-                        {today && <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />}
-                        {day}
-                      </span>
-                      <span className={time === "Geschlossen" ? "text-red-500 text-xs font-sans" : "text-brand-primary font-bold font-sans"}>
-                        {time}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div className="border-t border-brand-border pt-5 space-y-3">
-                  {/* VERKAUFSPSYCHOLOGIE: Telefonnummer als <a href="tel:> für direktes Anrufen */}
-                  <a href="tel:+41764020306" className="flex items-center gap-3 group" aria-label="B-repair anrufen">
-                    <div className="w-10 h-10 rounded-xl bg-brand-accent/10 flex items-center justify-center group-hover:bg-brand-accent/20 transition-colors">
-                      <Phone className="w-5 h-5 text-brand-accent" />
-                    </div>
-                    <span className="font-sans font-bold text-brand-primary">+41 76 402 03 06</span>
-                  </a>
-                  <a href="https://maps.google.com/?q=Bürglenweg+24+3627+Heimberg" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
-                    <div className="w-10 h-10 rounded-xl bg-brand-accent/10 flex items-center justify-center group-hover:bg-brand-accent/20 transition-colors">
-                      <MapPin className="w-5 h-5 text-brand-accent" />
-                    </div>
-                    <span className="font-sans text-brand-gray text-sm">Bürglenweg 24, 3627 Heimberg</span>
-                  </a>
-                </div>
-                <div className="mt-5 pt-5 border-t border-brand-border flex items-center gap-2">
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />)}
-                  </div>
-                  <span className="font-headline text-lg text-brand-primary">4.9</span>
-                  <span className="font-sans text-brand-gray text-xs">auf Google</span>
-                </div>
-              </div>
+              <HeroHoursCard />
             </div>
           </div>
         </div>
