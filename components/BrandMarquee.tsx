@@ -58,7 +58,7 @@ export default function BrandMarquee() {
               <img
                 src={brand.src}
                 alt={brand.name}
-                className="h-9 w-auto"
+                className="h-14 w-auto"
                 loading="lazy"
               />
               <span className="font-sans text-[11px] font-bold text-brand-gray whitespace-nowrap">
