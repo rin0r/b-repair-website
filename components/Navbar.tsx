@@ -68,7 +68,7 @@ export default function Navbar() {
             <img
               src="/images/logo.png"
               alt="B-repair&service Logo"
-              className="h-11 w-auto lg:h-12"
+              className="h-14 w-auto lg:h-16"
             />
           </Link>
 
