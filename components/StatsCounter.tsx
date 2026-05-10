@@ -65,7 +65,7 @@ function CountUp({ value }: { value: string }) {
 
 export default function StatsCounter({ stats }: { stats: Stat[] }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+    <div className="grid grid-cols-2 gap-8 max-w-sm mx-auto sm:max-w-md">
       {stats.map((s) => (
         <div key={s.label} className="text-center">
           <div className="font-headline text-4xl sm:text-5xl text-brand-accent mb-0.5">
