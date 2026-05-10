@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Wrench, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { repairDropdownLinks } from "@/lib/repairData";
 
 const mehrLinks = [
@@ -64,16 +65,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group" aria-label="B-repair&service – Startseite">
-            <div className="w-9 h-9 rounded-xl bg-brand-primary flex items-center justify-center group-hover:bg-brand-accent transition-colors">
-              <Wrench className="w-5 h-5 text-white" />
-            </div>
-            <div className="leading-none">
-              <span className="font-headline text-lg text-brand-primary">
-                B-repair<span className="text-brand-accent">&</span>service
-              </span>
-              <div className="text-[10px] text-brand-gray font-sans">Heimberg · Thun</div>
-            </div>
+          <Link href="/" aria-label="B-repair&service – Startseite">
+            <Image
+              src="/images/logo.png"
+              alt="B-repair&service Logo"
+              width={160}
+              height={160}
+              className="h-11 w-auto lg:h-12"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
