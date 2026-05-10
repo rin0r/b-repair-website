@@ -8,16 +8,9 @@ import {
 } from "lucide-react";
 import PreisrechnerWidget from "@/components/PreisrechnerWidget";
 import OpenStatus from "@/components/OpenStatus";
-import StatsCounter from "@/components/StatsCounter";
+import BrandMarquee from "@/components/BrandMarquee";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
-
-// VERKAUFSPSYCHOLOGIE: Kennzahlen nach Webdesign-Psychologie-Vorgabe.
-// Zahlen erzeugen Vertrauen (Social Proof + Autorität).
-const stats = [
-  { value: "4+",  label: "Jahre Erfahrung", sub: "seit 2021 in Heimberg" },
-  { value: "IPC", label: "zertifiziert",     sub: "geprüfte Qualitätsstandards" },
-];
 
 const services = [
   { icon: Monitor,    title: "Display-Reparatur",   time: "60–90 Min",  desc: "LCD & OLED – alle Marken, Originalqualität.",                          accent: "text-brand-accent" },
@@ -221,15 +214,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ KENNZAHLEN ════════════════════════════════════════════════ */}
-      {/* VERKAUFSPSYCHOLOGIE: Zahlen bauen Autorität und Social Proof auf.
-          "IPC-zertifiziert" differenziert klar von Amateuranbietern.
-          Helle Trennlinie schafft visuellen Atemraum. */}
-      <section className="bg-brand-surface border-y border-brand-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <StatsCounter stats={stats} />
-        </div>
-      </section>
+      {/* ══ BRAND MARQUEE ═════════════════════════════════════════════ */}
+      <BrandMarquee />
 
       {/* ══ SERVICES ══════════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28" style={{ background: "#F8FAFB" }}>

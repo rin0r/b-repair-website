@@ -36,12 +36,17 @@ const config: Config = {
         "fade-in":  "fadeIn 0.5s ease-out forwards",
         "slide-up": "slideUp 0.5s ease-out forwards",
         pulse:      "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        marquee:    "marquee 28s linear infinite",
       },
       keyframes: {
         fadeIn:  { from: { opacity: "0" }, to: { opacity: "1" } },
         slideUp: {
           from: { opacity: "0", transform: "translateY(16px)" },
           to:   { opacity: "1", transform: "translateY(0)" },
+        },
+        marquee: {
+          "0%":   { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
     },
