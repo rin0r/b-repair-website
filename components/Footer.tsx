@@ -4,7 +4,6 @@ import { Wrench, Phone, MapPin, Mail, Clock } from "lucide-react";
 const navLinks = [
   { href: "/leistungen",  label: "Reparaturen" },
   { href: "/preisliste",  label: "Preise & Garantie" },
-  { href: "/ueber-uns",   label: "Über uns & Team" },
   { href: "/kontakt",     label: "Anfrage starten" },
 ];
 

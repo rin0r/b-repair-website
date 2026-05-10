@@ -11,8 +11,7 @@ const mehrLinks = [
   { href: "/blog",    label: "Blog" },
 ];
 
-const navLinksLeft  = [{ href: "/",          label: "Home" },
-                       { href: "/ueber-uns", label: "Über uns" }];
+const navLinksLeft  = [{ href: "/", label: "Home" }];
 const navLinksRight = [{ href: "/kontakt",   label: "Kontakt" }];
 
 export default function Navbar() {
