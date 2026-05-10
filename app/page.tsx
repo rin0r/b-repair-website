@@ -27,7 +27,6 @@ const comparisonRows = [
   { label: "Reparaturzeit",        us: "≤ 2 Stunden",        apple: "1–5 Tage"    },
   { label: "Display iPhone 14",    us: "CHF 349.–",           apple: "CHF 399.–+"  },
   { label: "Garantie",             us: "6 Monate",            apple: "90 Tage"     },
-  { label: "Kostenlose Diagnose",  us: "✓ Immer gratis",      apple: "✗"           },
   { label: "Alle Marken",          us: "✓ iPhone & Android",  apple: "Nur Apple"   },
   { label: "Fixpreise online",     us: "✓ Transparent",       apple: "✗"           },
   { label: "Mikrolöten",           us: "✓ Spezialist",        apple: "✗"           },
