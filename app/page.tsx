@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import PreisrechnerWidget from "@/components/PreisrechnerWidget";
 import OpenStatus from "@/components/OpenStatus";
+import StatsCounter from "@/components/StatsCounter";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 
@@ -228,15 +229,7 @@ export default function Home() {
           Helle Trennlinie schafft visuellen Atemraum. */}
       <section className="bg-brand-surface border-y border-brand-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="font-headline text-4xl sm:text-5xl text-brand-accent mb-0.5">{s.value}</div>
-                <div className="font-headline text-lg text-brand-primary">{s.label}</div>
-                <div className="font-sans text-brand-gray text-xs mt-0.5 hidden sm:block">{s.sub}</div>
-              </div>
-            ))}
-          </div>
+          <StatsCounter stats={stats} />
         </div>
       </section>
 
