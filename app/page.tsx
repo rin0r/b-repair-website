@@ -24,13 +24,13 @@ const services = [
 ];
 
 const comparisonRows = [
-  { label: "Reparaturzeit",        us: "≤ 2 Stunden",      apple: "1–5 Tage",    others: "Unbekannt" },
-  { label: "Display iPhone 14",    us: "CHF 349.–",         apple: "CHF 399.–+",  others: "CHF 370–420.–" },
-  { label: "Garantie",             us: "6 Monate",          apple: "90 Tage",     others: "3 Monate" },
-  { label: "Kostenlose Diagnose",  us: "✓ Immer gratis",    apple: "✗",           others: "Teils" },
-  { label: "Alle Marken",          us: "✓ iPhone & Android", apple: "Nur Apple",   others: "Teils" },
-  { label: "Fixpreise online",     us: "✓ Transparent",     apple: "✗",           others: "Teils" },
-  { label: "Mikrolöten",           us: "✓ Spezialist",      apple: "✗",           others: "Selten" },
+  { label: "Reparaturzeit",        us: "≤ 2 Stunden",        apple: "1–5 Tage"    },
+  { label: "Display iPhone 14",    us: "CHF 349.–",           apple: "CHF 399.–+"  },
+  { label: "Garantie",             us: "6 Monate",            apple: "90 Tage"     },
+  { label: "Kostenlose Diagnose",  us: "✓ Immer gratis",      apple: "✗"           },
+  { label: "Alle Marken",          us: "✓ iPhone & Android",  apple: "Nur Apple"   },
+  { label: "Fixpreise online",     us: "✓ Transparent",       apple: "✗"           },
+  { label: "Mikrolöten",           us: "✓ Spezialist",        apple: "✗"           },
 ];
 
 const faqs = [
@@ -411,7 +411,6 @@ export default function Home() {
                     </span>
                   </th>
                   <th className="px-5 py-4 text-center text-brand-gray font-sans font-bold text-xs">Hersteller-Service</th>
-                  <th className="px-5 py-4 text-center text-brand-gray font-sans font-bold text-xs hidden sm:table-cell">Andere Anbieter</th>
                 </tr>
               </thead>
               <tbody>
@@ -420,7 +419,6 @@ export default function Home() {
                     <td className="px-5 py-3.5 font-sans text-brand-gray text-xs font-semibold">{row.label}</td>
                     <td className="px-5 py-3.5 text-center font-price text-brand-accent font-bold text-xs">{row.us}</td>
                     <td className="px-5 py-3.5 text-center font-sans text-red-500 text-xs">{row.apple}</td>
-                    <td className="px-5 py-3.5 text-center font-sans text-brand-gray text-xs hidden sm:table-cell">{row.others}</td>
                   </tr>
                 ))}
               </tbody>
