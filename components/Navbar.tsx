@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
-import Image from "next/image";
 import { repairDropdownLinks } from "@/lib/repairData";
 
 const mehrLinks = [
@@ -66,13 +65,11 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" aria-label="B-repair&service – Startseite">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/logo.png"
               alt="B-repair&service Logo"
-              width={160}
-              height={160}
               className="h-11 w-auto lg:h-12"
-              priority
             />
           </Link>
 
