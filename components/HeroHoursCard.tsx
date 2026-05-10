@@ -100,10 +100,10 @@ export default function HeroHoursCard() {
       <div className="mt-5 pt-4 border-t border-brand-border flex items-center gap-2">
         <div className="flex gap-0.5">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+            <Star key={i} className="w-4 h-4 fill-brand-accent text-brand-accent" />
           ))}
         </div>
-        <span className="font-headline text-lg text-brand-primary">4.9</span>
+        <span className="font-headline text-lg text-brand-primary">5.0</span>
         <span className="font-sans text-brand-gray text-xs">auf Google</span>
       </div>
     </div>
