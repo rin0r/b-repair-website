@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Smartphone, Battery, Wifi, Camera, Mic, Wrench, Droplets,
@@ -321,6 +322,25 @@ export default function Home() {
             ))}
           </div>
 
+          {/* Photo gallery */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-14">
+            {[
+              { src: "/images/mikroloet-chip-gold.jpg",    alt: "IC-Chip Mikrolöten – B-repair Heimberg" },
+              { src: "/images/mikroloet-iphone-board.jpg", alt: "iPhone Logic Board unter dem Mikroskop" },
+              { src: "/images/mikroloet-bga-chip.jpg",     alt: "BGA-Chip Platinen-Reparatur" },
+            ].map(({ src, alt }) => (
+              <div key={src} className="relative h-60 sm:h-72 rounded-2xl overflow-hidden ring-1 ring-white/10">
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
+          </div>
+
           {/* Divider */}
           <div className="flex items-center gap-4 mb-14">
             <div className="flex-1 h-px bg-white/10" />
@@ -366,15 +386,26 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Stat cards */}
-            <div className="grid grid-cols-2 gap-4">
-              {mikroloetStats.map(({ val, label, sub }) => (
-                <div key={label} className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center">
-                  <div className="font-headline text-4xl sm:text-5xl text-brand-accent mb-1">{val}</div>
-                  <div className="font-headline text-lg text-white">{label}</div>
-                  <div className="font-sans text-xs text-gray-400 mt-1">{sub}</div>
-                </div>
-              ))}
+            {/* Image + stats */}
+            <div className="flex flex-col gap-4">
+              <div className="relative h-56 rounded-2xl overflow-hidden ring-1 ring-white/10 flex-shrink-0">
+                <Image
+                  src="/images/mikroloet-platinen.jpg"
+                  alt="Mehrere Platinen bei der BGA-Reparatur – B-repair Werkstatt"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {mikroloetStats.map(({ val, label, sub }) => (
+                  <div key={label} className="p-5 rounded-2xl bg-white/5 border border-white/10 text-center">
+                    <div className="font-headline text-4xl sm:text-5xl text-brand-accent mb-1">{val}</div>
+                    <div className="font-headline text-base text-white">{label}</div>
+                    <div className="font-sans text-xs text-gray-400 mt-1">{sub}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
