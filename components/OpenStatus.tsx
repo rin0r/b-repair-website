@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 function getStatus(): { open: boolean; label: string } {
   // Use Swiss timezone (Europe/Zurich)
   const now = new Date();
-  const zurich = new Intl.DateTimeFormat("de-CH", {
+  const zurich = new Intl.DateTimeFormat("en-US", {
     timeZone: "Europe/Zurich",
     weekday: "short",
     hour: "2-digit",
@@ -16,10 +16,10 @@ function getStatus(): { open: boolean; label: string } {
   const weekday = zurich.find((p) => p.type === "weekday")?.value ?? "";
   const hour    = parseInt(zurich.find((p) => p.type === "hour")?.value   ?? "0");
   const minute  = parseInt(zurich.find((p) => p.type === "minute")?.value ?? "0");
-  const time    = hour * 60 + minute; // minutes since midnight
+  const time    = hour * 60 + minute;
 
-  const isSunday  = weekday === "So";
-  const isSaturday = weekday === "Sa";
+  const isSunday   = weekday === "Sun";
+  const isSaturday = weekday === "Sat";
 
   let open = false;
   if (!isSunday && !isSaturday) {

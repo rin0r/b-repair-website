@@ -5,7 +5,8 @@ import { Phone, MapPin, Star } from "lucide-react";
 
 function getTodayInfo(): { heading: string; todayRow: "mofr" | "sa" | "so" } {
   const now = new Date();
-  const parts = new Intl.DateTimeFormat("de-CH", {
+  // Use numeric fields only — immune to locale/browser weekday string differences
+  const z = new Intl.DateTimeFormat("en-US", {
     timeZone: "Europe/Zurich",
     weekday: "short",
     hour: "2-digit",
@@ -13,13 +14,13 @@ function getTodayInfo(): { heading: string; todayRow: "mofr" | "sa" | "so" } {
     hour12: false,
   }).formatToParts(now);
 
-  const weekday = parts.find((p) => p.type === "weekday")?.value ?? "";
-  const hour    = parseInt(parts.find((p) => p.type === "hour")?.value   ?? "0");
-  const minute  = parseInt(parts.find((p) => p.type === "minute")?.value ?? "0");
+  const weekday = z.find((p) => p.type === "weekday")?.value ?? ""; // "Mon"…"Sun"
+  const hour    = parseInt(z.find((p) => p.type === "hour")?.value   ?? "0");
+  const minute  = parseInt(z.find((p) => p.type === "minute")?.value ?? "0");
   const time    = hour * 60 + minute;
 
-  const isSunday   = weekday === "So";
-  const isSaturday = weekday === "Sa";
+  const isSunday   = weekday === "Sun";
+  const isSaturday = weekday === "Sat";
 
   let open = false;
   let todayRow: "mofr" | "sa" | "so" = "so";
