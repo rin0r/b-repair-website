@@ -156,7 +156,7 @@ export default function Home() {
                   href="/kontakt"
                   className="cta-btn gap-2 px-7 rounded-xl bg-brand-accent text-brand-primary font-sans font-bold text-base hover:bg-brand-accent-dark transition-all glow hover:scale-[1.02] shadow-lg shadow-brand-accent/20"
                 >
-                  Kostenlose Diagnose anfragen
+                  Diagnose anfragen
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 {/* Sekundär-CTA: Outline, weniger dominant */}
@@ -175,8 +175,6 @@ export default function Home() {
                 {[
                   "Diagnose kostenlos – entfällt bei Reparatur",
                   "6 Monate Garantie",
-                  "2.000+ Reparaturen",
-                  "IPC-zertifiziert",
                 ].map((item) => (
                   <span key={item} className="inline-flex items-center gap-1.5 text-sm text-brand-gray font-sans">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
