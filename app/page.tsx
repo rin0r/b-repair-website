@@ -97,7 +97,7 @@ const mikroloetLeistungen = [
 ];
 
 const mikroloetStats = [
-  { val: "IPC",    label: "Zertifiziert",            sub: "Geprüfte Qualitätsstandards" },
+  { val: "2021",   label: "Mikrolöten seit",          sub: "Spezialisiert auf Platinen-Reparaturen" },
   { val: "100×",   label: "Mikroskop-Vergr.",         sub: "Für feinste Lötreparaturen" },
   { val: "0.1mm",  label: "Lötpräzision",             sub: "Bei BGA & QFN-Bauteilen" },
   { val: "95%",    label: "Erfolgsrate",               sub: "Bei Platinen-Reparaturen" },
