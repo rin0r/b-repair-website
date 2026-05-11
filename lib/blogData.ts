@@ -27,12 +27,6 @@ export const articles: Article[] = [
       { type: "p", text: "Das Glas ist gesplittert, der Touchscreen reagiert sporadisch oder das Display zeigt gar nichts mehr – ein kaputter Bildschirm ist einer der häufigsten Gründe, warum Menschen ein neues Smartphone kaufen. Aber ist das wirklich nötig?" },
       { type: "h2", text: "Wann lohnt die Displayreparatur?" },
       { type: "p", text: "In den meisten Fällen ist eine Displayreparatur die wirtschaftlich sinnvollere Entscheidung. Besonders dann, wenn das Gerät jünger als 3–4 Jahre ist, kein weiterer Schaden vorliegt und es sich um ein Mittelklasse- oder Flaggschiff-Modell handelt." },
-      { type: "h2", text: "Preisvergleich: Was kostet ein Displaywechsel?" },
-      { type: "table", headers: ["Anbieter", "iPhone 14 Display", "Wartezeit"], rows: [
-        ["Apple Store Schweiz", "CHF 399.–", "1–3 Werktage"],
-        ["B-repair Heimberg",   "CHF 219.–", "60–90 Min vor Ort"],
-        ["Online-Versand",      "CHF 180–250.–", "5–10 Tage"],
-      ]},
       { type: "h2", text: "Wann ist ein Neukauf sinnvoller?" },
       { type: "ul", items: [
         "Das Gerät ist älter als 4–5 Jahre und erhält keine Software-Updates mehr",
@@ -121,12 +115,6 @@ export const articles: Article[] = [
         "iPhone wird warm beim Laden",
         "Gerät startet nach dem Laden nicht ohne Kabel",
       ]},
-      { type: "h2", text: "Preisvergleich: Akkutausch in der Schweiz" },
-      { type: "table", headers: ["Anbieter", "Preis", "Wartezeit"], rows: [
-        ["Apple Store Schweiz", "CHF 89–119.–", "1–3 Werktage"],
-        ["B-repair Heimberg",   "ab CHF 49.–",  "30–45 Min vor Ort"],
-        ["Online-Versand",      "CHF 40–70.–",  "5–10 Tage"],
-      ]},
       { type: "h2", text: "Original oder OEM-Akku?" },
       { type: "p", text: "Wir verwenden hochwertige OEM-Akkus, die nach Apples Originalspezifikation gefertigt werden und in Kapazität, Sicherheit und Lebensdauer mit dem Original vergleichbar sind. Alle Akkus sind durch unsere 6-Monate-Garantie abgedeckt." },
       { type: "h2", text: "Gilt das auch für ältere iPhones?" },
@@ -142,14 +130,6 @@ export const articles: Article[] = [
     readMin:  3,
     content: [
       { type: "p", text: "Online-Versanddienste für Handyreparaturen klingen verlockend: Einschicken, warten, zurückbekommen. Aber wie praktisch ist das wirklich – und was spricht für einen lokalen Anbieter wie B-repair in Heimberg?" },
-      { type: "h2", text: "Vor Ort vs. Versand: Der direkte Vergleich" },
-      { type: "table", headers: ["Kriterium", "B-repair (vor Ort)", "Online-Versand"], rows: [
-        ["Reparaturzeit",        "60–90 Min",          "5–10 Werktage"],
-        ["Persönliche Beratung", "✓ Ja",               "✗ Nein"],
-        ["Diagnose",             "Kostenlos",           "Oft kostenpflichtig"],
-        ["Datenschutz",          "Gerät bleibt lokal", "Paket durch mehrere Hände"],
-        ["Garantie",             "6 Monate",            "Teils 3 Monate"],
-      ]},
       { type: "h2", text: "Region Thun: Direkt für Sie erreichbar" },
       { type: "ul", items: [
         "Heimberg: direkt vor Ort",
