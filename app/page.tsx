@@ -111,7 +111,7 @@ export default function Home() {
       {/* ══ HERO ══════════════════════════════════════════════════════ */}
       {/* VERKAUFSPSYCHOLOGIE: Headline adressiert den Hauptschmerzpunkt
           "unreparierbar" direkt. Kombination aus Empathie + Kompetenzversprechen.
-          Subheadline verankert Expertise durch "seit 2021" + "IPC-zertifiziert".
+          Subheadline verankert Expertise durch "seit 2021".
           Primär-CTA gratis → senkt Hemmschwelle maximal. */}
       <section className="relative min-h-[100svh] flex items-center bg-grid overflow-hidden">
         {/* Hero background image – very faint through white overlay */}
@@ -130,7 +130,7 @@ export default function Home() {
               {/* Mikrolöt-Badge – Expertenpositionierung */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-accent/40 bg-brand-accent/10 text-brand-primary text-xs font-bold mb-5 uppercase tracking-wide">
                 <Zap className="w-3.5 h-3.5 text-brand-accent" />
-                Mikrolöt-Spezialisten seit 2021 · IPC-zertifiziert
+                Mikrolöt-Spezialisten seit 2021
               </div>
 
               {/* HAUPTHEADLINE: direkte Ansprache des grössten Kundenproblems */}
@@ -251,7 +251,7 @@ export default function Home() {
               reparieren wir.
             </h2>
             <p className="font-sans text-gray-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-              Platinen-Reparatur auf Bauteil-Ebene, unter dem Präzisionsmikroskop, IPC-zertifiziert.
+              Platinen-Reparatur auf Bauteil-Ebene, unter dem Präzisionsmikroskop.
               Kaum ein Anbieter im Grossraum Thun bietet dieses Niveau.
             </p>
           </div>
@@ -323,7 +323,6 @@ export default function Home() {
                   "Geräte reparieren, die andere Shops ablehnen",
                   "Daten retten, die verloren schienen",
                   "Günstiger als ein neues Gerät oder Platinentausch",
-                  "IPC-zertifiziert – geprüfte Qualitätsstandards",
                   "Diagnose kostenlos – entfällt bei Reparatur bei uns",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-gray-300">

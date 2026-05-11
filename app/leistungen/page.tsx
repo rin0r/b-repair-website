@@ -148,7 +148,7 @@ export default function LeistungenPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-brand-accent/40 bg-brand-accent/10 text-brand-accent text-xs font-bold mb-5 uppercase tracking-wide">
                 <Cpu className="w-3.5 h-3.5" />
-                Unser Spezialgebiet · IPC-zertifiziert
+                Unser Spezialgebiet
               </div>
               <h2 className="font-headline text-4xl sm:text-5xl mb-2">
                 Mikrolöten
@@ -177,7 +177,7 @@ export default function LeistungenPage() {
                   <Shield className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
                   <div>
                     <div className="font-sans font-bold text-sm" style={{ color: "#F9FAFB" }}>Beweis</div>
-                    <p className="font-sans text-sm leading-relaxed" style={{ color: "#8899AA" }}>IPC-zertifiziert. 95% Erfolgsrate bei Platinen-Reparaturen. 6 Monate Garantie.</p>
+                    <p className="font-sans text-sm leading-relaxed" style={{ color: "#8899AA" }}>95% Erfolgsrate bei Platinen-Reparaturen. 6 Monate Garantie.</p>
                   </div>
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function LeistungenPage() {
             {/* Stats-Grid */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { val: "IPC",    label: "Zertifiziert",             sub: "geprüfte Qualitätsstandards" },
+                { val: "2021",   label: "Mikrolöten seit",           sub: "Spezialisiert auf Platinen-Reparaturen" },
                 { val: "100×",   label: "Mikroskop-Vergrösserung",  sub: "für präzise Lötarbeiten" },
                 { val: "0.1mm",  label: "Genauigkeit",              sub: "bei BGA & Microsoldering" },
                 { val: "95%",    label: "Erfolgsrate",              sub: "bei Platinen-Reparaturen" },

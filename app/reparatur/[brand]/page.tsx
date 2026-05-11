@@ -213,7 +213,7 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
               <div>
                 <h3 className="font-headline text-xl text-brand-primary mb-1">Erfahrene Techniker</h3>
                 <p className="font-sans text-brand-gray text-sm leading-relaxed">
-                  Über 5 000 Reparaturen, IPC-zertifiziert. 6 Monate Garantie auf jede Reparatur.
+                  Über 5 000 Reparaturen. 6 Monate Garantie auf jede Reparatur.
                 </p>
               </div>
             </div>

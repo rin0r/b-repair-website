@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog – Reparatur-Tipps & Technik | B-repair&service",
-  description: "Experten-Tipps rund um Smartphone-Reparatur, Mikrolöten, Wasserschäden und mehr. Von den IPC-zertifizierten Spezialisten aus Heimberg / Thun.",
+  description: "Experten-Tipps rund um Smartphone-Reparatur, Mikrolöten, Wasserschäden und mehr. Von den Spezialisten aus Heimberg / Thun.",
 };
 
 const categoryColor: Record<string, string> = {
@@ -31,7 +31,7 @@ export default function BlogPage() {
           </h1>
           <p className="font-sans text-brand-gray text-lg max-w-xl mx-auto">
             Reparatur-Tipps, Technik-Erklärungen und Ratgeber rund ums Smartphone –
-            von unseren IPC-zertifizierten Spezialisten.
+            von unseren Spezialisten aus Heimberg.
           </p>
         </div>
       </section>

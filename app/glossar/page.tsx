@@ -20,7 +20,7 @@ const glossar: Record<string, Term[]> = {
   B: [
     { term: "Backlight", type: "Display", def: "Hintergrundbeleuchtung bei LCD-Displays. Ohne funktionierendes Backlight bleibt der Bildschirm dunkel (sogenannter Backlight-Fehler). Bei OLED-Displays nicht vorhanden, da jeder Pixel selbst leuchtet." },
     { term: "BGA (Ball Grid Array)", type: "Mikrolöten", def: "Chip-Gehäuseform, bei der die elektrischen Verbindungen als Lotkugeln unter dem Chip angeordnet sind. Nur mit Heissluft-Reworkstation und Mikroskop zu löten oder zu tauschen – typisches Mikrolöten-Anwendungsfeld." },
-    { term: "Board-Level Repair", type: "Reparatur", def: "Reparatur direkt auf der Hauptplatine (Logic Board) des Geräts – auf Ebene einzelner Bauteile wie Chips, Kondensatoren oder Widerstände. Erfordert Mikrolöt-Equipment und IPC-Zertifizierung." },
+    { term: "Board-Level Repair", type: "Reparatur", def: "Reparatur direkt auf der Hauptplatine (Logic Board) des Geräts – auf Ebene einzelner Bauteile wie Chips, Kondensatoren oder Widerstände. Erfordert Mikrolöt-Equipment und Präzisionswerkzeug." },
   ],
   D: [
     { term: "Datenrettung", type: "Reparatur", def: "Wiederherstellung von Fotos, Kontakten, Nachrichten und Dokumenten von defekten oder nicht startenden Geräten. Im Extremfall durch direktes Auslesen des NAND-Chips möglich – auch wenn das Gerät keinen Strom mehr bekommt." },
@@ -39,7 +39,6 @@ const glossar: Record<string, Term[]> = {
   I: [
     { term: "IC (Integrated Circuit)", type: "Elektronik", def: "Integrierter Schaltkreis, umgangssprachlich als «Chip» bezeichnet. Auf dem Logic Board eines Smartphones befinden sich Dutzende ICs für verschiedene Funktionen: Laden, Audio, Kommunikation, Kamera und mehr." },
     { term: "IMEI", type: "Allgemein", def: "International Mobile Equipment Identity – weltweit eindeutige 15-stellige Seriennummer eines Mobilgeräts. Wichtig für Entsperrungen, Versicherungen und Diebstahlsicherung. Abrufbar über *#06# auf dem Ziffernblock." },
-    { term: "IPC-Zertifizierung", type: "Qualität", def: "Internationale Qualitätsnorm (IPC-7711/7721) für Reparatur und Modifikation von Elektronikbaugruppen. B-repair ist IPC-zertifiziert – ein Qualitätsmerkmal, das nur wenige Reparaturbetriebe in der Schweiz vorweisen können." },
   ],
   K: [
     { term: "Kurzschluss (Short Circuit)", type: "Schaden", def: "Unerwünschte direkte elektrische Verbindung zwischen zwei Punkten unterschiedlichen Potenzials auf der Platine. Ursache für überhitzte Geräte, fehlerhaftes Laden oder Totalausfall. Diagnose und Behebung erfordern Mikrolöten-Expertise." },
@@ -49,7 +48,7 @@ const glossar: Record<string, Term[]> = {
     { term: "Logic Board / Hauptplatine", type: "Komponente", def: "Zentrale Leiterplatte des Smartphones, auf der Prozessor, RAM, Speicher und alle wichtigen ICs verbaut sind. Reparaturen am Logic Board erfordern Mikrolöten-Kompetenz und Präzisionswerkzeug." },
   ],
   M: [
-    { term: "Microsoldering / Mikrolöten", type: "Reparatur", def: "Präzisionslöten unter dem Mikroskop auf Bauteil-Ebene. Ermöglicht Reparaturen, die mit blossem Auge unmöglich wären: BGA-Chip-Tausch, Pad-Reparaturen, Leiterbahn-Wiederherstellung. B-repair ist einer der wenigen IPC-zertifizierten Mikrolöt-Spezialisten im Grossraum Thun." },
+    { term: "Microsoldering / Mikrolöten", type: "Reparatur", def: "Präzisionslöten unter dem Mikroskop auf Bauteil-Ebene. Ermöglicht Reparaturen, die mit blossem Auge unmöglich wären: BGA-Chip-Tausch, Pad-Reparaturen, Leiterbahn-Wiederherstellung. B-repair ist seit 2021 auf Mikrolöten spezialisiert – einer der wenigen Anbieter im Grossraum Thun." },
   ],
   N: [
     { term: "NAND-Flash", type: "Speicher", def: "Halbleiterspeicher-Technologie, die in Smartphones als nicht-flüchtiger Datenspeicher dient. NAND-Chips können bei schweren Schäden direkt ausgelesen werden – Grundlage für Chip-Level-Datenrettung." },
