@@ -32,6 +32,8 @@ export type BrandConfig = {
   intro: string;
   series: BrandSeries[];
   hasOnRequest: boolean;
+  /** true → Markenseite zeigt das Modell-Raster statt der Kurztabelle */
+  hasModelPages?: boolean;
   popularItems: PopularItem[];
   faq: FAQ[];
 };
@@ -230,6 +232,7 @@ export const brandConfig: Record<string, BrandConfig> = {
     intro: "Displaybruch, Akkuproblem oder Wasserschaden? Bei B-repair&service in Heimberg bekommen Sie Ihr iPhone schnell und zuverlässig repariert – oft in unter 2 Stunden. Transparente Fixpreise, 6 Monate Garantie und kostenlose Diagnose inklusive.",
     series: [{ label: "Alle Modelle", rows: iphoneRows }],
     hasOnRequest: false,
+    hasModelPages: true,
     popularItems: [
       { model: "iPhone 8",         repair: "Display",             price: "CHF\u00A099.–" },
       { model: "iPhone 11",        repair: "Display",             price: "CHF\u00A0139.–" },
@@ -345,3 +348,82 @@ export const repairDropdownLinks = [
   { href: "/reparatur/huawei",  label: "Huawei Reparatur" },
   { href: "/reparatur/oneplus", label: "OnePlus Reparatur" },
 ];
+
+/* ─── MODELLSEITEN ─────────────────────────────────────────────────
+   Slugs, Gruppierung und Lookups für /reparatur/[brand]/[model]. */
+
+/** "iPhone 15 Pro Max" → "iphone-15-pro-max" */
+export const modelSlug = (model: string): string =>
+  model
+    .toLowerCase()
+    .replace(/[\u2033"'\u2019.()]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+/** "CHF\u00A0149.00" → "CHF\u00A0149.\u2013" (Schreibweise wie auf den Markenseiten) */
+export const prettyPrice = (v: string): string => v.replace(/\.00$/, ".\u2013");
+
+export const hasPrice = (v: string): boolean => v !== "\u2013";
+
+export type ModelGroup = { label: string; rows: Row[] };
+
+/** Alle Zeilen einer Marke über sämtliche Serien hinweg. */
+export const brandRows = (brandKey: string): Row[] =>
+  (brandConfig[brandKey]?.series ?? []).flatMap((s) => s.rows);
+
+const iphoneGroupOf = (model: string): string => {
+  for (const gen of ["17", "16", "15", "14", "13", "12", "11"]) {
+    if (model.startsWith(`iPhone ${gen}`)) return `iPhone ${gen}`;
+  }
+  if (model.startsWith("iPhone X")) return "iPhone X-Serie";
+  if (model.startsWith("iPhone 8") || model.startsWith("iPhone 7")) return "iPhone 8 & 7";
+  return "iPhone 6s & 6";
+};
+
+/** Gruppen für das Modell-Raster auf der Markenseite. */
+export function getModelGroups(brandKey: string): ModelGroup[] {
+  const brand = brandConfig[brandKey];
+  if (!brand) return [];
+
+  if (brandKey === "iphone") {
+    const groups: ModelGroup[] = [];
+    for (const row of brandRows(brandKey)) {
+      const label = iphoneGroupOf(row.model);
+      const existing = groups.find((g) => g.label === label);
+      if (existing) existing.rows.push(row);
+      else groups.push({ label, rows: [row] });
+    }
+    return groups;
+  }
+
+  return brand.series.map((s) => ({ label: s.label, rows: s.rows }));
+}
+
+/** Eine Modellzeile über ihren Slug finden. */
+export const findModel = (brandKey: string, slug: string): Row | undefined =>
+  brandRows(brandKey).find((row) => modelSlug(row.model) === slug);
+
+/** Alle Marken, für die Modellseiten erzeugt werden. */
+export const modelPageBrands = Object.keys(brandConfig).filter(
+  (key) => brandConfig[key].hasModelPages,
+);
+
+/** Parameter für generateStaticParams der Modellseiten. */
+export const modelPageParams = (): { brand: string; model: string }[] =>
+  modelPageBrands.flatMap((brand) =>
+    brandRows(brand).map((row) => ({ brand, model: modelSlug(row.model) })),
+  );
+
+/** Die einzelnen Reparaturpositionen einer Zeile – in Anzeigereihenfolge. */
+export const repairFields = [
+  "display",
+  "batterie",
+  "ladebuchse",
+  "kamera",
+  "kameraglas",
+  "rueckseite",
+  "lautsprecher",
+  "datenrettung",
+] as const;
+
+export type RepairField = (typeof repairFields)[number];

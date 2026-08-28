@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronRight, ArrowRight, CheckCircle2, Shield } from "lucide-react";
 import { brandConfig, brandSlugs } from "@/lib/repairData";
 import BrandPriceTable from "./BrandPriceTable";
+import ModelGrid from "./ModelGrid";
 
 export function generateStaticParams() {
   return brandSlugs.map((brand) => ({ brand }));
@@ -112,24 +113,42 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
         </div>
       </section>
 
-      {/* ── Price Table ──────────────────────────────────────────── */}
+      {/* ── Modelle bzw. Kurz-Preistabelle ───────────────────────── */}
       <section id="preise" className="py-14 bg-brand-surface border-y border-brand-border scroll-mt-20">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={`${brand.hasModelPages ? "max-w-5xl" : "max-w-2xl"} mx-auto px-4 sm:px-6 lg:px-8`}
+        >
           <div className="mb-8 text-center">
             <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] block mb-2">
-              Meistgefragte Reparaturen
+              {brand.hasModelPages ? "Preise nach Modell" : "Meistgefragte Reparaturen"}
             </span>
             <h2 className="font-headline text-3xl sm:text-4xl text-brand-primary">
-              Preisübersicht {brand.name}
+              {brand.hasModelPages ? `Alle ${brand.name}-Modelle` : `Preisübersicht ${brand.name}`}
             </h2>
             <p className="font-sans text-brand-gray text-sm mt-2">
-              Modell nicht dabei?{" "}
-              <a href="tel:+41764020306" className="text-brand-accent hover:underline font-bold">
-                Einfach anfragen.
-              </a>
+              {brand.hasModelPages ? (
+                <>
+                  Modell wählen – Sie sehen sofort alle Reparaturpreise. Modell nicht dabei?{" "}
+                  <a href="tel:+41764020306" className="text-brand-accent hover:underline font-bold">
+                    Einfach anfragen.
+                  </a>
+                </>
+              ) : (
+                <>
+                  Modell nicht dabei?{" "}
+                  <a href="tel:+41764020306" className="text-brand-accent hover:underline font-bold">
+                    Einfach anfragen.
+                  </a>
+                </>
+              )}
             </p>
           </div>
-          <BrandPriceTable items={brand.popularItems} />
+
+          {brand.hasModelPages ? (
+            <ModelGrid brandKey={params.brand} />
+          ) : (
+            <BrandPriceTable items={brand.popularItems} />
+          )}
         </div>
       </section>
 
