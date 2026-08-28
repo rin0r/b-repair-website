@@ -4,7 +4,7 @@
    Gerätebild zeichnet. Key = Slug aus modelSlug() in repairData.ts. */
 
 export type Front = "home" | "notch" | "island";
-export type CamStyle = "single" | "dual-h" | "dual-v" | "square" | "pill";
+export type CamStyle = "single" | "dual-h" | "dual-v" | "square" | "pill" | "bar";
 
 export type DeviceSpec = {
   year: number;
@@ -31,17 +31,17 @@ const spec = (
 ): DeviceSpec => ({ year, display, size, connector, front, cams, camStyle, body, issues });
 
 export const iphoneSpecs: Record<string, DeviceSpec> = {
-  "iphone-17-pro-max": spec(2025, "OLED", 6.9, "USB-C", "island", 3, "square", "#B4693C", [
+  "iphone-17-pro-max": spec(2025, "OLED", 6.9, "USB-C", "island", 3, "bar", "#B4693C", [
     "Displaybruch – das grosse 6.9″-Panel ist bei Stürzen besonders exponiert",
     "Gesprungenes Kameraglas an der Kameraleiste",
     "USB-C-Buchse ausgeleiert oder verschmutzt",
   ]),
-  "iphone-17-pro": spec(2025, "OLED", 6.3, "USB-C", "island", 3, "square", "#B4693C", [
+  "iphone-17-pro": spec(2025, "OLED", 6.3, "USB-C", "island", 3, "bar", "#B4693C", [
     "Displaybruch nach Sturz",
     "Gesprungenes Kameraglas an der Kameraleiste",
     "Verbogener Rahmen nach Sturz auf die Ecke",
   ]),
-  "iphone-17-air": spec(2025, "OLED", 6.5, "USB-C", "island", 1, "pill", "#414855", [
+  "iphone-17-air": spec(2025, "OLED", 6.5, "USB-C", "island", 1, "bar", "#414855", [
     "Sehr flaches Gehäuse – der Rahmen verbiegt bei Stürzen leichter",
     "Displaybruch",
     "Akkukapazität sinkt bei der kompakten Zelle schneller unter 80 %",
