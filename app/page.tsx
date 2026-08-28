@@ -447,7 +447,7 @@ export default function Home() {
             {/* Map – 2/3 width */}
             <div className="lg:w-2/3 rounded-2xl overflow-hidden border border-brand-border shadow-sm flex-shrink-0" style={{ minHeight: 400 }}>
               <iframe
-                src="https://maps.google.com/maps?q=Bürglenweg+24,+3627+Heimberg,+Schweiz&output=embed&hl=de"
+                src="https://maps.google.com/maps?q=Stationsweg+3,+3627+Heimberg,+Schweiz&output=embed&hl=de"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: "block", minHeight: 400 }}
@@ -468,7 +468,7 @@ export default function Home() {
                   <span className="font-headline text-xl text-brand-primary">Standort</span>
                 </div>
                 <p className="font-sans font-bold text-brand-primary text-base mb-1">B-repair&service</p>
-                <p className="font-sans text-brand-gray text-sm mb-4">Bürglenweg 24, 3627 Heimberg</p>
+                <p className="font-sans text-brand-gray text-sm mb-4">Stationsweg 3, 3627 Heimberg</p>
                 <a href="tel:+41764020306" className="inline-flex items-center gap-2 font-sans font-bold text-brand-primary text-base hover:text-brand-accent transition-colors">
                   <Phone className="w-4 h-4 text-brand-accent" />
                   +41 76 402 03 06
@@ -486,8 +486,8 @@ export default function Home() {
                 </div>
                 <div className="space-y-2">
                   {[
-                    { day: "Mo – Fr", time: "09:00 – 18:00" },
-                    { day: "Samstag", time: "10:00 – 16:00" },
+                    { day: "Mo – Fr", time: "09:30 – 18:00" },
+                    { day: "Samstag", time: "10:00 – 17:00" },
                     { day: "Sonntag", time: "Geschlossen" },
                   ].map(({ day, time }) => (
                     <div key={day} className="flex justify-between text-sm font-sans">
@@ -500,7 +500,7 @@ export default function Home() {
 
               {/* Block 3 – Route planen */}
               <a
-                href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A"
+                href="https://www.google.com/maps/search/?api=1&query=Stationsweg+3%2C+3627+Heimberg%2C+Schweiz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-btn gap-2 px-6 rounded-2xl bg-brand-accent text-brand-primary font-sans font-bold text-base hover:bg-brand-accent-dark transition-all glow-sm"
@@ -578,7 +578,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-4 justify-center text-xs font-sans text-brand-gray">
             <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-brand-accent" /> Mo–Fr 09–18 · Sa 10–16</span>
-            <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-brand-accent" /> Bürglenweg 24, Heimberg</span>
+            <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-brand-accent" /> Stationsweg 3, Heimberg</span>
             <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-brand-accent" /> 6 Monate Garantie</span>
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function ImpressumPage() {
                 ["Firma",            "B-Repair"],
                 ["Rechtsform",       "Einzelunternehmen"],
                 ["Inhaber",          "Bestar Zenelaj"],
-                ["Adresse",          "Bürglenweg 24, 3627 Heimberg, Schweiz"],
+                ["Adresse",          "Stationsweg 3, 3627 Heimberg, Schweiz"],
                 ["UID",              "CHE-282.605.618"],
                 ["MWST-Nummer",      "CHE-282.605.618 MWST"],
               ].map(([label, value]) => (

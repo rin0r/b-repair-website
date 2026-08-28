@@ -320,10 +320,10 @@ export default function PreisrechnerWidget() {
           <div className="text-center mb-5">
             <div className="inline-flex items-center gap-2 font-sans text-sm text-brand-gray">
               <MapPin className="w-4 h-4 text-brand-accent flex-shrink-0" />
-              Bürglenweg 24, 3627 Heimberg
+              Stationsweg 3, 3627 Heimberg
             </div>
             <p className="font-sans text-brand-gray/60 text-xs mt-1">
-              Mo – Fr 09:00 – 18:00 · Sa 10:00 – 16:00
+              Mo – Fr 09:30 – 18:00 · Sa 10:00 – 17:00
             </p>
           </div>
 

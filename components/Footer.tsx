@@ -95,17 +95,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-xs font-sans hover:text-brand-accent transition-colors" style={{ color: "#8899AA" }}>
+                <a href="https://www.google.com/maps/search/?api=1&query=Stationsweg+3%2C+3627+Heimberg%2C+Schweiz" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-xs font-sans hover:text-brand-accent transition-colors" style={{ color: "#8899AA" }}>
                   <MapPin className="w-3.5 h-3.5 text-brand-accent flex-shrink-0 mt-0.5" />
-                  <span>Bürglenweg 24<br />3627 Heimberg</span>
+                  <span>Stationsweg 3<br />3627 Heimberg</span>
                 </a>
               </li>
             </ul>
             <h3 className="text-white font-sans font-bold mb-3 text-xs uppercase tracking-wider">Öffnungszeiten</h3>
             <ul className="space-y-1.5">
               {[
-                { d: "Mo – Fr", t: "09:00 – 18:00" },
-                { d: "Samstag", t: "10:00 – 16:00" },
+                { d: "Mo – Fr", t: "09:30 – 18:00" },
+                { d: "Samstag", t: "10:00 – 17:00" },
                 { d: "Sonntag", t: "Geschlossen" },
               ].map(({ d, t }) => (
                 <li key={d} className="flex items-center gap-2 text-[11px] font-sans">
@@ -126,7 +126,7 @@ export default function Footer() {
             </a>
           </p>
           <p className="font-sans text-[11px]" style={{ color: "#6B8099" }}>
-            Bürglenweg 24, 3627 Heimberg · Schweiz ·{" "}
+            Stationsweg 3, 3627 Heimberg · Schweiz ·{" "}
             <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>{" "}·{" "}
             <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
           </p>

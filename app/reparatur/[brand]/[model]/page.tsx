@@ -112,7 +112,7 @@ export default function ModelPage({ params }: { params: { brand: string; model: 
       email: "info@b-repair.ch",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Bürglenweg 24",
+        streetAddress: "Stationsweg 3",
         postalCode: "3627",
         addressLocality: "Heimberg",
         addressCountry: "CH",
@@ -378,7 +378,7 @@ export default function ModelPage({ params }: { params: { brand: string; model: 
             {row.model} defekt? Wir helfen sofort.
           </h2>
           <p className="font-sans text-sm mb-8" style={{ color: "#8899AA" }}>
-            Bürglenweg 24, 3627 Heimberg · Kostenlose Diagnose · Fixpreise · 6 Monate Garantie
+            Stationsweg 3, 3627 Heimberg · Kostenlose Diagnose · Fixpreise · 6 Monate Garantie
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

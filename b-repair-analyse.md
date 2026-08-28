@@ -4,7 +4,7 @@
 | Feld | Wert |
 |------|------|
 | Firmenname | B-repair&service |
-| Standort | Bürglenweg 24, 3627 Heimberg |
+| Standort | Stationsweg 3, 3627 Heimberg |
 | Telefon | +41 76 402 03 06 |
 | E-Mail | info@b-repair.ch |
 | Gründung | 2018 |
@@ -40,8 +40,8 @@ iPhone, Samsung, Huawei, Xiaomi, OnePlus, Google Pixel, Sony Xperia, Motorola
 ## Öffnungszeiten
 | Tag | Zeit |
 |-----|------|
-| Montag – Freitag | 09:00 – 18:30 |
-| Samstag | 10:00 – 16:00 |
+| Montag – Freitag | 09:30 – 18:00 |
+| Samstag | 10:00 – 17:00 |
 | Sonntag | Geschlossen |
 
 ## Zielgruppe

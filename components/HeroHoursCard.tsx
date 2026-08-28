@@ -29,10 +29,10 @@ function getTodayInfo(): { heading: string; todayRow: "mofr" | "sa" | "so" } {
     todayRow = "so";
   } else if (isSaturday) {
     todayRow = "sa";
-    open = time >= 10 * 60 && time < 16 * 60;
+    open = time >= 10 * 60 && time < 17 * 60;
   } else {
     todayRow = "mofr";
-    open = time >= 9 * 60 && time < 18 * 60;
+    open = time >= 9 * 60 + 30 && time < 18 * 60;
   }
 
   return { heading: open ? "Heute geöffnet" : "Heute geschlossen", todayRow };
@@ -51,8 +51,8 @@ export default function HeroHoursCard() {
   const heading  = info?.heading  ?? "Öffnungszeiten";
 
   const rows = [
-    { id: "mofr", day: "Mo – Fr",  time: "09:00 – 18:00", closed: false },
-    { id: "sa",   day: "Samstag",  time: "10:00 – 16:00", closed: false },
+    { id: "mofr", day: "Mo – Fr",  time: "09:30 – 18:00", closed: false },
+    { id: "sa",   day: "Samstag",  time: "10:00 – 17:00", closed: false },
     { id: "so",   day: "Sonntag",  time: "Geschlossen",    closed: true  },
   ];
 
@@ -93,7 +93,7 @@ export default function HeroHoursCard() {
           <div className="w-10 h-10 rounded-xl bg-brand-accent/10 flex items-center justify-center">
             <MapPin className="w-5 h-5 text-brand-accent" />
           </div>
-          <span className="font-sans text-brand-gray text-sm">Bürglenweg 24, 3627 Heimberg</span>
+          <span className="font-sans text-brand-gray text-sm">Stationsweg 3, 3627 Heimberg</span>
         </div>
       </div>
 

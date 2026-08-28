@@ -30,7 +30,7 @@ export default function DatenschutzPage() {
           <div className="bg-brand-surface rounded-xl p-4 text-brand-primary">
             <strong>Bestar Zenelaj</strong><br />
             B-Repair (Einzelunternehmen)<br />
-            Bürglenweg 24, 3627 Heimberg, Schweiz<br />
+            Stationsweg 3, 3627 Heimberg, Schweiz<br />
             <a href="tel:+41764020306" className="text-brand-accent hover:underline">+41 76 402 03 06</a><br />
             <a href="mailto:info@b-repair.ch" className="text-brand-accent hover:underline">info@b-repair.ch</a>
           </div>

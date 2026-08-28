@@ -14,12 +14,12 @@ import {
 } from "lucide-react";
 
 const openingHours = [
-  { day: "Montag", time: "09:00 – 18:00" },
-  { day: "Dienstag", time: "09:00 – 18:00" },
-  { day: "Mittwoch", time: "09:00 – 18:00" },
-  { day: "Donnerstag", time: "09:00 – 18:00" },
-  { day: "Freitag", time: "09:00 – 18:00" },
-  { day: "Samstag", time: "10:00 – 16:00" },
+  { day: "Montag", time: "09:30 – 18:00" },
+  { day: "Dienstag", time: "09:30 – 18:00" },
+  { day: "Mittwoch", time: "09:30 – 18:00" },
+  { day: "Donnerstag", time: "09:30 – 18:00" },
+  { day: "Freitag", time: "09:30 – 18:00" },
+  { day: "Samstag", time: "10:00 – 17:00" },
   { day: "Sonntag", time: "Geschlossen" },
 ];
 
@@ -115,7 +115,7 @@ export default function KontaktPage() {
               </a>
 
               <a
-                href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A"
+                href="https://www.google.com/maps/search/?api=1&query=Stationsweg+3%2C+3627+Heimberg%2C+Schweiz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-5 rounded-2xl bg-brand-card border border-brand-border hover:border-brand-accent/50 transition-all group"
@@ -126,7 +126,7 @@ export default function KontaktPage() {
                 <div>
                   <div className="text-xs text-brand-muted mb-0.5">Adresse</div>
                   <div className="font-semibold text-brand-text">
-                    Bürglenweg 24<br />3627 Heimberg
+                    Stationsweg 3<br />3627 Heimberg
                   </div>
                 </div>
               </a>
@@ -155,7 +155,7 @@ export default function KontaktPage() {
               {/* Map embed placeholder */}
               <div className="rounded-2xl bg-brand-card border border-brand-border overflow-hidden h-44 flex items-center justify-center">
                 <a
-                  href="https://maps.app.goo.gl/AUHeLXLo1wwJsYD6A"
+                  href="https://www.google.com/maps/search/?api=1&query=Stationsweg+3%2C+3627+Heimberg%2C+Schweiz"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center gap-2 text-brand-muted hover:text-brand-accent transition-colors"
