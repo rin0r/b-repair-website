@@ -22,8 +22,8 @@ export function buildIntro(model: string, slug: string): string {
   if (v === 0)
     return `Display gebrochen, Akku am Ende oder Wasserschaden? Wir reparieren Ihr ${model} in Heimberg bei Thun – meist noch am selben Tag, zum Fixpreis und mit 6 Monaten Garantie.`;
   if (v === 1)
-    return `Ihr ${model} hat einen Defekt? Bei B-repair&service in Heimberg erhalten Sie eine kostenlose Diagnose, einen verbindlichen Fixpreis und Ihr Gerät meist innerhalb von 2 Stunden zurück.`;
-  return `Ob Displaybruch, schwacher Akku oder defekte Ladebuchse – Ihr ${model} wird bei uns in Heimberg fachgerecht repariert. Transparente Fixpreise, kostenlose Diagnose, 6 Monate Garantie.`;
+    return `Ihr ${model} hat einen Defekt? Bei B-repair&service in Heimberg prüfen wir Ihr Gerät, nennen Ihnen einen verbindlichen Fixpreis und geben es Ihnen meist innerhalb von 2 Stunden zurück.`;
+  return `Ob Displaybruch, schwacher Akku oder defekte Ladebuchse – Ihr ${model} wird bei uns in Heimberg fachgerecht repariert. Transparente Fixpreise, 6 Monate Garantie.`;
 }
 
 /* ─── SEO-Fliesstext (zwei Absätze) ────────────────────────────── */
@@ -48,10 +48,10 @@ export function buildCopy(model: string, slug: string, spec: DeviceSpec, row: Ro
 
   const second =
     v === 0
-      ? `${displayLine}${batteryLine} – als Fixpreis, den wir vor Beginn der Arbeit verbindlich nennen. Die Diagnose ist immer kostenlos, auch wenn Sie sich danach gegen die Reparatur entscheiden. Die meisten Arbeiten am ${model} sind in unter zwei Stunden erledigt, Sie können also warten oder das Gerät am selben Tag wieder abholen. Auf jede Reparatur geben wir 6 Monate Garantie.`
+      ? `${displayLine}${batteryLine} – als Fixpreis, den wir vor Beginn der Arbeit verbindlich nennen. Sie kennen den Preis also, bevor Sie sich entscheiden. Die meisten Arbeiten am ${model} sind in unter zwei Stunden erledigt, Sie können also warten oder das Gerät am selben Tag wieder abholen. Auf jede Reparatur geben wir 6 Monate Garantie.`
       : v === 1
-        ? `${displayLine}${batteryLine}. Bei uns gibt es keine Kostenvoranschläge, die sich später ändern: Sie bekommen einen Fixpreis, bevor wir anfangen. Kommt bei der kostenlosen Diagnose heraus, dass sich die Reparatur nicht lohnt, sagen wir Ihnen das offen. Die meisten ${model}-Reparaturen dauern unter zwei Stunden, dazu 6 Monate Garantie auf die ausgeführte Arbeit.`
-        : `${displayLine}${batteryLine} – ohne versteckte Zusatzkosten. Vor der Reparatur prüfen wir Ihr ${model} kostenlos durch und besprechen mit Ihnen, was sinnvoll ist. Danach starten wir erst nach Ihrer Freigabe. Die Standardreparaturen sind meist in unter zwei Stunden fertig, auf alles geben wir 6 Monate Garantie. Auch Platinenschäden reparieren wir – dank eigener Mikrolöt-Werkstatt.`;
+        ? `${displayLine}${batteryLine}. Bei uns gibt es keine Kostenvoranschläge, die sich später ändern: Sie bekommen einen Fixpreis, bevor wir anfangen. Kommt bei der Prüfung heraus, dass sich die Reparatur nicht lohnt, sagen wir Ihnen das offen. Die meisten ${model}-Reparaturen dauern unter zwei Stunden, dazu 6 Monate Garantie auf die ausgeführte Arbeit.`
+        : `${displayLine}${batteryLine} – ohne versteckte Zusatzkosten. Vor der Reparatur prüfen wir Ihr ${model} durch und besprechen mit Ihnen, was sinnvoll ist. Danach starten wir erst nach Ihrer Freigabe. Die Standardreparaturen sind meist in unter zwei Stunden fertig, auf alles geben wir 6 Monate Garantie. Auch Platinenschäden reparieren wir – dank eigener Mikrolöt-Werkstatt.`;
 
   return [first, second];
 }
@@ -64,7 +64,7 @@ export function buildFaq(model: string, spec: DeviceSpec, row: Row): FAQ[] {
     q: `Was kostet eine Display-Reparatur beim ${model}?`,
     a: hasPrice(row.display)
       ? `Die Display-Reparatur am ${model} kostet ${prettyPrice(row.display)} als Fixpreis, inklusive Einbau, Funktionstest und 6 Monaten Garantie. Der Preis steht fest, bevor wir mit der Arbeit beginnen – Nachforderungen gibt es bei uns nicht.`
-      : `Den Preis für die Display-Reparatur am ${model} nennen wir Ihnen nach einer kostenlosen Diagnose als verbindlichen Fixpreis. Melden Sie sich einfach kurz per WhatsApp oder Telefon.`,
+      : `Den Preis für die Display-Reparatur am ${model} nennen wir Ihnen nach einer Prüfung des Geräts als verbindlichen Fixpreis. Melden Sie sich einfach kurz per WhatsApp oder Telefon.`,
   });
 
   faq.push({

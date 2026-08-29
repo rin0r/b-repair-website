@@ -229,7 +229,7 @@ const huaweiRows: Row[] = [
 export const brandConfig: Record<string, BrandConfig> = {
   iphone: {
     name: "iPhone",
-    intro: "Displaybruch, Akkuproblem oder Wasserschaden? Bei B-repair&service in Heimberg bekommen Sie Ihr iPhone schnell und zuverlässig repariert – oft in unter 2 Stunden. Transparente Fixpreise, 6 Monate Garantie und kostenlose Diagnose inklusive.",
+    intro: "Displaybruch, Akkuproblem oder Wasserschaden? Bei B-repair&service in Heimberg bekommen Sie Ihr iPhone schnell und zuverlässig repariert – oft in unter 2 Stunden. Transparente Fixpreise und 6 Monate Garantie inklusive.",
     series: [{ label: "Alle Modelle", rows: iphoneRows }],
     hasOnRequest: false,
     hasModelPages: true,
@@ -240,7 +240,6 @@ export const brandConfig: Record<string, BrandConfig> = {
       { model: "iPhone 15 Pro Max",repair: "Display",             price: "CHF\u00A0529.–" },
       { model: "iPhone 16 Pro Max",repair: "Display",             price: "CHF\u00A0499.–" },
       { model: "Alle Modelle",     repair: "Akku-Wechsel",        price: "CHF\u00A079.–",  from: true },
-      { model: "Alle Modelle",     repair: "Kostenlose Diagnose", price: "Gratis" },
     ],
     faq: [
       { q: "Wie lange dauert eine iPhone-Display-Reparatur?", a: "Die meisten Display-Reparaturen sind bei uns in 30–60 Minuten erledigt. Bei OLED-Displays der Pro-Serie kann es bis zu 2 Stunden dauern. Sie warten bequem bei uns oder kommen einfach später abholen." },
@@ -262,7 +261,6 @@ export const brandConfig: Record<string, BrandConfig> = {
       { model: "iPad Pro 11\"",       repair: "Display",             price: "CHF\u00A0279.–", from: true },
       { model: "iPad Pro 12.9\"",     repair: "Display",             price: "CHF\u00A0269.–", from: true },
       { model: "Alle Modelle",        repair: "Akku-Wechsel",        price: "CHF\u00A099.–",  from: true },
-      { model: "Alle Modelle",        repair: "Kostenlose Diagnose", price: "Gratis" },
     ],
     faq: [
       { q: "Können Sie auch iPad Pro-Displays reparieren?", a: "Ja, wir reparieren alle iPad Pro-Varianten inklusive der 12.9\"- und 11\"-Modelle. Liquid-Retina-Displays werden fachmännisch ausgetauscht." },
@@ -274,7 +272,7 @@ export const brandConfig: Record<string, BrandConfig> = {
   },
   samsung: {
     name: "Samsung",
-    intro: "Samsung Galaxy Display gebrochen oder Akku leer? B-repair&service repariert alle Galaxy-Modelle – S-Serie, A-Serie und Note-Serie. Schnell, günstig und zuverlässig in Heimberg bei Thun. Kostenlose Diagnose, Fixpreise, 6 Monate Garantie.",
+    intro: "Samsung Galaxy Display gebrochen oder Akku leer? B-repair&service repariert alle Galaxy-Modelle – S-Serie, A-Serie und Note-Serie. Schnell, günstig und zuverlässig in Heimberg bei Thun. Fixpreise und 6 Monate Garantie.",
     series: [
       { label: "Galaxy S-Serie", rows: samsungSRows },
       { label: "Galaxy A-Serie", rows: samsungARows },
@@ -287,7 +285,6 @@ export const brandConfig: Record<string, BrandConfig> = {
       { model: "Galaxy S24 5G",    repair: "Display",             price: "CHF\u00A0339.–" },
       { model: "Galaxy S25 Ultra", repair: "Display",             price: "CHF\u00A0499.–" },
       { model: "Alle Modelle",     repair: "Akku-Wechsel",        price: "CHF\u00A079.–",  from: true },
-      { model: "Alle Modelle",     repair: "Kostenlose Diagnose", price: "Gratis" },
     ],
     faq: [
       { q: "Reparieren Sie auch Samsung AMOLED-Displays?", a: "Ja, wir reparieren AMOLED- und Super AMOLED-Displays aller Galaxy-Modelle. Für S-Ultra-Modelle verwenden wir Premium-Displays mit identischer Farbdarstellung." },
@@ -309,7 +306,6 @@ export const brandConfig: Record<string, BrandConfig> = {
       { model: "Huawei P40",      repair: "Display",             price: "CHF\u00A0279.–" },
       { model: "Huawei P40 Pro",  repair: "Display",             price: "CHF\u00A0349.–" },
       { model: "Alle Modelle",    repair: "Akku-Wechsel",        price: "CHF\u00A089.–",  from: true },
-      { model: "Alle Modelle",    repair: "Kostenlose Diagnose", price: "Gratis" },
     ],
     faq: [
       { q: "Welche Huawei-Modelle reparieren Sie?", a: "Wir reparieren die P-Serie (P20 bis P40) und Mate-Serie (Mate 20 bis Mate 20 Pro). Für andere Modelle fragen Sie uns einfach an – wir helfen gerne." },
@@ -321,17 +317,16 @@ export const brandConfig: Record<string, BrandConfig> = {
   },
   oneplus: {
     name: "OnePlus",
-    intro: "OnePlus-Smartphone defekt? Ob Display, Akku oder Ladebuchse – B-repair&service in Heimberg bei Thun repariert OnePlus-Geräte zu fairen Preisen. Kostenlose Diagnose inklusive, verbindlicher Fixpreis nach der Prüfung.",
+    intro: "OnePlus-Smartphone defekt? Ob Display, Akku oder Ladebuchse – B-repair&service in Heimberg bei Thun repariert OnePlus-Geräte zu fairen Preisen. Verbindlicher Fixpreis nach der Prüfung.",
     series: [],
     hasOnRequest: true,
     popularItems: [
       { model: "Alle Modelle", repair: "Display",             price: "Auf Anfrage" },
       { model: "Alle Modelle", repair: "Akku-Wechsel",        price: "Auf Anfrage" },
-      { model: "Alle Modelle", repair: "Kostenlose Diagnose", price: "Gratis" },
     ],
     faq: [
       { q: "Welche OnePlus-Modelle reparieren Sie?", a: "Wir reparieren OnePlus-Geräte aller gängigen Serien – von OnePlus 6 bis zu aktuellen OnePlus 12/13-Modellen. Kontaktieren Sie uns für eine genaue Auskunft zu Ihrem Modell." },
-      { q: "Warum stehen keine Fixpreise für OnePlus online?", a: "OnePlus-Ersatzteile variieren stark je nach Modell und Verfügbarkeit. Nach einer kostenlosen Diagnose erhalten Sie von uns einen verbindlichen Fixpreis – ohne Überraschungen." },
+      { q: "Warum stehen keine Fixpreise für OnePlus online?", a: "OnePlus-Ersatzteile variieren stark je nach Modell und Verfügbarkeit. Nach einer Prüfung Ihres Geräts erhalten Sie von uns einen verbindlichen Fixpreis – ohne Überraschungen." },
       { q: "Wie lange dauert eine OnePlus-Reparatur?", a: "Wenn das Ersatzteil verfügbar ist, reparieren wir Ihr OnePlus meist am selben Tag. Für spezifische Teile kann es 1–3 Werktage dauern." },
       { q: "Gilt die 6-Monate-Garantie auch für OnePlus?", a: "Ja, auf alle Reparaturen – egal welche Marke – geben wir 6 Monate Garantie." },
       { q: "Kann ich per WhatsApp anfragen?", a: "Ja, schreiben Sie uns einfach auf WhatsApp (+41 76 402 03 06) mit Ihrem Modell und dem Defekt. Wir antworten in der Regel innerhalb weniger Stunden." },

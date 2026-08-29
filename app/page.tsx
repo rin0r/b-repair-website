@@ -21,7 +21,7 @@ const services = [
   { icon: Camera,     title: "Kamera-Reparatur",     time: "45–90 Min",  desc: "Front- & Rückkamera, Glas, Autofokus, Blitz.",                          accent: "text-brand-accent" },
   { icon: Droplets,   title: "Wasserschaden",        time: "1–2 Tage",   desc: "Ultraschall-Reinigung und Korrosionsbehandlung.",                       accent: "text-blue-600" },
   { icon: Wrench,     title: "Computer & Laptop",    time: "1–3 Tage",   desc: "MacBook, Windows-Laptops – Display, Akku, SSD.",                        accent: "text-brand-accent" },
-  { icon: Wifi,       title: "Software & Diagnose",  time: "30–60 Min",  desc: "Abstürze, Viren, Betriebssystem – kostenlose Erstdiagnose.",             accent: "text-purple-600" },
+  { icon: Wifi,       title: "Software & Diagnose",  time: "30–60 Min",  desc: "Abstürze, Viren, Betriebssystem – wir finden die Ursache.",             accent: "text-purple-600" },
 ];
 
 const reviews = [
@@ -51,7 +51,7 @@ const reviews = [
 const faqs = [
   { q: "Brauche ich einen Termin?",      a: "Nein – Sie können jederzeit während der Öffnungszeiten vorbeikommen. Für Mikrolöten und Datenrettung empfehlen wir kurze Voranmeldung per Telefon oder WhatsApp." },
   { q: "Wie lange dauert eine Reparatur?",  a: "Display und Akku: 30–90 Min. Wasserschäden, Mikrolötungen und Datenrettungen: 1–5 Werktage je nach Aufwand." },
-  { q: "Was kostet die Diagnose?",        a: "Die Diagnose ist kostenlos und entfällt bei Reparatur bei uns. Sie erfahren den genauen Fixpreis vor der Reparatur – keine Überraschungen." },
+  { q: "Erfahre ich den Preis vorher?",   a: "Ja. Wir prüfen Ihr Gerät und nennen Ihnen einen verbindlichen Fixpreis, bevor wir mit der Reparatur beginnen – keine Überraschungen." },
   { q: "Welche Garantie gibt es?",        a: "6 Monate auf alle Reparaturen – doppelt so lang wie bei den meisten Mitbewerbern." },
   { q: "Gehen meine Daten verloren?",     a: "Bei Display- und Akku-Reparaturen bleiben alle Daten erhalten. Ihre Daten werden nie ohne Ihre Erlaubnis gelesen." },
   { q: "Reparieren Sie auch iPads und Laptops?",  a: "Ja – iPhones, iPads, Android-Smartphones, MacBooks und Windows-Laptops. Preis auf Anfrage." },
@@ -112,7 +112,7 @@ export default function Home() {
       {/* VERKAUFSPSYCHOLOGIE: Headline adressiert den Hauptschmerzpunkt
           "unreparierbar" direkt. Kombination aus Empathie + Kompetenzversprechen.
           Subheadline verankert Expertise durch "seit 2021".
-          Primär-CTA gratis → senkt Hemmschwelle maximal. */}
+          Primär-CTA unverbindlich → senkt Hemmschwelle maximal. */}
       <section className="relative min-h-[100svh] flex items-center bg-grid overflow-hidden">
         {/* Hero background image – very faint through white overlay */}
         <div
@@ -148,7 +148,7 @@ export default function Home() {
                 Mikrolöten, Datenrettung & mehr.
               </p>
 
-              {/* VERKAUFSPSYCHOLOGIE: Primär-CTA kostenlos = kein Risiko für den Kunden.
+              {/* VERKAUFSPSYCHOLOGIE: Primär-CTA unverbindlich = kein Risiko für den Kunden.
                   Sekundär-CTA Outline = visuell weniger dominant → klare Hierarchie. */}
               <div className="flex flex-wrap gap-3 mb-8">
                 {/* Primär-CTA: #00D4AA, dunkle Schrift für WCAG AA */}
@@ -173,7 +173,7 @@ export default function Home() {
                   Jedes Element hebt eine andere Vertrauensdimension hervor. */}
               <div className="flex flex-wrap gap-x-5 gap-y-2">
                 {[
-                  "Diagnose kostenlos – entfällt bei Reparatur",
+                  "Fixpreis vor der Reparatur",
                   "6 Monate Garantie",
                 ].map((item) => (
                   <span key={item} className="inline-flex items-center gap-1.5 text-sm text-brand-gray font-sans">
@@ -323,7 +323,7 @@ export default function Home() {
                   "Geräte reparieren, die andere Shops ablehnen",
                   "Daten retten, die verloren schienen",
                   "Günstiger als ein neues Gerät oder Platinentausch",
-                  "Diagnose kostenlos – entfällt bei Reparatur bei uns",
+                  "Fixpreis vor der Reparatur – keine Überraschungen",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2.5 font-sans text-sm text-gray-300">
                     <CheckCircle2 className="w-4 h-4 text-brand-accent flex-shrink-0" />
@@ -425,7 +425,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { n: "01", t: "Vorbeikommen",         d: "Kein Termin nötig – einfach während den Öffnungszeiten." },
-              { n: "02", t: "Kostenlose Diagnose",  d: "Wir prüfen Ihr Gerät und nennen den Fixpreis – entfällt bei Reparatur bei uns." },
+              { n: "02", t: "Diagnose",             d: "Wir prüfen Ihr Gerät und nennen Ihnen den verbindlichen Fixpreis, bevor wir starten." },
               { n: "03", t: "Express-Reparatur",    d: "Die meisten Reparaturen in unter 2 Stunden abgeschlossen." },
               { n: "04", t: "Garantie geniessen",   d: "Gerät abholen und 6 Monate Garantie geniessen." },
             ].map(({ n, t, d }) => (
@@ -550,11 +550,11 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] mb-2 block">Bereit?</span>
           <h2 className="font-headline text-5xl sm:text-6xl lg:text-7xl text-brand-primary mb-4">
-            Kostenlose Diagnose.<br />
+            Gerät defekt?<br />
             <span className="text-brand-accent">Jetzt anfragen.</span>
           </h2>
           <p className="font-sans text-brand-gray text-lg mb-10 max-w-xl mx-auto">
-            Diagnose kostenlos – entfällt bei Reparatur bei uns. Kein Termin nötig.
+            Fixpreis vor der Reparatur. Kein Termin nötig.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a

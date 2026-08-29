@@ -328,7 +328,7 @@ export default function PreislistePage() {
           <span className="font-sans text-brand-accent text-xs font-bold uppercase tracking-[0.15em] block mb-1">Transparente Preise</span>
           <h1 className="font-headline text-4xl sm:text-5xl text-brand-primary">Preise & Garantie</h1>
           <p className="mt-3 font-sans text-brand-gray max-w-xl">
-            Alle Preise in CHF inkl. MwSt. Kostenlose Diagnose vor jeder Reparatur.
+            Alle Preise in CHF inkl. MwSt. Verbindlicher Fixpreis vor jeder Reparatur.
           </p>
 
           {/* VERKAUFSPSYCHOLOGIE: Preistransparenz-Banner eliminiert Preisangst.
@@ -343,7 +343,7 @@ export default function PreislistePage() {
                 </p>
                 <p className="font-sans text-brand-gray text-sm mt-1 leading-relaxed">
                   Was Sie hier sehen, zahlen Sie – ohne Überraschung.{" "}
-                  <strong className="text-brand-primary">Diagnose kostenlos – entfällt bei Reparatur bei uns.</strong>{" "}
+                  <strong className="text-brand-primary">Den Fixpreis nennen wir vor der Reparatur.</strong>{" "}
                   Kein Kostenvoranschlag, kein Mindesthonorar, keine Bearbeitungsgebühr.
                 </p>
               </div>
@@ -432,7 +432,7 @@ export default function PreislistePage() {
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
             {[
               { icon: Shield,     text: "6 Monate Garantie auf alle Reparaturen" },
-              { icon: PhoneIcon,  text: "Kostenlose Diagnose vor der Reparatur" },
+              { icon: PhoneIcon,  text: "Fixpreis vor der Reparatur" },
               { icon: BadgeCheck, text: "Modell nicht dabei? Einfach anfragen" },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-3 p-4 rounded-xl bg-white border border-brand-border shadow-sm text-sm font-sans text-brand-gray">
@@ -449,7 +449,7 @@ export default function PreislistePage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-headline text-3xl text-brand-primary mb-3">Modell nicht gefunden?</h2>
           <p className="font-sans text-brand-gray text-sm mb-6">
-            Wir reparieren praktisch alle Geräte. Kostenlose Diagnose – immer.
+            Wir reparieren praktisch alle Geräte. Fragen Sie uns einfach an.
           </p>
           <Link
             href="/kontakt"

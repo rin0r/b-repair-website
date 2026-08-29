@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "B-repair&service | Smartphone Reparatur Heimberg – Fertig in 2h",
   description:
-    "Professionelle Smartphone- & Tablet-Reparaturen in Heimberg bei Thun. Display, Akku, Mikrolöten, Datenrettung. Fertig in 2 Stunden. 6 Monate Garantie. Kostenlose Diagnose.",
+    "Professionelle Smartphone- & Tablet-Reparaturen in Heimberg bei Thun. Display, Akku, Mikrolöten, Datenrettung. Fertig in 2 Stunden. 6 Monate Garantie. Fixpreise ohne Überraschungen.",
   keywords:
     "Smartphone Reparatur Heimberg, Handy Reparatur Thun, iPhone Reparatur Bern, Samsung Display Reparatur, Mikrolöten, Datenrettung, Akku Wechsel",
 };

@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "Reparaturen | B-repair&service – Smartphone, Laptop & Mikrolöten",
   description:
-    "Professionelle Reparaturen: Display, Akku, Mikrolöten, Datenrettung, Wasserschaden, Computer. Kostenlose Diagnose in Heimberg bei Thun.",
+    "Professionelle Reparaturen: Display, Akku, Mikrolöten, Datenrettung, Wasserschaden, Computer. Fixpreise in Heimberg bei Thun.",
 };
 
 const services = [
@@ -36,7 +36,7 @@ const services = [
     problem: "Ihr Gerät hält kaum noch eine Stunde durch?",
     pain:    "Ständig am Ladekabel – das schränkt ein und ist auf Dauer nervig und teuer.",
     solution:"Wir ersetzen Ihren Akku durch Original- oder Premium-Teile und bringen die volle Laufzeit zurück.",
-    proof:   "6 Monate Garantie. Akkukapazität messen wir kostenlos.",
+    proof:   "6 Monate Garantie. Die Akkukapazität messen wir vor dem Tausch.",
     items:   ["Akkukapazitätsmessung", "Original & Premium-Akkus", "Ladeport-Reparatur", "Schnelllade-Diagnose", "Kabelloses Laden"],
     accent:  "border-brand-accent",
     iconCol: "text-brand-accent",
@@ -72,8 +72,8 @@ const services = [
     problem: "Ihr Gerät hatte Kontakt mit Wasser oder Flüssigkeit?",
     pain:    "Jede Stunde zählt – Korrosion breitet sich aus und zerstört Bauteile, die noch zu retten wären.",
     solution:"Wir trocknen und reinigen mit Ultraschalltechnik, behandeln Korrosion auf Platinen-Ebene.",
-    proof:   "Kostenlose Erstdiagnose. Keine Hoffnung aufgeben, bevor wir geschaut haben.",
-    items:   ["Ultraschallreinigung", "Korrosionsbehandlung", "Platinendiagnose", "Komponentenprüfung", "Kostenlose Erstdiagnose"],
+    proof:   "Erst prüfen, dann entscheiden. Keine Hoffnung aufgeben, bevor wir geschaut haben.",
+    items:   ["Ultraschallreinigung", "Korrosionsbehandlung", "Platinendiagnose", "Komponentenprüfung", "Erstdiagnose"],
     accent:  "border-blue-500",
     iconCol: "text-blue-600",
   },
@@ -108,8 +108,8 @@ const services = [
     problem: "Abstürze, Viren, vergessenes Passwort oder ein langsames System?",
     pain:    "Software-Probleme sind unsichtbar, aber nervenraubend – und oft unnötig.",
     solution:"Wir analysieren, bereinigen und reparieren: Betriebssystem, Viren, Passwort-Entsperrung, Werksreset.",
-    proof:   "Kostenlose Erstdiagnose. Transparent, bevor wir etwas tun.",
-    items:   ["Betriebssystem-Reparatur", "Virus- & Malware-Entfernung", "Passwort-Entsperrung", "Werksreset & Einrichtung", "Kostenlose Diagnose"],
+    proof:   "Erstdiagnose vorab. Transparent, bevor wir etwas tun.",
+    items:   ["Betriebssystem-Reparatur", "Virus- & Malware-Entfernung", "Passwort-Entsperrung", "Werksreset & Einrichtung", "Fehlerdiagnose"],
     accent:  "border-brand-accent",
     iconCol: "text-brand-accent",
   },
@@ -133,7 +133,7 @@ export default function LeistungenPage() {
             Reparaturen
           </h1>
           <p className="mt-3 font-sans text-brand-gray text-base max-w-xl leading-relaxed">
-            Von der Display-Reparatur bis zur komplexen Mikrolötung – mit 6 Monaten Garantie und kostenloser Erstdiagnose.
+            Von der Display-Reparatur bis zur komplexen Mikrolötung – mit 6 Monaten Garantie und verbindlichen Fixpreisen.
           </p>
         </div>
       </section>
@@ -303,7 +303,7 @@ export default function LeistungenPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { n: "01", t: "Vorbeikommen",        d: "Kein Termin nötig. Stationsweg 3, Heimberg." },
-              { n: "02", t: "Kostenlose Diagnose", d: "Wir prüfen und nennen den Fixpreis – entfällt bei Reparatur bei uns." },
+              { n: "02", t: "Diagnose", d: "Wir prüfen Ihr Gerät und nennen Ihnen den verbindlichen Fixpreis." },
               { n: "03", t: "Express-Reparatur",   d: "Meiste Reparaturen in unter 2 Stunden." },
               { n: "04", t: "6 Mon. Garantie",     d: "Gerät abholen und sorgenfrei nutzen." },
             ].map(({ n, t, d }) => (
@@ -321,7 +321,7 @@ export default function LeistungenPage() {
       <section className="py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-headline text-4xl sm:text-5xl text-brand-primary mb-4">Bereit?</h2>
-          <p className="font-sans text-brand-gray text-sm mb-8">Diagnose kostenlos – entfällt bei Reparatur bei uns. Kein Termin nötig.</p>
+          <p className="font-sans text-brand-gray text-sm mb-8">Fixpreis vor der Reparatur. Kein Termin nötig.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/kontakt"

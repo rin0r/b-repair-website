@@ -35,7 +35,7 @@ export const articles: Article[] = [
         "Das Modell wird vom Hersteller nicht mehr unterstützt",
       ]},
       { type: "h2", text: "Fazit: Meistens reparieren" },
-      { type: "p", text: "Für Geräte, die noch unter 3–4 Jahre alt sind, ist eine Displayreparatur fast immer die günstigere und nachhaltigere Wahl. Bei B-repair erhalten Sie eine kostenlose Erstdiagnose – so wissen Sie den genauen Preis, bevor Sie sich entscheiden. Keine Überraschungen." },
+      { type: "p", text: "Für Geräte, die noch unter 3–4 Jahre alt sind, ist eine Displayreparatur fast immer die günstigere und nachhaltigere Wahl. Bei B-repair prüfen wir Ihr Gerät vorab – so wissen Sie den genauen Preis, bevor Sie sich entscheiden. Keine Überraschungen." },
     ],
   },
   {
@@ -63,7 +63,7 @@ export const articles: Article[] = [
       { type: "h2", text: "Warum bieten so wenige Shops Mikrolöten an?" },
       { type: "p", text: "Die Ausrüstung ist kostspielig, die Ausbildung langwierig und die Fehlertoleranz extrem gering. Ein falscher Handgriff unter dem Mikroskop kann eine Platine dauerhaft zerstören. Deshalb lehnen die meisten Shops solche Geräte einfach ab. Bei B-repair ist Mikrolöten unser Spezialgebiet – seit 2021 im Einsatz." },
       { type: "h2", text: "Was kostet Mikrolöten?" },
-      { type: "p", text: "Die Kosten variieren je nach Aufwand und Schaden. Wir erstellen immer eine kostenlose Diagnose und nennen den Fixpreis vor Beginn der Arbeiten. Oft ist Mikrolöten günstiger als der Kauf eines Ersatzgeräts – und Ihre Daten bleiben erhalten." },
+      { type: "p", text: "Die Kosten variieren je nach Aufwand und Schaden. Wir prüfen das Gerät und nennen den Fixpreis vor Beginn der Arbeiten. Oft ist Mikrolöten günstiger als der Kauf eines Ersatzgeräts – und Ihre Daten bleiben erhalten." },
     ],
   },
   {
@@ -94,7 +94,7 @@ export const articles: Article[] = [
       { type: "h2", text: "Ultraschall-Reinigung: Was wir tun" },
       { type: "p", text: "Bei B-repair verwenden wir professionelle Ultraschall-Reinigung: Die Platine wird in einer speziellen Reinigungslösung behandelt, die Mineralrückstände und Korrosion effektiv entfernt, ohne die empfindlichen Bauteile zu beschädigen. Anschliessend prüfen wir jeden Schaltkreis auf Bauteil-Ebene." },
       { type: "h2", text: "Was sind die Chancen?" },
-      { type: "p", text: "Mit schneller und professioneller Behandlung können viele Wasserschäden vollständig behoben werden. Je früher Sie zu uns kommen, desto besser stehen die Chancen. Wir bieten eine kostenlose Erstdiagnose für wasserbeschädigte Geräte." },
+      { type: "p", text: "Mit schneller und professioneller Behandlung können viele Wasserschäden vollständig behoben werden. Je früher Sie zu uns kommen, desto besser stehen die Chancen. Wir bieten eine Erstdiagnose für wasserbeschädigte Geräte." },
     ],
   },
   {

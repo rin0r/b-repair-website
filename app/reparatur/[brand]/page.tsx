@@ -26,8 +26,8 @@ const steps = [
   },
   {
     num: "02",
-    title: "Kostenlose Diagnose",
-    desc: "Wir prüfen Ihr Gerät und nennen den Fixpreis – entfällt bei Reparatur bei uns.",
+    title: "Diagnose",
+    desc: "Wir prüfen Ihr Gerät und nennen Ihnen den verbindlichen Fixpreis, bevor wir starten.",
   },
   {
     num: "03",
@@ -100,7 +100,7 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
 
           {/* Trust pills */}
           <div className="flex flex-wrap gap-2">
-            {["≤ 2 Std. Reparatur", "6 Monate Garantie", "Kostenlose Diagnose", "Fixpreise"].map((t) => (
+            {["≤ 2 Std. Reparatur", "6 Monate Garantie", "Kein Termin nötig", "Fixpreise"].map((t) => (
               <span
                 key={t}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-brand-border bg-white text-brand-gray text-xs font-sans font-bold"
@@ -217,7 +217,7 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
               <div>
                 <h3 className="font-headline text-xl text-brand-primary mb-1">Transparente Preise</h3>
                 <p className="font-sans text-brand-gray text-sm leading-relaxed">
-                  Fixpreise online, kostenlose Diagnose, keine versteckten Kosten. Was Sie sehen, zahlen Sie.
+                  Fixpreise online, keine versteckten Kosten. Was Sie sehen, zahlen Sie.
                 </p>
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
           <div className="mt-8 flex flex-wrap gap-3">
             {[
               { icon: Shield, text: "6 Monate Garantie auf alle Reparaturen" },
-              { icon: CheckCircle2, text: "Kostenlose Diagnose – immer" },
+              { icon: CheckCircle2, text: "Fixpreis vor der Reparatur" },
             ].map(({ icon: Icon, text }) => (
               <div
                 key={text}
@@ -303,7 +303,7 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
             {brand.name} defekt? Wir helfen sofort.
           </h2>
           <p className="font-sans text-sm mb-8" style={{ color: "#8899AA" }}>
-            Kostenlose Diagnose · Fixpreise · 6 Monate Garantie
+            Fixpreise · Meist in 2 Stunden fertig · 6 Monate Garantie
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

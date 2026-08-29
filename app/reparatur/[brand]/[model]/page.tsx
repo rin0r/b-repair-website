@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: { params: { brand: string; mo
 
   const priceHint = hasPrice(row.display) ? ` – Display ab ${prettyPrice(row.display)}` : "";
   const title = `${row.model} Reparatur Heimberg & Thun${priceHint} | B-repair&service`;
-  const description = `${row.model} reparieren lassen in Heimberg bei Thun: Display, Akku, ${spec.connector}-Buchse und Kamera zum Fixpreis. Kostenlose Diagnose, meist in 2 Stunden fertig, 6 Monate Garantie.`;
+  const description = `${row.model} reparieren lassen in Heimberg bei Thun: Display, Akku, ${spec.connector}-Buchse und Kamera zum Fixpreis. Meist in 2 Stunden fertig, 6 Monate Garantie.`;
 
   return {
     title,
@@ -199,7 +199,7 @@ export default function ModelPage({ params }: { params: { brand: string; model: 
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {["≤ 2 Std. Reparatur", "6 Monate Garantie", "Kostenlose Diagnose", "Fixpreise"].map((t) => (
+                {["≤ 2 Std. Reparatur", "6 Monate Garantie", "Kein Termin nötig", "Fixpreise"].map((t) => (
                   <span
                     key={t}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-brand-border bg-white text-brand-gray text-xs font-sans font-bold"
@@ -360,7 +360,7 @@ export default function ModelPage({ params }: { params: { brand: string; model: 
           <div className="mt-8 flex flex-wrap gap-3">
             {[
               { icon: Shield, text: "6 Monate Garantie auf alle Reparaturen" },
-              { icon: CheckCircle2, text: "Kostenlose Diagnose – immer" },
+              { icon: CheckCircle2, text: "Fixpreis vor der Reparatur" },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-2 px-4 py-3 rounded-xl bg-white border border-brand-border text-sm font-sans text-brand-gray">
                 <Icon className="w-4 h-4 text-brand-accent flex-shrink-0" />
@@ -378,7 +378,7 @@ export default function ModelPage({ params }: { params: { brand: string; model: 
             {row.model} defekt? Wir helfen sofort.
           </h2>
           <p className="font-sans text-sm mb-8" style={{ color: "#8899AA" }}>
-            Stationsweg 3, 3627 Heimberg · Kostenlose Diagnose · Fixpreise · 6 Monate Garantie
+            Stationsweg 3, 3627 Heimberg · Fixpreise · 6 Monate Garantie
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a

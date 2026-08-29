@@ -291,7 +291,7 @@ export default function PreisrechnerWidget() {
             )}
             {isOnRequest && (
               <p className="font-sans text-brand-gray text-sm mt-1">
-                Wir erstellen nach der kostenlosen Diagnose einen Fixpreis.
+                Wir nennen Ihnen nach der Prüfung des Geräts den verbindlichen Fixpreis.
               </p>
             )}
           </div>
