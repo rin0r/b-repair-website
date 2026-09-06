@@ -161,7 +161,7 @@ export const brandConfig: Record<string, BrandConfig> = {
   },
   pixel: {
     name: "Google Pixel",
-    intro: "Google Pixel defekt? B-repair&service repariert alle Pixel-Modelle vom Pixel 2 XL bis zum Pixel 10 Pro – Display, Akku, USB-C-Buchse und Kamera. Schnell und zuverlässig in Heimberg bei Thun, mit Fixpreisen und 6 Monaten Garantie.",
+    intro: "Google Pixel defekt? B-repair&service repariert alle Pixel-Modelle vom Pixel 3 bis zum Pixel 10 Pro – Display, Akku, USB-C-Buchse und Kamera. Schnell und zuverlässig in Heimberg bei Thun, mit Fixpreisen und 6 Monaten Garantie.",
     series: [{ label: "Alle Modelle", rows: pixelRows }],
     hasOnRequest: false,
     hasModelPages: true,
@@ -172,7 +172,7 @@ export const brandConfig: Record<string, BrandConfig> = {
       { model: "Alle Modelle",     repair: "Akku-Wechsel",     price: "CHF\u00A099.–", from: true },
     ],
     faq: [
-      { q: "Welche Google-Pixel-Modelle reparieren Sie?", a: "Wir reparieren alle gängigen Pixel-Modelle vom Pixel 2 XL bis zum aktuellen Pixel 10 Pro, einschliesslich der a-Modelle und des Pixel 9 Pro Fold. Ihr Modell finden Sie in der Liste oben." },
+      { q: "Welche Google-Pixel-Modelle reparieren Sie?", a: "Wir reparieren alle gängigen Pixel-Modelle vom Pixel 3 bis zum aktuellen Pixel 10 Pro, einschliesslich der a-Modelle und des Pixel 9 Pro Fold. Ihr Modell finden Sie in der Liste oben." },
       { q: "Warum bricht bei Pixel-Modellen so oft das Glas der Kameraleiste?", a: "Die Kameraleiste steht über die Rückseite hinaus und trifft bei einem Sturz oft zuerst auf. Das Glas darüber lässt sich einzeln ersetzen – dafür muss nicht die ganze Rückseite getauscht werden." },
       { q: "Wie lange dauert eine Pixel-Display-Reparatur?", a: "Meist 60 bis 90 Minuten. Bei Modellen mit gebogenem Display – etwa dem Pixel 6 Pro oder 7 Pro – kann es etwas länger dauern, weil das Panel besonders vorsichtig gelöst werden muss." },
       { q: "Funktioniert der Fingerabdrucksensor nach dem Displaytausch noch?", a: "Ab dem Pixel 6 sitzt der Sensor unter dem Display. Wir kalibrieren ihn nach dem Einbau neu, damit er wieder zuverlässig erkennt. Bei älteren Modellen sitzt der Sensor auf der Rückseite und ist vom Displaytausch nicht betroffen." },

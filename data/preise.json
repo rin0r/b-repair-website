@@ -163,7 +163,6 @@
     {"modell": "Google Pixel 3a XL", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
     {"modell": "Google Pixel 3a", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
     {"modell": "Google Pixel 3 XL", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
-    {"modell": "Google Pixel 3", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
-    {"modell": "Google Pixel 2 XL", "display": null, "displayPremium": null, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true}
+    {"modell": "Google Pixel 3", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true}
   ]
 }

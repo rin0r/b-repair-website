@@ -84,9 +84,4 @@ export const pixelSpecs: Record<string, DeviceSpec> = {
     "Mikrofon fällt aus",
     "Akkukapazität deutlich gesunken",
   ]),
-  "google-pixel-2-xl":   spec(2017, 6.0, "bezel", 1, "single", "#3A3A3C", true, [
-    "Einbrennen und Farbstich im OLED-Display – ein bekanntes Problem dieses Modells",
-    "Akkukapazität deutlich gesunken",
-    "USB-C-Buchse ausgeleiert",
-  ]),
 };
