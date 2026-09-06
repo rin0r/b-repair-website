@@ -27,7 +27,7 @@ export const preisFelder = [
 ] as const;
 
 export const preisGruppen = [
-  "iphone", "ipad", "samsung-s", "samsung-a", "samsung-note", "huawei", "pixel",
+  "iphone", "ipad", "samsung-s", "samsung-a", "samsung-note", "pixel",
 ] as const;
 
 function pruefe(gruppe: string, rows: unknown): PreisZeile[] {

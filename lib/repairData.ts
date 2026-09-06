@@ -87,7 +87,6 @@ const ipadRows        = ausJson(preisDaten["ipad"]);
 const samsungSRows    = ausJson(preisDaten["samsung-s"]);
 const samsungARows    = ausJson(preisDaten["samsung-a"]);
 const samsungNoteRows = ausJson(preisDaten["samsung-note"]);
-const huaweiRows      = ausJson(preisDaten["huawei"]);
 const pixelRows       = ausJson(preisDaten["pixel"]);
 
 /* ─── BRAND CONFIG ─────────────────────────────────────────────── */
@@ -160,26 +159,6 @@ export const brandConfig: Record<string, BrandConfig> = {
       { q: "Gilt meine Samsung-Herstellergarantie noch?", a: "Drittanbieter-Reparaturen können die Herstellergarantie beeinflussen. Unsere eigene 6-Monate-Garantie auf alle Reparaturen gilt jedoch unabhängig davon." },
     ],
   },
-  huawei: {
-    name: "Huawei",
-    intro: "Huawei P- oder Mate-Serie defekt? B-repair&service repariert Huawei-Smartphones professionell in Heimberg bei Thun. Display, Akku, Ladebuchse oder Kamera – mit hochwertigen Ersatzteilen und 6 Monaten Garantie.",
-    series: [{ label: "Alle Modelle", rows: huaweiRows }],
-    hasOnRequest: false,
-    popularItems: [
-      { model: "Huawei P30",      repair: "Display Original",             price: "CHF\u00A0239.–" },
-      { model: "Huawei P30 Pro",  repair: "Display Original",             price: "CHF\u00A0279.–" },
-      { model: "Huawei P40",      repair: "Display Original",             price: "CHF\u00A0279.–" },
-      { model: "Huawei P40 Pro",  repair: "Display Original",             price: "CHF\u00A0349.–" },
-      { model: "Alle Modelle",    repair: "Akku-Wechsel",        price: "CHF\u00A089.–",  from: true },
-    ],
-    faq: [
-      { q: "Welche Huawei-Modelle reparieren Sie?", a: "Wir reparieren die P-Serie (P20 bis P40) und Mate-Serie (Mate 20 bis Mate 20 Pro). Für andere Modelle fragen Sie uns einfach an – wir helfen gerne." },
-      { q: "Gibt es Probleme mit der Displaykalibrierung nach dem Tausch?", a: "Bei Huawei-Geräten ist die Displaykalibrierung wichtig. Wir verwenden kompatible Displays und kalibrieren diese nach dem Einbau sorgfältig." },
-      { q: "Was kostet ein Huawei-Display-Tausch?", a: "Je nach Modell beginnen die Preise ab CHF 169.– (P20) bis CHF 349.– (P40 Pro). Die vollständige Preistabelle finden Sie oben." },
-      { q: "Können Sie Huawei-Wasserschäden reparieren?", a: "Ja, wir behandeln Wasserschäden auf Platinen-Ebene (Mikrolöten). Bringen Sie das Gerät so schnell wie möglich – je früher, desto besser die Erfolgsaussichten." },
-      { q: "Sind Ersatzteile für Huawei noch erhältlich?", a: "Für gängige P- und Mate-Modelle halten wir Ersatzteile auf Lager. Für seltenere Modelle kann es 1–3 Werktage dauern, bis das Teil eintrifft – wir informieren Sie vorab." },
-    ],
-  },
   pixel: {
     name: "Google Pixel",
     intro: "Google Pixel defekt? B-repair&service repariert alle Pixel-Modelle vom Pixel 2 XL bis zum Pixel 10 Pro – Display, Akku, USB-C-Buchse und Kamera. Schnell und zuverlässig in Heimberg bei Thun, mit Fixpreisen und 6 Monaten Garantie.",
@@ -225,7 +204,6 @@ export const repairDropdownLinks = [
   { href: "/reparatur/iphone",  label: "iPhone Reparatur" },
   { href: "/reparatur/ipad",    label: "iPad Reparatur" },
   { href: "/reparatur/samsung", label: "Samsung Reparatur" },
-  { href: "/reparatur/huawei",  label: "Huawei Reparatur" },
   { href: "/reparatur/pixel",   label: "Google Pixel Reparatur" },
   { href: "/reparatur/oneplus", label: "OnePlus Reparatur" },
 ];

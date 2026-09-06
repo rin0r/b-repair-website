@@ -138,21 +138,6 @@
     {"modell": "Galaxy Note 9", "display": 319, "displayPremium": 160, "rueckseite": 89, "batterie": 89, "ladebuchse": 99, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 159, "aelter": true},
     {"modell": "Galaxy Note 8", "display": 289, "displayPremium": 145, "rueckseite": 89, "batterie": 89, "ladebuchse": 99, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 159, "aelter": true}
   ],
-  "huawei": [
-    {"modell": "Huawei P40 Pro", "display": 349, "displayPremium": 175, "rueckseite": 149, "batterie": 99, "ladebuchse": 119, "kameraglas": 119, "lautsprecher": 99, "datenrettung": 169, "kamera": 229},
-    {"modell": "Huawei P40", "display": 279, "displayPremium": 140, "rueckseite": 149, "batterie": 99, "ladebuchse": 119, "kameraglas": 119, "lautsprecher": 99, "datenrettung": 169, "kamera": 229},
-    {"modell": "Huawei P40 Lite", "display": 189, "displayPremium": 95, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 109, "lautsprecher": 89, "datenrettung": 169, "kamera": 119},
-    {"modell": "Huawei P40 Lite E", "display": 189, "displayPremium": 95, "rueckseite": 129, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 119},
-    {"modell": "Huawei P30 Pro", "display": 279, "displayPremium": 140, "rueckseite": 99, "batterie": 99, "ladebuchse": 99, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 189},
-    {"modell": "Huawei P30", "display": 239, "displayPremium": 120, "rueckseite": 99, "batterie": 89, "ladebuchse": 99, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
-    {"modell": "Huawei P30 Lite", "display": 189, "displayPremium": 95, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 99},
-    {"modell": "Huawei P20 Pro", "display": 229, "displayPremium": 115, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 179, "aelter": true},
-    {"modell": "Huawei P20", "display": 169, "displayPremium": 85, "rueckseite": 99, "batterie": 89, "ladebuchse": 89, "kameraglas": 99, "lautsprecher": 89, "datenrettung": 169, "kamera": 139, "aelter": true},
-    {"modell": "Huawei P20 Lite", "display": 189, "displayPremium": 95, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 99, "lautsprecher": 89, "datenrettung": 169, "kamera": 109, "aelter": true},
-    {"modell": "Huawei Mate 20 Pro", "display": 289, "displayPremium": 145, "rueckseite": 109, "batterie": 99, "ladebuchse": 99, "kameraglas": 109, "lautsprecher": 99, "datenrettung": 169, "kamera": 179, "aelter": true},
-    {"modell": "Huawei Mate 20", "display": 289, "displayPremium": 145, "rueckseite": 139, "batterie": 99, "ladebuchse": 99, "kameraglas": 129, "lautsprecher": 119, "datenrettung": 169, "kamera": 139, "aelter": true},
-    {"modell": "Huawei Mate 20 Lite", "display": 189, "displayPremium": 95, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 119, "aelter": true}
-  ],
   "pixel": [
     {"modell": "Google Pixel 10 Pro", "display": 360, "displayPremium": 180, "rueckseite": null, "batterie": null, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aktuell": true},
     {"modell": "Google Pixel 10", "display": 299, "displayPremium": 150, "rueckseite": null, "batterie": 129, "ladebuchse": null, "kameraglas": 99, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aktuell": true},

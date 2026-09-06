@@ -19,17 +19,6 @@ const SamsungLogo = () => (
   </svg>
 );
 
-const HuaweiLogo = () => {
-  const petal = "M50,13 C57,23 57,43 50,50 C43,43 43,23 50,13Z";
-  return (
-    <svg viewBox="0 0 100 100" className="w-9 h-9">
-      {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-        <path key={angle} d={petal} fill="currentColor" transform={`rotate(${angle},50,50)`} opacity={angle % 90 === 0 ? "1" : "0.65"} />
-      ))}
-    </svg>
-  );
-};
-
 const PixelLogo = () => (
   <svg viewBox="0 0 100 100" className="w-9 h-9">
     <text
@@ -53,7 +42,6 @@ const OnePlusLogo = () => (
 const BRANDS = [
   { id: "iphone",  name: "iPhone",  Logo: AppleLogo,   color: "#1d1d1f" },
   { id: "samsung", name: "Samsung", Logo: SamsungLogo, color: "#1428A0" },
-  { id: "huawei",  name: "Huawei",  Logo: HuaweiLogo,  color: "#CF0A2C" },
   { id: "pixel",   name: "Google Pixel", Logo: PixelLogo, color: "#5A89ED" },
   { id: "oneplus", name: "OnePlus", Logo: OnePlusLogo, color: "#F5010C" },
 ] as const;

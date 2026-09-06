@@ -8,10 +8,6 @@ const brands = [
     src: "https://cdn.simpleicons.org/samsung/1428A0",
   },
   {
-    name: "Huawei",
-    src: "https://cdn.simpleicons.org/huawei/CF0A2C",
-  },
-  {
     name: "Google Pixel",
     src: "https://cdn.simpleicons.org/google/4285F4",
   },
