@@ -31,12 +31,15 @@ const HuaweiLogo = () => {
 };
 
 const PixelLogo = () => (
-  /* Neutrales Pixel-Motiv – bewusst nicht Googles geschütztes Logo */
-  <svg viewBox="0 0 100 100" className="w-8 h-8">
-    <rect x="10" y="10" width="36" height="36" rx="6" fill="currentColor" />
-    <rect x="54" y="10" width="36" height="36" rx="6" fill="currentColor" opacity="0.55" />
-    <rect x="10" y="54" width="36" height="36" rx="6" fill="currentColor" opacity="0.55" />
-    <rect x="54" y="54" width="36" height="36" rx="6" fill="currentColor" />
+  <svg viewBox="0 0 100 100" className="w-9 h-9">
+    <text
+      x="50" y="78" textAnchor="middle"
+      fontSize="92" fontWeight="500"
+      fontFamily="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif"
+      fill="currentColor"
+    >
+      G
+    </text>
   </svg>
 );
 
@@ -51,7 +54,7 @@ const BRANDS = [
   { id: "iphone",  name: "iPhone",  Logo: AppleLogo,   color: "#1d1d1f" },
   { id: "samsung", name: "Samsung", Logo: SamsungLogo, color: "#1428A0" },
   { id: "huawei",  name: "Huawei",  Logo: HuaweiLogo,  color: "#CF0A2C" },
-  { id: "pixel",   name: "Google Pixel", Logo: PixelLogo, color: "#1A73E8" },
+  { id: "pixel",   name: "Google Pixel", Logo: PixelLogo, color: "#5A89ED" },
   { id: "oneplus", name: "OnePlus", Logo: OnePlusLogo, color: "#F5010C" },
 ] as const;
 
