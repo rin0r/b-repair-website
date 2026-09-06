@@ -152,5 +152,33 @@
     {"modell": "Huawei Mate 20 Pro", "display": 289, "displayPremium": 145, "rueckseite": 109, "batterie": 99, "ladebuchse": 99, "kameraglas": 109, "lautsprecher": 99, "datenrettung": 169, "kamera": 179, "aelter": true},
     {"modell": "Huawei Mate 20", "display": 289, "displayPremium": 145, "rueckseite": 139, "batterie": 99, "ladebuchse": 99, "kameraglas": 129, "lautsprecher": 119, "datenrettung": 169, "kamera": 139, "aelter": true},
     {"modell": "Huawei Mate 20 Lite", "display": 189, "displayPremium": 95, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 119, "aelter": true}
+  ],
+  "pixel": [
+    {"modell": "Google Pixel 10 Pro", "display": 360, "displayPremium": 180, "rueckseite": null, "batterie": null, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aktuell": true},
+    {"modell": "Google Pixel 10", "display": 299, "displayPremium": 150, "rueckseite": null, "batterie": 129, "ladebuchse": null, "kameraglas": 99, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aktuell": true},
+    {"modell": "Google Pixel 9 Pro Fold", "display": 150, "displayPremium": 75, "rueckseite": 179, "batterie": null, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aktuell": true},
+    {"modell": "Google Pixel 9 Pro XL", "display": 369, "displayPremium": 185, "rueckseite": 259, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199, "aktuell": true},
+    {"modell": "Google Pixel 9 Pro", "display": 289, "displayPremium": 145, "rueckseite": 259, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199, "aktuell": true},
+    {"modell": "Google Pixel 9", "display": 299, "displayPremium": 150, "rueckseite": 159, "batterie": 129, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aktuell": true},
+    {"modell": "Google Pixel 9a", "display": 229, "displayPremium": 115, "rueckseite": null, "batterie": 159, "ladebuchse": null, "kameraglas": 99, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aktuell": true},
+    {"modell": "Google Pixel 8 Pro", "display": 499, "displayPremium": 250, "rueckseite": null, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199},
+    {"modell": "Google Pixel 8", "display": 279, "displayPremium": 140, "rueckseite": 219, "batterie": 99, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 8a", "display": 299, "displayPremium": 150, "rueckseite": 229, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 7 Pro", "display": 349, "displayPremium": 175, "rueckseite": 129, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199},
+    {"modell": "Google Pixel 7", "display": 249, "displayPremium": 125, "rueckseite": 219, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 7a", "display": 249, "displayPremium": 125, "rueckseite": 159, "batterie": 139, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 6 Pro", "display": 469, "displayPremium": 235, "rueckseite": 249, "batterie": 179, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 6", "display": 279, "displayPremium": 140, "rueckseite": 149, "batterie": 139, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 6a", "display": 249, "displayPremium": 125, "rueckseite": 149, "batterie": 139, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 5a 5G", "display": 249, "displayPremium": 125, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 5", "display": 299, "displayPremium": 150, "rueckseite": 149, "batterie": 129, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
+    {"modell": "Google Pixel 4a 5G", "display": 249, "displayPremium": 125, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
+    {"modell": "Google Pixel 4a", "display": 249, "displayPremium": 125, "rueckseite": 149, "batterie": 129, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
+    {"modell": "Google Pixel 4", "display": 169, "displayPremium": 85, "rueckseite": 149, "batterie": 129, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
+    {"modell": "Google Pixel 3a XL", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
+    {"modell": "Google Pixel 3a", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
+    {"modell": "Google Pixel 3 XL", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
+    {"modell": "Google Pixel 3", "display": 199, "displayPremium": 100, "rueckseite": 149, "batterie": 99, "ladebuchse": 139, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aelter": true},
+    {"modell": "Google Pixel 2 XL", "display": null, "displayPremium": null, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true}
   ]
 }

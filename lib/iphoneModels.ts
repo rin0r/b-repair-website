@@ -3,7 +3,7 @@
    Render-Merkmale, aus denen components/DeviceRender.tsx das
    Gerätebild zeichnet. Key = Slug aus modelSlug() in repairData.ts. */
 
-export type Front = "home" | "notch" | "island";
+export type Front = "home" | "notch" | "island" | "punch" | "bezel";
 export type CamStyle = "single" | "dual-h" | "dual-v" | "square" | "pill" | "bar";
 
 export type DeviceSpec = {
@@ -15,6 +15,7 @@ export type DeviceSpec = {
   cams: 1 | 2 | 3;
   camStyle: CamStyle;
   body: string;                        // Gehäusefarbe (Hex) für das Rendering
+  rearFinger?: boolean;                // Fingerabdrucksensor auf der Rückseite
   issues: string[];                    // typische Defekte dieses Modells
 };
 

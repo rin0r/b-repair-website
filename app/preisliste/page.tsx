@@ -62,6 +62,7 @@ const tabs: Tab[] = [
   { id: "samsung-a",    label: "Samsung A" },
   { id: "samsung-note", label: "Samsung Note" },
   { id: "huawei",       label: "Huawei" },
+  { id: "pixel",        label: "Google Pixel" },
 ];
 
 /* ─── DATA ───────────────────────────────────────────────

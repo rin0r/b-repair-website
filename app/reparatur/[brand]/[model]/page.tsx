@@ -12,7 +12,7 @@ import {
   repairFields, hasPrice, prettyPrice,
 } from "@/lib/repairData";
 import type { RepairField } from "@/lib/repairData";
-import { getSpec } from "@/lib/iphoneModels";
+import { getSpec } from "@/lib/deviceSpecs";
 import { buildIntro, buildCopy, buildFaq } from "@/lib/modelCopy";
 import DeviceRender from "@/components/DeviceRender";
 

@@ -75,7 +75,9 @@ function Device({
       const spots =
         spec.cams === 3
           ? [w * 0.21, w * 0.44, w * 0.67].map((x) => [x, cyy] as const)
-          : [[w * 0.21, cyy] as const];
+          : spec.cams === 2
+            ? [w * 0.22, w * 0.46].map((x) => [x, cyy] as const)
+            : [[w * 0.21, cyy] as const];
       return (
         <>
           <rect x={0} y={by} width={w} height={bh} rx={bh * 0.34} fill={`url(#${id}-cam)`} stroke={light} strokeWidth={1} />
@@ -167,11 +169,12 @@ function Device({
   };
 
   /* Vorderseite */
-  const screenPad = spec.front === "home" ? 6 : 6.5;
-  const screenY = spec.front === "home" ? h * 0.152 : screenPad;
-  const screenH = spec.front === "home" ? h * 0.696 : h - screenPad * 2;
+  const bezelFront = spec.front === "home" || spec.front === "bezel";
+  const screenPad = bezelFront ? 6 : 6.5;
+  const screenY = spec.front === "home" ? h * 0.152 : spec.front === "bezel" ? h * 0.075 : screenPad;
+  const screenH = spec.front === "home" ? h * 0.696 : spec.front === "bezel" ? h * 0.85 : h - screenPad * 2;
   const screenW = w - screenPad * 2;
-  const screenRx = spec.front === "home" ? 3 : rx - screenPad;
+  const screenRx = spec.front === "home" ? 3 : spec.front === "bezel" ? 8 : rx - screenPad;
 
   return (
     <g transform={`translate(${cx} ${cy}) rotate(${rot}) scale(${scale}) translate(${-w / 2} ${-h / 2})`}>
@@ -215,6 +218,12 @@ function Device({
               </>
             );
           })()}
+          {spec.front === "punch" && (
+            <circle cx={w / 2} cy={screenY + 26} r={7} fill="#05080F" />
+          )}
+          {spec.front === "bezel" && (
+            <rect x={(w - w * 0.24) / 2} y={screenY - h * 0.048} width={w * 0.24} height={4.5} rx={2.25} fill={deep} />
+          )}
           {spec.front === "home" && (
             <>
               {/* Hörmuschel mit Frontkamera daneben */}
@@ -247,6 +256,9 @@ function Device({
             </g>
           )}
           {camModule()}
+          {spec.rearFinger && (
+            <circle cx={w / 2} cy={h * 0.30} r={w * 0.075} fill="none" stroke={deep} strokeWidth={2.5} opacity={0.8} />
+          )}
           {/* Rückglas-Sheen */}
           <path d={`M 0 ${h * 0.72} L ${w} ${h * 0.28} L ${w} ${h * 0.46} L 0 ${h * 0.9} Z`} fill="#FFFFFF" opacity={0.05} />
         </>

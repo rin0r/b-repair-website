@@ -88,6 +88,7 @@ const samsungSRows    = ausJson(preisDaten["samsung-s"]);
 const samsungARows    = ausJson(preisDaten["samsung-a"]);
 const samsungNoteRows = ausJson(preisDaten["samsung-note"]);
 const huaweiRows      = ausJson(preisDaten["huawei"]);
+const pixelRows       = ausJson(preisDaten["pixel"]);
 
 /* ─── BRAND CONFIG ─────────────────────────────────────────────── */
 export const brandConfig: Record<string, BrandConfig> = {
@@ -179,6 +180,26 @@ export const brandConfig: Record<string, BrandConfig> = {
       { q: "Sind Ersatzteile für Huawei noch erhältlich?", a: "Für gängige P- und Mate-Modelle halten wir Ersatzteile auf Lager. Für seltenere Modelle kann es 1–3 Werktage dauern, bis das Teil eintrifft – wir informieren Sie vorab." },
     ],
   },
+  pixel: {
+    name: "Google Pixel",
+    intro: "Google Pixel defekt? B-repair&service repariert alle Pixel-Modelle vom Pixel 2 XL bis zum Pixel 10 Pro – Display, Akku, USB-C-Buchse und Kamera. Schnell und zuverlässig in Heimberg bei Thun, mit Fixpreisen und 6 Monaten Garantie.",
+    series: [{ label: "Alle Modelle", rows: pixelRows }],
+    hasOnRequest: false,
+    hasModelPages: true,
+    popularItems: [
+      { model: "Google Pixel 6a",  repair: "Display Original", price: "CHF\u00A0189.–" },
+      { model: "Google Pixel 7",   repair: "Display Original", price: "CHF\u00A0249.–" },
+      { model: "Google Pixel 8",   repair: "Display Original", price: "CHF\u00A0279.–" },
+      { model: "Alle Modelle",     repair: "Akku-Wechsel",     price: "CHF\u00A099.–", from: true },
+    ],
+    faq: [
+      { q: "Welche Google-Pixel-Modelle reparieren Sie?", a: "Wir reparieren alle gängigen Pixel-Modelle vom Pixel 2 XL bis zum aktuellen Pixel 10 Pro, einschliesslich der a-Modelle und des Pixel 9 Pro Fold. Ihr Modell finden Sie in der Liste oben." },
+      { q: "Warum bricht bei Pixel-Modellen so oft das Glas der Kameraleiste?", a: "Die Kameraleiste steht über die Rückseite hinaus und trifft bei einem Sturz oft zuerst auf. Das Glas darüber lässt sich einzeln ersetzen – dafür muss nicht die ganze Rückseite getauscht werden." },
+      { q: "Wie lange dauert eine Pixel-Display-Reparatur?", a: "Meist 60 bis 90 Minuten. Bei Modellen mit gebogenem Display – etwa dem Pixel 6 Pro oder 7 Pro – kann es etwas länger dauern, weil das Panel besonders vorsichtig gelöst werden muss." },
+      { q: "Funktioniert der Fingerabdrucksensor nach dem Displaytausch noch?", a: "Ab dem Pixel 6 sitzt der Sensor unter dem Display. Wir kalibrieren ihn nach dem Einbau neu, damit er wieder zuverlässig erkennt. Bei älteren Modellen sitzt der Sensor auf der Rückseite und ist vom Displaytausch nicht betroffen." },
+      { q: "Bekomme ich einen Fixpreis?", a: "Ja. Sie sehen den Preis für Ihr Modell online, und wir bestätigen ihn, bevor wir mit der Arbeit beginnen. Auf jede Reparatur geben wir 6 Monate Garantie." },
+    ],
+  },
   oneplus: {
     name: "OnePlus",
     intro: "OnePlus-Smartphone defekt? Ob Display, Akku oder Ladebuchse – B-repair&service in Heimberg bei Thun repariert OnePlus-Geräte zu fairen Preisen. Verbindlicher Fixpreis nach der Prüfung.",
@@ -205,6 +226,7 @@ export const repairDropdownLinks = [
   { href: "/reparatur/ipad",    label: "iPad Reparatur" },
   { href: "/reparatur/samsung", label: "Samsung Reparatur" },
   { href: "/reparatur/huawei",  label: "Huawei Reparatur" },
+  { href: "/reparatur/pixel",   label: "Google Pixel Reparatur" },
   { href: "/reparatur/oneplus", label: "OnePlus Reparatur" },
 ];
 
@@ -243,6 +265,18 @@ const iphoneGroupOf = (model: string): string => {
 export function getModelGroups(brandKey: string): ModelGroup[] {
   const brand = brandConfig[brandKey];
   if (!brand) return [];
+
+  if (brandKey === "pixel") {
+    const groups: ModelGroup[] = [];
+    for (const row of brandRows(brandKey)) {
+      const gen = row.model.match(/Google Pixel (\d+)/);
+      const label = gen ? `Pixel ${gen[1]}` : "Weitere Modelle";
+      const existing = groups.find((g) => g.label === label);
+      if (existing) existing.rows.push(row);
+      else groups.push({ label, rows: [row] });
+    }
+    return groups;
+  }
 
   if (brandKey === "iphone") {
     const groups: ModelGroup[] = [];
