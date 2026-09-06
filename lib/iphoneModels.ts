@@ -10,12 +10,14 @@ export type DeviceSpec = {
   year: number;
   display: "LCD" | "OLED";
   size: number;                        // Zoll
-  connector: "Lightning" | "USB-C";
+  connector: "Lightning" | "USB-C" | "30-Pin";
   front: Front;
   cams: 1 | 2 | 3;
   camStyle: CamStyle;
   body: string;                        // Gehäusefarbe (Hex) für das Rendering
   rearFinger?: boolean;                // Fingerabdrucksensor auf der Rückseite
+  tablet?: boolean;                    // Tablet statt Smartphone (andere Proportionen)
+  notchStyle?: "wide" | "drop";        // schmaler Tropfen statt breiter Kerbe
   issues: string[];                    // typische Defekte dieses Modells
 };
 

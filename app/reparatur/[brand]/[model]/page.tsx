@@ -84,7 +84,7 @@ export default function ModelPage({ params }: { params: { brand: string; model: 
   const photo = findPhoto(slug);
   const intro = buildIntro(row.model, slug);
   const copy = buildCopy(row.model, slug, spec, row);
-  const faq = buildFaq(row.model, spec, row);
+  const faq = buildFaq(row.model, spec, row, params.brand);
 
   const available = repairFields.filter((f) => hasPrice(row[f] as string));
   const waLink = (repair: string) =>

@@ -57,7 +57,7 @@ export function buildCopy(model: string, slug: string, spec: DeviceSpec, row: Ro
 }
 
 /* ─── FAQ: vier modellspezifische Fragen ───────────────────────── */
-export function buildFaq(model: string, spec: DeviceSpec, row: Row): FAQ[] {
+export function buildFaq(model: string, spec: DeviceSpec, row: Row, marke: string): FAQ[] {
   const faq: FAQ[] = [];
 
   faq.push({
@@ -72,17 +72,7 @@ export function buildFaq(model: string, spec: DeviceSpec, row: Row): FAQ[] {
     a: `Ein Display- oder Akkutausch am ${model} dauert in der Regel 30 bis 60 Minuten. Aufwendigere Arbeiten wie ${spec.connector}-Buchse, Kamera oder Reparaturen auf Platinenebene brauchen länger. Die allermeisten Reparaturen sind innerhalb von zwei Stunden fertig – Sie können bei uns in Heimberg warten oder das Gerät später abholen.`,
   });
 
-  if (spec.front === "home") {
-    faq.push({
-      q: `Funktioniert Touch ID nach dem Displaytausch noch?`,
-      a: `Ja. Der Home-Button des ${model} ist fest mit der Platine gekoppelt – wird er beim Tausch beschädigt oder ersetzt, ist Touch ID dauerhaft verloren. Wir bauen deshalb immer Ihren Original-Home-Button in das neue Display um, damit Fingerabdrucksensor und Taste weiter funktionieren.`,
-    });
-  } else {
-    faq.push({
-      q: `Funktioniert Face ID nach dem Displaytausch noch?`,
-      a: `Ja. Die Face-ID-Einheit des ${model} sitzt im Displayrahmen und ist mit Ihrem Gerät gepaart. Wir übernehmen sie beim Tausch vollständig aus dem alten Display – ein häufiger Fehler bei unsachgemässen Reparaturen, der Face ID sonst dauerhaft deaktiviert.`,
-    });
-  }
+  faq.push(biometrieFrage(model, spec, marke));
 
   faq.push({
     q: `Wann lohnt sich ein Akkuwechsel beim ${model}?`,
@@ -92,4 +82,52 @@ export function buildFaq(model: string, spec: DeviceSpec, row: Row): FAQ[] {
   });
 
   return faq;
+}
+
+/** Frage zum Sensor nach dem Displaytausch – je nach Marke etwas anderes. */
+function biometrieFrage(model: string, spec: DeviceSpec, marke: string): FAQ {
+  if (marke === "samsung") {
+    return {
+      q: `Funktioniert der Fingerabdrucksensor nach dem Displaytausch noch?`,
+      a: `Ja. Sitzt der Sensor beim ${model} im Display, kalibrieren wir ihn nach dem Einbau neu, damit er wieder zuverlässig erkennt. Sitzt er auf der Rückseite oder in der Ein-/Aus-Taste, ist er vom Displaytausch gar nicht betroffen.`,
+    };
+  }
+  if (marke === "pixel") {
+    const imDisplay = spec.year >= 2021;
+    return {
+      q: `Funktioniert der Fingerabdrucksensor nach dem Displaytausch noch?`,
+      a: imDisplay
+        ? `Ja. Beim ${model} sitzt der Sensor unter dem Display. Wir kalibrieren ihn nach dem Einbau neu – ohne diesen Schritt erkennt er nach einem Displaytausch oft schlechter.`
+        : `Ja. Beim ${model} sitzt der Fingerabdrucksensor auf der Rückseite und ist vom Displaytausch nicht betroffen.`,
+    };
+  }
+  if (marke === "ipad") {
+    if (spec.front === "home") {
+      return {
+        q: `Funktioniert Touch ID nach dem Displaytausch noch?`,
+        a: `Ja. Der Home-Button des ${model} ist fest mit der Platine gekoppelt – wird er beschädigt oder ersetzt, ist Touch ID dauerhaft verloren. Wir bauen deshalb immer Ihren Original-Home-Button in die neue Scheibe um.`,
+      };
+    }
+    if (spec.size >= 11) {
+      return {
+        q: `Funktioniert Face ID nach dem Displaytausch noch?`,
+        a: `Ja. Die Face-ID-Einheit des ${model} sitzt im Displayrahmen und ist mit Ihrem Gerät gepaart. Wir übernehmen sie vollständig aus dem alten Display – ein häufiger Fehler bei unsachgemässen Reparaturen, der Face ID sonst dauerhaft deaktiviert.`,
+      };
+    }
+    return {
+      q: `Funktioniert Touch ID nach dem Displaytausch noch?`,
+      a: `Ja. Beim ${model} sitzt Touch ID in der Ein-/Aus-Taste am Gehäuserand und ist vom Displaytausch nicht betroffen.`,
+    };
+  }
+  // iPhone
+  if (spec.front === "home") {
+    return {
+      q: `Funktioniert Touch ID nach dem Displaytausch noch?`,
+      a: `Ja. Der Home-Button des ${model} ist fest mit der Platine gekoppelt – wird er beim Tausch beschädigt oder ersetzt, ist Touch ID dauerhaft verloren. Wir bauen deshalb immer Ihren Original-Home-Button in das neue Display um, damit Fingerabdrucksensor und Taste weiter funktionieren.`,
+    };
+  }
+  return {
+    q: `Funktioniert Face ID nach dem Displaytausch noch?`,
+    a: `Ja. Die Face-ID-Einheit des ${model} sitzt im Displayrahmen und ist mit Ihrem Gerät gepaart. Wir übernehmen sie beim Tausch vollständig aus dem alten Display – ein häufiger Fehler bei unsachgemässen Reparaturen, der Face ID sonst dauerhaft deaktiviert.`,
+  };
 }

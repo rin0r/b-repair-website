@@ -14,7 +14,12 @@ function shade(hex: string, amt: number): string {
 }
 
 /* ─── Gerätemasse ──────────────────────────────────────────────── */
-function bodyWidth(size: number): number {
+function bodyWidth(size: number, tablet = false): number {
+  if (tablet) {
+    if (size <= 8.0) return 152;   // Mini
+    if (size <= 11.2) return 178;  // 9.7" bis 11"
+    return 196;                    // 12.9"
+  }
   if (size <= 4.8) return 168;
   if (size <= 5.5) return size <= 5.4 ? 166 : 182;
   if (size <= 5.9) return 172;
@@ -34,9 +39,11 @@ function Device({
   spec: DeviceSpec; side: Side; uid: string;
   cx: number; cy: number; rot: number; scale?: number;
 }) {
-  const w = bodyWidth(spec.size);
-  const h = w * 2.06;
-  const rx = spec.front === "home" ? w * 0.13 : w * 0.155;
+  const w = bodyWidth(spec.size, spec.tablet);
+  const h = spec.tablet ? w * 1.4 : w * 2.06;
+  const rx = spec.tablet
+    ? (spec.front === "home" ? w * 0.055 : w * 0.075)
+    : spec.front === "home" ? w * 0.13 : w * 0.155;
   const id = `${uid}-${side}`;
 
   const light = shade(spec.body, 46);
@@ -112,10 +119,8 @@ function Device({
       const mx = w * 0.07;
       const my = h * 0.028;
       const lr = pw * 0.32;
-      const spots =
-        spec.cams === 1
-          ? [[mx + pw / 2, my + ph * 0.5] as const]
-          : [[mx + pw / 2, my + ph * 0.27] as const, [mx + pw / 2, my + ph * 0.73] as const];
+      const anteile = spec.cams === 3 ? [0.2, 0.5, 0.8] : spec.cams === 2 ? [0.27, 0.73] : [0.5];
+      const spots = anteile.map((f) => [mx + pw / 2, my + ph * f] as const);
       return (
         <>
           <rect x={mx} y={my} width={pw} height={ph} rx={pw / 2} fill={`url(#${id}-cam)`} stroke={light} strokeWidth={1} />
@@ -130,12 +135,12 @@ function Device({
       const ph = w * 0.19;
       const mx = w * 0.07;
       const my = h * 0.028;
-      const lr = ph * 0.32;
+      const lr = ph * 0.3;
+      const anteile = spec.cams === 3 ? [0.2, 0.5, 0.8] : spec.cams === 2 ? [0.27, 0.73] : [0.5];
       return (
         <>
           <rect x={mx} y={my} width={pw} height={ph} rx={ph / 2} fill={`url(#${id}-cam)`} stroke={light} strokeWidth={1} />
-          {lens(mx + pw * 0.27, my + ph / 2, lr, "h0")}
-          {lens(mx + pw * 0.73, my + ph / 2, lr, "h1")}
+          {anteile.map((f, i) => lens(mx + pw * f, my + ph / 2, lr, `h${i}`))}
           {flash(mx + pw * 0.5, my + ph * 1.55, lr * 0.42)}
         </>
       );
@@ -170,18 +175,22 @@ function Device({
 
   /* Vorderseite */
   const bezelFront = spec.front === "home" || spec.front === "bezel";
-  const screenPad = bezelFront ? 6 : 6.5;
-  const screenY = spec.front === "home" ? h * 0.152 : spec.front === "bezel" ? h * 0.075 : screenPad;
-  const screenH = spec.front === "home" ? h * 0.696 : spec.front === "bezel" ? h * 0.85 : h - screenPad * 2;
+  const screenPad = spec.tablet ? (spec.front === "home" ? w * 0.075 : w * 0.045) : bezelFront ? 6 : 6.5;
+  const screenY = spec.tablet
+    ? (spec.front === "home" ? h * 0.105 : screenPad)
+    : spec.front === "home" ? h * 0.152 : spec.front === "bezel" ? h * 0.075 : screenPad;
+  const screenH = spec.tablet
+    ? (spec.front === "home" ? h * 0.79 : h - screenPad * 2)
+    : spec.front === "home" ? h * 0.696 : spec.front === "bezel" ? h * 0.85 : h - screenPad * 2;
   const screenW = w - screenPad * 2;
-  const screenRx = spec.front === "home" ? 3 : spec.front === "bezel" ? 8 : rx - screenPad;
+  const screenRx = spec.tablet ? Math.max(3, rx - screenPad) : spec.front === "home" ? 3 : spec.front === "bezel" ? 8 : rx - screenPad;
 
   return (
     <g transform={`translate(${cx} ${cy}) rotate(${rot}) scale(${scale}) translate(${-w / 2} ${-h / 2})`}>
       {/* Gehäusekante – erzeugt die Tiefenwirkung */}
       <rect x={6} y={4} width={w} height={h} rx={rx} fill={edge} />
 
-      {buttons()}
+      {!spec.tablet && buttons()}
 
       {/* Korpus */}
       <rect x={0} y={0} width={w} height={h} rx={rx} fill={`url(#${id}-body)`} stroke={light} strokeWidth={1.4} />
@@ -195,10 +204,11 @@ function Device({
           {spec.front === "notch" && (() => {
             /* Ab dem iPhone 13 ist der Notch schmaler. Nur die unteren Ecken
                sind gerundet – sonst ragt er über die Gehäusekante hinaus. */
-            const nw = w * (spec.year >= 2021 ? 0.34 : 0.42);
-            const nh = 22;
+            const tropfen = spec.notchStyle === "drop";
+            const nw = tropfen ? w * 0.135 : w * (spec.year >= 2021 ? 0.34 : 0.42);
+            const nh = tropfen ? 15 : 22;
             const nx = (w - nw) / 2;
-            const r = 11;
+            const r = tropfen ? nw / 2 : 11;
             return (
               <path
                 d={`M ${nx} ${screenY} H ${nx + nw} V ${screenY + nh - r} A ${r} ${r} 0 0 1 ${nx + nw - r} ${screenY + nh} H ${nx + r} A ${r} ${r} 0 0 1 ${nx} ${screenY + nh - r} Z`}
@@ -227,10 +237,15 @@ function Device({
           {spec.front === "home" && (
             <>
               {/* Hörmuschel mit Frontkamera daneben */}
-              <rect x={(w - w * 0.26) / 2} y={screenY - h * 0.05} width={w * 0.26} height={4.5} rx={2.25} fill={deep} />
-              <circle cx={(w - w * 0.26) / 2 - w * 0.07} cy={screenY - h * 0.05 + 2.25} r={2.6} fill={deep} />
-              <circle cx={w / 2} cy={h - h * 0.076} r={w * 0.105} fill="none" stroke={light} strokeWidth={1.6} opacity={0.9} />
-              <circle cx={w / 2} cy={h - h * 0.076} r={w * 0.093} fill={`url(#${id}-body)`} opacity={0.5} />
+              {!spec.tablet && (
+                <>
+                  <rect x={(w - w * 0.26) / 2} y={screenY - h * 0.05} width={w * 0.26} height={4.5} rx={2.25} fill={deep} />
+                  <circle cx={(w - w * 0.26) / 2 - w * 0.07} cy={screenY - h * 0.05 + 2.25} r={2.6} fill={deep} />
+                </>
+              )}
+              {spec.tablet && <circle cx={w / 2} cy={screenY - h * 0.05} r={3} fill={deep} />}
+              <circle cx={w / 2} cy={h - (spec.tablet ? h * 0.055 : h * 0.076)} r={w * (spec.tablet ? 0.055 : 0.105)} fill="none" stroke={light} strokeWidth={1.6} opacity={0.9} />
+              <circle cx={w / 2} cy={h - (spec.tablet ? h * 0.055 : h * 0.076)} r={w * (spec.tablet ? 0.048 : 0.093)} fill={`url(#${id}-body)`} opacity={0.5} />
             </>
           )}
 
@@ -360,17 +375,21 @@ export default function DeviceRender({
       </defs>
 
       {/* Schatten: weicher Umgebungsschatten + enger Kontaktschatten */}
-      <ellipse cx="210" cy="562" rx="180" ry="32" fill={`url(#${uid}-floor)`} />
-      <ellipse cx="232" cy="548" rx="96" ry="13" fill={`url(#${uid}-contact)`} />
+      <ellipse cx="210" cy={spec.tablet ? 476 : 562} rx="180" ry="32" fill={`url(#${uid}-floor)`} />
+      <ellipse cx={spec.tablet ? 250 : 232} cy={spec.tablet ? 462 : 548} rx="96" ry="13" fill={`url(#${uid}-contact)`} />
 
       {/* Rückseite – angeschnitten dahinter */}
       <g opacity={0.97} filter={`url(#${uid}-drop)`}>
-        <Device spec={spec} side="back" uid={uid} cx={150} cy={296} rot={-12} scale={0.9} />
+        <Device spec={spec} side="back" uid={uid}
+          cx={spec.tablet ? 142 : 150} cy={spec.tablet ? 288 : 296}
+          rot={spec.tablet ? -10 : -12} scale={spec.tablet ? 1.02 : 0.9} />
       </g>
 
       {/* Vorderseite – im Vordergrund */}
       <g filter={`url(#${uid}-drop)`}>
-        <Device spec={spec} side="front" uid={uid} cx={256} cy={320} rot={6} />
+        <Device spec={spec} side="front" uid={uid}
+          cx={spec.tablet ? 268 : 256} cy={spec.tablet ? 300 : 320}
+          rot={spec.tablet ? 5 : 6} scale={spec.tablet ? 1.12 : 1} />
       </g>
     </svg>
   );

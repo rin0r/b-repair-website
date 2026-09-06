@@ -119,6 +119,7 @@ export const brandConfig: Record<string, BrandConfig> = {
     intro: "Gebrochener iPad-Bildschirm oder schwacher Akku? B-repair&service repariert alle iPad-Generationen – von iPad 2 bis iPad Pro der neuesten Generation. Schnell, professionell und zu fairen Fixpreisen in Heimberg bei Thun.",
     series: [{ label: "Alle Modelle", rows: ipadRows }],
     hasOnRequest: false,
+    hasModelPages: true,
     popularItems: [
       { model: "iPad 6",              repair: "Display Original",             price: "CHF\u00A0129.–" },
       { model: "iPad Air (3. Gen)",   repair: "Display Original",             price: "CHF\u00A0229.–" },
@@ -143,6 +144,7 @@ export const brandConfig: Record<string, BrandConfig> = {
       { label: "Galaxy Note",    rows: samsungNoteRows },
     ],
     hasOnRequest: false,
+    hasModelPages: true,
     popularItems: [
       { model: "Galaxy A54",       repair: "Display Original",             price: "CHF\u00A0199.–" },
       { model: "Galaxy S22",       repair: "Display Original",             price: "CHF\u00A0329.–" },
@@ -216,6 +218,7 @@ export const modelSlug = (model: string): string =>
   model
     .toLowerCase()
     .replace(/[\u2033"'\u2019.()]/g, "")
+    .replace(/\+/g, "-plus")          // "Galaxy S22+" darf nicht auf "galaxy-s22" fallen
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
@@ -243,6 +246,22 @@ const iphoneGroupOf = (model: string): string => {
 export function getModelGroups(brandKey: string): ModelGroup[] {
   const brand = brandConfig[brandKey];
   if (!brand) return [];
+
+  if (brandKey === "ipad") {
+    const familie = (m: string) =>
+      m.startsWith("iPad Pro") ? "iPad Pro"
+      : m.startsWith("iPad Air") ? "iPad Air"
+      : m.startsWith("iPad Mini") ? "iPad Mini"
+      : "iPad";
+    const groups: ModelGroup[] = [];
+    for (const row of brandRows(brandKey)) {
+      const label = familie(row.model);
+      const existing = groups.find((g) => g.label === label);
+      if (existing) existing.rows.push(row);
+      else groups.push({ label, rows: [row] });
+    }
+    return groups;
+  }
 
   if (brandKey === "pixel") {
     const groups: ModelGroup[] = [];
@@ -280,10 +299,26 @@ export const modelPageBrands = Object.keys(brandConfig).filter(
 );
 
 /** Parameter für generateStaticParams der Modellseiten. */
-export const modelPageParams = (): { brand: string; model: string }[] =>
-  modelPageBrands.flatMap((brand) =>
-    brandRows(brand).map((row) => ({ brand, model: modelSlug(row.model) })),
+export const modelPageParams = (): { brand: string; model: string }[] => {
+  const params = modelPageBrands.flatMap((brand) =>
+    brandRows(brand).map((row) => ({ brand, model: modelSlug(row.model), name: row.model })),
   );
+  // Zwei Modelle mit derselben Adresse würden sich gegenseitig überschreiben –
+  // lieber den Bau abbrechen als eine stille Verwechslung ausliefern.
+  const gesehen = new Map<string, string>();
+  for (const p of params) {
+    const key = `${p.brand}/${p.model}`;
+    const vorher = gesehen.get(key);
+    if (vorher) {
+      throw new Error(
+        `Zwei Modelle ergeben dieselbe Adresse ${key}: "${vorher}" und "${p.name}". ` +
+        `Bitte eines davon in data/preise.json eindeutig benennen.`,
+      );
+    }
+    gesehen.set(key, p.name);
+  }
+  return params.map(({ brand, model }) => ({ brand, model }));
+};
 
 /** Die einzelnen Reparaturpositionen einer Zeile – in Anzeigereihenfolge. */
 export const repairFields = [
