@@ -26,10 +26,10 @@ export default function ModelGrid({ brandKey }: { brandKey: string }) {
                     {row.model}
                   </span>
                   <span className="block font-sans text-xs text-brand-gray mt-0.5">
-                    {hasPrice(row.display) ? (
+                    {hasPrice(row.displayPremium) ? (
                       <>
                         Display ab{" "}
-                        <span className="text-brand-accent font-bold">{prettyPrice(row.display)}</span>
+                        <span className="text-brand-accent font-bold">{prettyPrice(row.displayPremium)}</span>
                       </>
                     ) : (
                       "Preis auf Anfrage"

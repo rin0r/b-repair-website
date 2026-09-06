@@ -24,7 +24,8 @@ export function generateStaticParams() {
 
 /* ─── Reparaturpositionen ──────────────────────────────────────── */
 const repairMeta: Record<RepairField, { label: string; desc: string; Icon: typeof Monitor }> = {
-  display:      { label: "Display-Reparatur",     desc: "Displaybruch, Touch-Ausfall, Streifen oder schwarzes Bild",      Icon: Monitor },
+  display:        { label: "Display Original",      desc: "Displaybruch, Touch-Ausfall, Streifen oder schwarzes Bild – mit Originaldisplay", Icon: Monitor },
+  displayPremium: { label: "Display Premium",       desc: "Dieselbe Reparatur mit hochwertigem Ersatzdisplay – die günstigere Variante",     Icon: Monitor },
   batterie:     { label: "Akku-Wechsel",          desc: "Schnelle Entladung, Abschaltungen, Kapazität unter 80 %",       Icon: BatteryFull },
   ladebuchse:   { label: "Ladebuchse",            desc: "Lädt nicht mehr, Wackelkontakt, Kabel hält nicht",              Icon: Plug },
   kamera:       { label: "Kamera-Reparatur",      desc: "Schwarzes Bild, unscharf, Autofokus rattert",                   Icon: Camera },
@@ -62,7 +63,7 @@ export async function generateMetadata({ params }: { params: { brand: string; mo
   if (!data) return {};
   const { row, spec } = data;
 
-  const priceHint = hasPrice(row.display) ? ` – Display ab ${prettyPrice(row.display)}` : "";
+  const priceHint = hasPrice(row.displayPremium) ? ` – Display ab ${prettyPrice(row.displayPremium)}` : "";
   const title = `${row.model} Reparatur Heimberg & Thun${priceHint} | B-repair&service`;
   const description = `${row.model} reparieren lassen in Heimberg bei Thun: Display, Akku, ${spec.connector}-Buchse und Kamera zum Fixpreis. Meist in 2 Stunden fertig, 6 Monate Garantie.`;
 

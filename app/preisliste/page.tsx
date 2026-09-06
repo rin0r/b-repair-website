@@ -13,6 +13,7 @@ import { ChevronRight, Shield, Phone as PhoneIcon, ArrowRight, Search, BadgeChec
 type Row = {
   model: string;
   display: string;
+  displayPremium: string;
   rueckseite: string;
   batterie: string;
   ladebuchse: string;
@@ -30,6 +31,7 @@ const chf = (v: number | null) => (v === null ? "–" : `CHF\u00A0${v.toFixed(2)
 const r = (
   model: string,
   display: number | null,
+  displayPremium: number | null,
   rueckseite: number | null,
   batterie: number | null,
   ladebuchse: number | null,
@@ -41,7 +43,8 @@ const r = (
   isLegacy = false,
 ): Row => ({
   model, isCurrent, isLegacy,
-  display:     chf(display),
+  display:        chf(display),
+  displayPremium: chf(displayPremium),
   rueckseite:  chf(rueckseite),
   batterie:    chf(batterie),
   ladebuchse:  chf(ladebuchse),
@@ -66,7 +69,7 @@ const tabs: Tab[] = [
    Markenseiten, Modellseiten und Preisrechner. */
 const ausJson = (rows: PreisZeile[]): Row[] =>
   rows.map((p) =>
-    r(p.modell, p.display, p.rueckseite, p.batterie, p.ladebuchse,
+    r(p.modell, p.display, p.displayPremium, p.rueckseite, p.batterie, p.ladebuchse,
       p.kameraglas, p.lautsprecher, p.datenrettung, p.kamera,
       p.aktuell ?? false, p.aelter ?? false),
   );
@@ -76,7 +79,8 @@ const data: Record<string, Row[]> = Object.fromEntries(
 );
 
 const cols = [
-  { key: "display",      label: "Frontdisplay" },
+  { key: "display",        label: "Display Original" },
+  { key: "displayPremium", label: "Display Premium" },
   { key: "rueckseite",   label: "Glasrückseite" },
   { key: "batterie",     label: "Batterie" },
   { key: "ladebuchse",   label: "Ladebuchse" },
@@ -139,7 +143,7 @@ function PriceTable({ rows }: { rows: Row[] }) {
                     key={col.key}
                     className={`px-4 py-3 whitespace-nowrap font-price ${
                       hasPrice
-                        ? col.key === "display"
+                        ? col.key === "display" || col.key === "displayPremium"
                           ? "text-brand-accent font-bold"
                           : "text-brand-gray"
                         : "text-brand-border"

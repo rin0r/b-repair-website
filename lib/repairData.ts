@@ -4,6 +4,7 @@ import { preisDaten, type PreisZeile } from "@/lib/preisQuelle";
 export type Row = {
   model: string;
   display: string;
+  displayPremium: string;
   rueckseite: string;
   batterie: string;
   ladebuchse: string;
@@ -46,6 +47,7 @@ const chf = (v: number | null) => (v === null ? "–" : `CHF\u00A0${v.toFixed(2)
 const r = (
   model: string,
   display: number | null,
+  displayPremium: number | null,
   rueckseite: number | null,
   batterie: number | null,
   ladebuchse: number | null,
@@ -57,7 +59,8 @@ const r = (
   isLegacy = false,
 ): Row => ({
   model, isCurrent, isLegacy,
-  display:      chf(display),
+  display:        chf(display),
+  displayPremium: chf(displayPremium),
   rueckseite:   chf(rueckseite),
   batterie:     chf(batterie),
   ladebuchse:   chf(ladebuchse),
@@ -74,7 +77,7 @@ const r = (
    Preise nicht auseinanderlaufen koennen. */
 const ausJson = (rows: PreisZeile[]): Row[] =>
   rows.map((p) =>
-    r(p.modell, p.display, p.rueckseite, p.batterie, p.ladebuchse,
+    r(p.modell, p.display, p.displayPremium, p.rueckseite, p.batterie, p.ladebuchse,
       p.kameraglas, p.lautsprecher, p.datenrettung, p.kamera,
       p.aktuell ?? false, p.aelter ?? false),
   );
@@ -95,11 +98,11 @@ export const brandConfig: Record<string, BrandConfig> = {
     hasOnRequest: false,
     hasModelPages: true,
     popularItems: [
-      { model: "iPhone 8",         repair: "Display",             price: "CHF\u00A099.–" },
-      { model: "iPhone 11",        repair: "Display",             price: "CHF\u00A0139.–" },
-      { model: "iPhone 13 Pro",    repair: "Display",             price: "CHF\u00A0349.–" },
-      { model: "iPhone 15 Pro Max",repair: "Display",             price: "CHF\u00A0529.–" },
-      { model: "iPhone 16 Pro Max",repair: "Display",             price: "CHF\u00A0499.–" },
+      { model: "iPhone 8",         repair: "Display Original",             price: "CHF\u00A099.–" },
+      { model: "iPhone 11",        repair: "Display Original",             price: "CHF\u00A0139.–" },
+      { model: "iPhone 13 Pro",    repair: "Display Original",             price: "CHF\u00A0349.–" },
+      { model: "iPhone 15 Pro Max",repair: "Display Original",             price: "CHF\u00A0529.–" },
+      { model: "iPhone 16 Pro Max",repair: "Display Original",             price: "CHF\u00A0499.–" },
       { model: "Alle Modelle",     repair: "Akku-Wechsel",        price: "CHF\u00A079.–",  from: true },
     ],
     faq: [
@@ -117,10 +120,10 @@ export const brandConfig: Record<string, BrandConfig> = {
     series: [{ label: "Alle Modelle", rows: ipadRows }],
     hasOnRequest: false,
     popularItems: [
-      { model: "iPad 6",              repair: "Display",             price: "CHF\u00A0129.–" },
-      { model: "iPad Air (3. Gen)",   repair: "Display",             price: "CHF\u00A0229.–" },
-      { model: "iPad Pro 11\"",       repair: "Display",             price: "CHF\u00A0279.–", from: true },
-      { model: "iPad Pro 12.9\"",     repair: "Display",             price: "CHF\u00A0269.–", from: true },
+      { model: "iPad 6",              repair: "Display Original",             price: "CHF\u00A0129.–" },
+      { model: "iPad Air (3. Gen)",   repair: "Display Original",             price: "CHF\u00A0229.–" },
+      { model: "iPad Pro 11\"",       repair: "Display Original",             price: "CHF\u00A0279.–", from: true },
+      { model: "iPad Pro 12.9\"",     repair: "Display Original",             price: "CHF\u00A0269.–", from: true },
       { model: "Alle Modelle",        repair: "Akku-Wechsel",        price: "CHF\u00A099.–",  from: true },
     ],
     faq: [
@@ -141,10 +144,10 @@ export const brandConfig: Record<string, BrandConfig> = {
     ],
     hasOnRequest: false,
     popularItems: [
-      { model: "Galaxy A54",       repair: "Display",             price: "CHF\u00A0199.–" },
-      { model: "Galaxy S22",       repair: "Display",             price: "CHF\u00A0329.–" },
-      { model: "Galaxy S24 5G",    repair: "Display",             price: "CHF\u00A0339.–" },
-      { model: "Galaxy S25 Ultra", repair: "Display",             price: "CHF\u00A0499.–" },
+      { model: "Galaxy A54",       repair: "Display Original",             price: "CHF\u00A0199.–" },
+      { model: "Galaxy S22",       repair: "Display Original",             price: "CHF\u00A0329.–" },
+      { model: "Galaxy S24 5G",    repair: "Display Original",             price: "CHF\u00A0339.–" },
+      { model: "Galaxy S25 Ultra", repair: "Display Original",             price: "CHF\u00A0499.–" },
       { model: "Alle Modelle",     repair: "Akku-Wechsel",        price: "CHF\u00A079.–",  from: true },
     ],
     faq: [
@@ -162,10 +165,10 @@ export const brandConfig: Record<string, BrandConfig> = {
     series: [{ label: "Alle Modelle", rows: huaweiRows }],
     hasOnRequest: false,
     popularItems: [
-      { model: "Huawei P30",      repair: "Display",             price: "CHF\u00A0239.–" },
-      { model: "Huawei P30 Pro",  repair: "Display",             price: "CHF\u00A0279.–" },
-      { model: "Huawei P40",      repair: "Display",             price: "CHF\u00A0279.–" },
-      { model: "Huawei P40 Pro",  repair: "Display",             price: "CHF\u00A0349.–" },
+      { model: "Huawei P30",      repair: "Display Original",             price: "CHF\u00A0239.–" },
+      { model: "Huawei P30 Pro",  repair: "Display Original",             price: "CHF\u00A0279.–" },
+      { model: "Huawei P40",      repair: "Display Original",             price: "CHF\u00A0279.–" },
+      { model: "Huawei P40 Pro",  repair: "Display Original",             price: "CHF\u00A0349.–" },
       { model: "Alle Modelle",    repair: "Akku-Wechsel",        price: "CHF\u00A089.–",  from: true },
     ],
     faq: [
@@ -182,7 +185,7 @@ export const brandConfig: Record<string, BrandConfig> = {
     series: [],
     hasOnRequest: true,
     popularItems: [
-      { model: "Alle Modelle", repair: "Display",             price: "Auf Anfrage" },
+      { model: "Alle Modelle", repair: "Display Original",             price: "Auf Anfrage" },
       { model: "Alle Modelle", repair: "Akku-Wechsel",        price: "Auf Anfrage" },
     ],
     faq: [
@@ -273,6 +276,7 @@ export const modelPageParams = (): { brand: string; model: string }[] =>
 /** Die einzelnen Reparaturpositionen einer Zeile – in Anzeigereihenfolge. */
 export const repairFields = [
   "display",
+  "displayPremium",
   "batterie",
   "ladebuchse",
   "kamera",

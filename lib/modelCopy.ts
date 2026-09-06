@@ -40,7 +40,7 @@ export function buildCopy(model: string, slug: string, spec: DeviceSpec, row: Ro
         : `Das ${model} (${spec.year}) gehört zu den Modellen, die wir regelmässig auf dem Tisch haben. Sein ${spec.size}″-${panel} und die verklebte Bauweise verlangen sauberes Arbeiten – mit dem richtigen Werkzeug und Erfahrung ist der Tausch aber Routine. Für Kundinnen und Kunden aus Heimberg, Thun, Steffisburg und der Region Bern erledigen wir das ohne Postversand direkt vor Ort.`;
 
   const displayLine = hasPrice(row.display)
-    ? `Die Display-Reparatur am ${model} kostet bei uns ${prettyPrice(row.display)}`
+    ? `Die Display-Reparatur am ${model} kostet bei uns ${prettyPrice(row.display)} mit Originaldisplay und ${prettyPrice(row.displayPremium)} mit Premium-Display`
     : `Den Preis für die Display-Reparatur am ${model} nennen wir Ihnen nach einer kurzen Prüfung`;
   const batteryLine = hasPrice(row.batterie)
     ? `, ein neuer Akku ${prettyPrice(row.batterie)}`
@@ -63,7 +63,7 @@ export function buildFaq(model: string, spec: DeviceSpec, row: Row): FAQ[] {
   faq.push({
     q: `Was kostet eine Display-Reparatur beim ${model}?`,
     a: hasPrice(row.display)
-      ? `Die Display-Reparatur am ${model} kostet ${prettyPrice(row.display)} als Fixpreis, inklusive Einbau, Funktionstest und 6 Monaten Garantie. Der Preis steht fest, bevor wir mit der Arbeit beginnen – Nachforderungen gibt es bei uns nicht.`
+      ? `Sie haben die Wahl: mit Originaldisplay kostet die Reparatur am ${model} ${prettyPrice(row.display)}, mit Premium-Display ${prettyPrice(row.displayPremium)}. Beides als Fixpreis, inklusive Einbau, Funktionstest und 6 Monaten Garantie. Der Preis steht fest, bevor wir mit der Arbeit beginnen.`
       : `Den Preis für die Display-Reparatur am ${model} nennen wir Ihnen nach einer Prüfung des Geräts als verbindlichen Fixpreis. Melden Sie sich einfach kurz per WhatsApp oder Telefon.`,
   });
 

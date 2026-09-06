@@ -9,6 +9,7 @@ import preise from "@/data/preise.json";
 export type PreisZeile = {
   modell: string;
   display: number | null;
+  displayPremium: number | null;
   rueckseite: number | null;
   batterie: number | null;
   ladebuchse: number | null;
@@ -21,7 +22,7 @@ export type PreisZeile = {
 };
 
 export const preisFelder = [
-  "display", "rueckseite", "batterie", "ladebuchse",
+  "display", "displayPremium", "rueckseite", "batterie", "ladebuchse",
   "kameraglas", "lautsprecher", "datenrettung", "kamera",
 ] as const;
 

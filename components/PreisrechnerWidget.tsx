@@ -47,7 +47,8 @@ const BRANDS = [
 type BrandId = typeof BRANDS[number]["id"];
 
 const REPAIRS = [
-  { key: "display",      label: "Display",       Icon: Monitor },
+  { key: "display",        label: "Display Original", Icon: Monitor },
+  { key: "displayPremium", label: "Display Premium",  Icon: Monitor },
   { key: "batterie",     label: "Akku-Wechsel",  Icon: BatteryFull },
   { key: "rueckseite",   label: "Glasrückseite", Icon: Layers },
   { key: "ladebuchse",   label: "Ladebuchse",    Icon: Plug },
