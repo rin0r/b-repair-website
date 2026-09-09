@@ -6,11 +6,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import { repairDropdownLinks } from "@/lib/repairData";
 
-const mehrLinks = [
-  { href: "/glossar", label: "Glossar" },
-  { href: "/blog",    label: "Blog" },
-];
-
 const navLinksLeft  = [{ href: "/", label: "Home" }];
 const navLinksRight = [{ href: "/kontakt",   label: "Kontakt" }];
 
@@ -18,12 +13,9 @@ export default function Navbar() {
   const [open, setOpen]           = useState(false);
   const [scrolled, setScrolled]   = useState(false);
   const [dropOpen, setDropOpen]   = useState(false);
-  const [moreOpen, setMoreOpen]   = useState(false);
   const [mobileRep, setMobileRep] = useState(false);
-  const [mobileMehr, setMobileMehr] = useState(false);
   const pathname                  = usePathname();
   const dropRef                   = useRef<HTMLDivElement>(null);
-  const moreRef                   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -34,22 +26,18 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false);
     setDropOpen(false);
-    setMoreOpen(false);
     setMobileRep(false);
-    setMobileMehr(false);
   }, [pathname]);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (dropRef.current && !dropRef.current.contains(e.target as Node)) setDropOpen(false);
-      if (moreRef.current && !moreRef.current.contains(e.target as Node)) setMoreOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   const isRepairActive = pathname.startsWith("/reparatur");
-  const isMehrActive   = pathname.startsWith("/glossar") || pathname.startsWith("/blog");
 
   return (
     <header
@@ -96,8 +84,8 @@ export default function Navbar() {
             {/* Reparatur dropdown */}
             <div ref={dropRef} className="relative">
               <button
-                onClick={() => { setDropOpen(!dropOpen); setMoreOpen(false); }}
-                onMouseEnter={() => { setDropOpen(true); setMoreOpen(false); }}
+                onClick={() => setDropOpen(!dropOpen)}
+                onMouseEnter={() => setDropOpen(true)}
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-sans font-bold transition-all duration-200 ${
                   isRepairActive
                     ? "text-brand-accent bg-brand-accent/10"
@@ -133,45 +121,6 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Mehr dropdown */}
-            <div ref={moreRef} className="relative">
-              <button
-                onClick={() => { setMoreOpen(!moreOpen); setDropOpen(false); }}
-                onMouseEnter={() => { setMoreOpen(true); setDropOpen(false); }}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-sans font-bold transition-all duration-200 ${
-                  isMehrActive
-                    ? "text-brand-accent bg-brand-accent/10"
-                    : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
-                }`}
-              >
-                Mehr
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {moreOpen && (
-                <div
-                  onMouseLeave={() => setMoreOpen(false)}
-                  className="absolute top-full left-0 mt-1.5 w-40 bg-white border border-brand-border rounded-2xl shadow-lg overflow-hidden z-50"
-                >
-                  {mehrLinks.map((link) => {
-                    const active = pathname === link.href || pathname.startsWith(link.href + "/");
-                    return (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={`flex items-center px-4 py-3 text-sm font-sans font-bold transition-colors ${
-                          active
-                            ? "text-brand-accent bg-brand-accent/8"
-                            : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
 
             {/* Kontakt */}
             {navLinksRight.map((link) => {
@@ -265,37 +214,6 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Mehr accordion */}
-              <div>
-                <button
-                  onClick={() => setMobileMehr(!mobileMehr)}
-                  className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-sans font-bold transition-all ${
-                    isMehrActive
-                      ? "text-brand-accent bg-brand-accent/10"
-                      : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
-                  }`}
-                >
-                  Mehr
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileMehr ? "rotate-180" : ""}`} />
-                </button>
-                {mobileMehr && (
-                  <div className="ml-4 mt-1 flex flex-col gap-0.5 border-l-2 border-brand-border pl-4">
-                    {mehrLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className={`px-3 py-2.5 rounded-lg text-sm font-sans font-bold transition-all ${
-                          pathname === link.href || pathname.startsWith(link.href + "/")
-                            ? "text-brand-accent bg-brand-accent/10"
-                            : "text-brand-gray hover:text-brand-primary hover:bg-brand-surface"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
 
               {/* Kontakt */}
               {navLinksRight.map((link) => (
