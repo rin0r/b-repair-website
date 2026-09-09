@@ -110,7 +110,7 @@ export const brandConfig: Record<string, BrandConfig> = {
       { q: "Verliere ich meine Daten bei der Reparatur?", a: "Nein. Bei Display- und Akku-Reparaturen bleiben Ihre Daten vollständig erhalten. Bei tiefgreifenderen Eingriffen empfehlen wir vorab ein iCloud-Backup – wir beraten Sie gerne." },
       { q: "Welche iPhone-Modelle reparieren Sie?", a: "Wir reparieren alle iPhone-Modelle von iPhone 6 bis zum aktuellen iPhone 17 Pro Max – sowohl ältere LCD-Modelle als auch neuste OLED-Displays." },
       { q: "Sind Ihre Ersatzteile original?", a: "Wir verwenden hochwertige, OLED-kompatible Displays und zertifizierte Ersatzteile. Auf alle Reparaturen geben wir 6 Monate Garantie – das spricht für die Qualität unserer Teile." },
-      { q: "Was kostet ein iPhone-Akku-Wechsel?", a: "Je nach Modell beginnen Akku-Wechsel ab CHF 79.– bis CHF 149.–. Den genauen Preis für Ihr Modell finden Sie in der Preistabelle oben." },
+      { q: "Was kostet ein iPhone-Akku-Wechsel?", a: "Je nach Modell beginnen Akku-Wechsel ab CHF 79.– bis CHF 129.–. Den genauen Preis für Ihr Modell finden Sie in der Preistabelle oben." },
       { q: "Muss ich einen Termin vereinbaren?", a: "Nein, Sie können einfach vorbeikommen. Für grössere Reparaturen empfehlen wir eine kurze Voranmeldung per WhatsApp oder Telefon, damit wir das Ersatzteil bereithalten können." },
     ],
   },
