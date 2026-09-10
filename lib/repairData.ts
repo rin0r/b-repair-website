@@ -116,7 +116,7 @@ export const brandConfig: Record<string, BrandConfig> = {
   },
   ipad: {
     name: "iPad",
-    intro: "Gebrochener iPad-Bildschirm oder schwacher Akku? B-repair&service repariert alle iPad-Generationen – von iPad 2 bis iPad Pro der neuesten Generation. Schnell, professionell und zu fairen Fixpreisen in Heimberg bei Thun.",
+    intro: "Gebrochener iPad-Bildschirm oder schwacher Akku? B-repair&service repariert alle iPad-Generationen – von iPad 5 bis iPad Pro der neuesten Generation. Schnell, professionell und zu fairen Fixpreisen in Heimberg bei Thun.",
     series: [{ label: "Alle Modelle", rows: ipadRows }],
     hasOnRequest: false,
     hasModelPages: true,
@@ -130,7 +130,7 @@ export const brandConfig: Record<string, BrandConfig> = {
     faq: [
       { q: "Können Sie auch iPad Pro-Displays reparieren?", a: "Ja, wir reparieren alle iPad Pro-Varianten inklusive der 12.9\"- und 11\"-Modelle. Liquid-Retina-Displays werden fachmännisch ausgetauscht." },
       { q: "Wie lange dauert eine iPad-Reparatur?", a: "Einfache Display- oder Akku-Tausche dauern 1–3 Stunden. Grössere Modelle (iPad Pro 12.9\") können etwas mehr Zeit benötigen. Wir informieren Sie beim Eincheck über die genaue Dauer." },
-      { q: "Was kostet ein iPad-Display-Tausch?", a: "Die Preise variieren je nach Generation: von CHF 119.– (iPad 2) bis CHF 499.– (iPad Pro 12.9\" 2. Gen). Die vollständige Übersicht finden Sie in der Tabelle oben." },
+      { q: "Was kostet ein iPad-Display-Tausch?", a: "Die Preise variieren je nach Generation: von CHF 129.– (iPad 5) bis CHF 499.– (iPad Pro 12.9\" 2. Gen). Die vollständige Übersicht finden Sie in der Tabelle oben." },
       { q: "Reparieren Sie auch iPad Mini?", a: "Ja, wir reparieren alle iPad Mini-Generationen von Mini 1 bis Mini 6." },
       { q: "Bleibt die Apple Pencil-Kompatibilität nach dem Display-Tausch erhalten?", a: "Ja. Wir verwenden kompatible Displays, die die Apple Pencil-Funktionalität vollständig erhalten." },
     ],

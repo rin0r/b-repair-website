@@ -63,7 +63,4 @@ export const ipadSpecs: Record<string, DeviceSpec> = {
   "ipad-7":             spec(2019, 10.2, "Lightning", "home", 1, "single", GRAU, homeTaste),
   "ipad-6":             spec(2018, 9.7,  "Lightning", "home", 1, "single", SILBER, homeTaste),
   "ipad-5":             spec(2017, 9.7,  "Lightning", "home", 1, "single", SILBER, homeTaste),
-  "ipad-4":             spec(2012, 9.7,  "Lightning", "home", 1, "single", SILBER, homeTaste),
-  "ipad-3":             spec(2012, 9.7,  "30-Pin", "home", 1, "single", SILBER, homeTaste),
-  "ipad-2":             spec(2011, 9.7,  "30-Pin", "home", 1, "single", SILBER, homeTaste),
 };
