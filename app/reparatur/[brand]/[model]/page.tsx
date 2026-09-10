@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import {
   brandConfig, findModel, modelPageParams,
-  repairFields, hasPrice, prettyPrice,
+  repairFields, hasPrice, prettyPrice, preisMitAb,
 } from "@/lib/repairData";
 import type { RepairField } from "@/lib/repairData";
 import { getSpec } from "@/lib/deviceSpecs";
@@ -257,7 +257,7 @@ export default function ModelPage({ params }: { params: { brand: string; model: 
                   </div>
                   <div className="flex items-end justify-between gap-2 pt-2 border-t border-brand-border">
                     <span className="font-sans font-bold text-xl text-brand-accent">
-                      {prettyPrice(row[field] as string)}
+                      {preisMitAb(field, prettyPrice(row[field] as string))}
                     </span>
                     <span className="font-sans text-xs font-bold text-brand-gray group-hover:text-brand-accent transition-colors inline-flex items-center gap-1">
                       Anfragen <ArrowRight className="w-3 h-3" />

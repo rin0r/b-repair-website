@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ArrowRight, RotateCcw, MapPin, Monitor, BatteryFull, Layers, Plug, Camera, Volume2, HardDrive, Scan } from "lucide-react";
-import { brandConfig } from "@/lib/repairData";
+import { brandConfig, preisMitAb } from "@/lib/repairData";
 import type { Row } from "@/lib/repairData";
 
 /* ─── Brand Logos (inline SVG) ─────────────────────────────────────── */
@@ -135,7 +135,7 @@ export default function PreisrechnerWidget() {
     }
     return REPAIRS.filter((r) => modelRow[r.key as keyof Row] !== "–").map((r) => ({
       ...r,
-      price: modelRow[r.key as keyof Row] as string,
+      price: preisMitAb(r.key, modelRow[r.key as keyof Row] as string),
     }));
   }, [modelRow]);
 

@@ -227,6 +227,13 @@ export const prettyPrice = (v: string): string => v.replace(/\.00$/, ".\u2013");
 
 export const hasPrice = (v: string): boolean => v !== "\u2013";
 
+/** Positionen, bei denen der Preis nur ein Startpreis ist. */
+const abFelder = new Set<string>(["datenrettung"]);
+
+/** "CHF\u00A0139.–" → "ab CHF\u00A0139.–", wo der Preis nur ein Startpreis ist. */
+export const preisMitAb = (field: string, v: string): string =>
+  abFelder.has(field) && hasPrice(v) && v !== "Auf Anfrage" ? `ab ${v}` : v;
+
 export type ModelGroup = { label: string; rows: Row[] };
 
 /** Alle Zeilen einer Marke über sämtliche Serien hinweg. */
