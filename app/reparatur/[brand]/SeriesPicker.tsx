@@ -4,7 +4,9 @@
 // Erst die Serie wählen (drei Karten), dann die Modelle dieser Serie –
 // zwei einfache Entscheidungen statt einer langen Liste.
 // Alle Modell-Links stehen trotzdem im HTML (nur ausgeblendet),
-// damit Google sie findet.
+// damit Google sie findet. Wichtig: die Layout-Klasse darf nur
+// gesetzt sein, wenn der Block sichtbar ist – sonst schlaegt
+// `display:grid` das `hidden`-Attribut.
 
 import { useState } from "react";
 import Link from "next/link";
@@ -26,7 +28,10 @@ export default function SeriesPicker({
   return (
     <div>
       {/* Serien-Auswahl */}
-      <div hidden={aktiv !== null} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div
+        hidden={aktiv !== null}
+        className={aktiv === null ? "grid grid-cols-1 sm:grid-cols-3 gap-4" : undefined}
+      >
         {series.map((serie) => (
           <button
             key={serie.label}
@@ -59,7 +64,10 @@ export default function SeriesPicker({
       </div>
 
       {/* Zurück-Leiste */}
-      <div hidden={aktiv === null} className="mb-5 flex items-center gap-3">
+      <div
+        hidden={aktiv === null}
+        className={aktiv === null ? undefined : "mb-5 flex items-center gap-3"}
+      >
         <button
           onClick={() => setAktiv(null)}
           className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-brand-border font-sans font-bold text-xs text-brand-gray hover:border-brand-primary hover:text-brand-primary transition-all"
@@ -77,7 +85,9 @@ export default function SeriesPicker({
         <div
           key={serie.label}
           hidden={aktiv !== serie.label}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
+          className={
+            aktiv === serie.label ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" : undefined
+          }
         >
           {serie.rows.map((row) => (
             <Link
