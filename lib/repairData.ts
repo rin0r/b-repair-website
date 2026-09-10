@@ -293,6 +293,10 @@ export function getModelGroups(brandKey: string): ModelGroup[] {
 export const findModel = (brandKey: string, slug: string): Row | undefined =>
   brandRows(brandKey).find((row) => modelSlug(row.model) === slug);
 
+/** Marken mit mehreren Geräteserien: erst Serie wählen, dann Modell. */
+export const hatSerienauswahl = (brandKey: string): boolean =>
+  brandKey === "samsung" && (brandConfig[brandKey]?.series.length ?? 0) > 1;
+
 /** Alle Marken, für die Modellseiten erzeugt werden. */
 export const modelPageBrands = Object.keys(brandConfig).filter(
   (key) => brandConfig[key].hasModelPages,

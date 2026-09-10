@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronRight, ArrowRight, CheckCircle2, Shield } from "lucide-react";
-import { brandConfig, brandSlugs } from "@/lib/repairData";
+import { brandConfig, brandSlugs, hatSerienauswahl } from "@/lib/repairData";
 import BrandPriceTable from "./BrandPriceTable";
 import ModelGrid from "./ModelGrid";
 
@@ -50,6 +50,8 @@ const whatsappSvg = (
 export default function BrandPage({ params }: { params: { brand: string } }) {
   const brand = brandConfig[params.brand];
   if (!brand) notFound();
+
+  const serienauswahl = hatSerienauswahl(params.brand);
 
   return (
     <>
@@ -128,7 +130,8 @@ export default function BrandPage({ params }: { params: { brand: string } }) {
             <p className="font-sans text-brand-gray text-sm mt-2">
               {brand.hasModelPages ? (
                 <>
-                  Modell wählen – Sie sehen sofort alle Reparaturpreise. Modell nicht dabei?{" "}
+                  {serienauswahl ? "Serie wählen, dann Modell – Sie sehen sofort alle Reparaturpreise." : "Modell wählen – Sie sehen sofort alle Reparaturpreise."}{" "}
+                  Modell nicht dabei?{" "}
                   <a href="tel:+41764020306" className="text-brand-accent hover:underline font-bold">
                     Einfach anfragen.
                   </a>

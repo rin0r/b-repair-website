@@ -1,9 +1,40 @@
+import fs from "fs";
+import path from "path";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { getModelGroups, modelSlug, prettyPrice, hasPrice } from "@/lib/repairData";
+import { getModelGroups, hatSerienauswahl, modelSlug, prettyPrice, hasPrice } from "@/lib/repairData";
+import SeriesPicker, { type Serie } from "./SeriesPicker";
+
+/* Eigenes Foto unter public/models/<slug>.<ext> – wie auf der Modellseite. */
+function findPhoto(slug: string): string | undefined {
+  for (const ext of ["jpg", "jpeg", "png", "webp"]) {
+    const rel = `/models/${slug}.${ext}`;
+    if (fs.existsSync(path.join(process.cwd(), "public", rel))) return rel;
+  }
+  return undefined;
+}
+
+const kurzLabel = (label: string) => label.replace(/-Serie$/, "");
 
 export default function ModelGrid({ brandKey }: { brandKey: string }) {
   const groups = getModelGroups(brandKey);
+
+  if (hatSerienauswahl(brandKey)) {
+    const series: Serie[] = groups.map((group) => {
+      const rows = group.rows.map((row) => ({
+        model: row.model,
+        slug: modelSlug(row.model),
+        ab: hasPrice(row.displayPremium) ? prettyPrice(row.displayPremium) : null,
+      }));
+      return {
+        label: group.label,
+        kurz: kurzLabel(group.label),
+        cover: rows.map((r) => findPhoto(r.slug)).find(Boolean),
+        rows,
+      };
+    });
+    return <SeriesPicker brandKey={brandKey} series={series} />;
+  }
 
   return (
     <div className="space-y-9">
