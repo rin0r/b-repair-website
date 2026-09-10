@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Wrench, Phone, MapPin, Mail, Clock } from "lucide-react";
+import { Phone, MapPin, Mail, Clock } from "lucide-react";
 
 const navLinks = [
   { href: "/leistungen",  label: "Reparaturen" },
@@ -25,9 +25,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-brand-accent flex items-center justify-center">
-                <Wrench className="w-5 h-5 text-brand-primary" />
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-mark.webp"
+                alt="B-repair&service Logo"
+                className="w-11 h-11 object-contain flex-shrink-0"
+              />
               <div className="leading-none">
                 <span className="font-headline text-lg text-white">B-repair<span className="text-brand-accent">&</span>service</span>
                 <div className="text-[10px] font-sans" style={{ color: "#6B8099" }}>Heimberg · Thun</div>
