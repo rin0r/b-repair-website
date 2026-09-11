@@ -7,11 +7,13 @@ ErrorDocument 404 /404.html
 DirectoryIndex index.html
 Options -Indexes
 
-# Immer über HTTPS
+# Kanonische Adresse: immer https://b-repair.ch (ohne www).
+# Beide Regeln in einem Schritt, damit www + http nur einmal umgeleitet wird.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} !=on
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://b-repair.ch/$1 [R=301,L]
 </IfModule>
 
 # Bilder, Schriften und Build-Dateien lange cachen
