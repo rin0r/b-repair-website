@@ -9,6 +9,16 @@ export const metadata: Metadata = {
     "Professionelle Smartphone- & Tablet-Reparaturen in Heimberg bei Thun. Display, Akku, Mikrolöten, Datenrettung. Fertig in 2 Stunden. 6 Monate Garantie. Fixpreise ohne Überraschungen.",
   keywords:
     "Smartphone Reparatur Heimberg, Handy Reparatur Thun, iPhone Reparatur Bern, Samsung Display Reparatur, Mikrolöten, Datenrettung, Akku Wechsel",
+  // Das Logo hat helle Flächen, deshalb liegt es im Icon auf dunklem Grund –
+  // sonst verschwindet es im hellen Browser-Tab.
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
