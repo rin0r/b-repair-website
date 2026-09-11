@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { brandSlugs, modelPageParams } from "@/lib/repairData";
 
 /* Produktiv-Domain. Bei einem Domainwechsel NEXT_PUBLIC_SITE_URL setzen. */
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://b-repair-website.vercel.app").replace(/\/$/, "");
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://b-repair.ch").replace(/\/$/, "");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [

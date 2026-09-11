@@ -3,7 +3,14 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+/* Produktiv-Domain. Beide Deployments (Hostinger + Vercel) verweisen
+   kanonisch hierher, damit Google die Kopie nicht als Original wertet. */
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://b-repair.ch").replace(/\/$/, "");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  // "./" löst Next pro Route auf – jede Seite bekommt ihre eigene Adresse.
+  alternates: { canonical: "./" },
   title: "B-repair&service | Smartphone Reparatur Heimberg – Fertig in 2h",
   description:
     "Professionelle Smartphone- & Tablet-Reparaturen in Heimberg bei Thun. Display, Akku, Mikrolöten, Datenrettung. Fertig in 2 Stunden. 6 Monate Garantie. Fixpreise ohne Überraschungen.",
