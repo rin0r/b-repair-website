@@ -108,7 +108,7 @@ export default function Footer() {
             <ul className="space-y-1.5">
               {[
                 { d: "Mo – Fr", t: "09:30 – 18:00" },
-                { d: "Samstag", t: "10:00 – 17:00" },
+                { d: "Samstag", t: "10:00 – 16:00" },
                 { d: "Sonntag", t: "Geschlossen" },
               ].map(({ d, t }) => (
                 <li key={d} className="flex items-center gap-2 text-[11px] font-sans">

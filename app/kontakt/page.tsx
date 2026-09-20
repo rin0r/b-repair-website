@@ -19,7 +19,7 @@ const openingHours = [
   { day: "Mittwoch", time: "09:30 – 18:00" },
   { day: "Donnerstag", time: "09:30 – 18:00" },
   { day: "Freitag", time: "09:30 – 18:00" },
-  { day: "Samstag", time: "10:00 – 17:00" },
+  { day: "Samstag", time: "10:00 – 16:00" },
   { day: "Sonntag", time: "Geschlossen" },
 ];
 

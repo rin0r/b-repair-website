@@ -26,8 +26,8 @@ function getStatus(): { open: boolean; label: string } {
     // Mo–Fr: 09:30–18:00
     open = time >= 9 * 60 + 30 && time < 18 * 60;
   } else if (isSaturday) {
-    // Sa: 10:00–17:00
-    open = time >= 10 * 60 && time < 17 * 60;
+    // Sa: 10:00–16:00
+    open = time >= 10 * 60 && time < 16 * 60;
   }
 
   return { open, label: open ? "Geöffnet" : "Geschlossen" };
