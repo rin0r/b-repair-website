@@ -278,7 +278,7 @@ export default function KontaktPage() {
                         <option value="software">Software / System</option>
                         <option value="wasser">Wasserschaden</option>
                         <option value="audio">Mikrofon / Lautsprecher</option>
-                        <option value="gehaeuse">Gehäuse / Mechanik</option>
+                        <option value="gehaeuse">Gehäuse</option>
                         <option value="sonstiges">Sonstiges</option>
                       </select>
                     </div>
