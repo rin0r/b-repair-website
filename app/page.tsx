@@ -10,7 +10,6 @@ import PreisrechnerWidget from "@/components/PreisrechnerWidget";
 import OpenStatus from "@/components/OpenStatus";
 import BrandMarquee from "@/components/BrandMarquee";
 import HeroHoursCard from "@/components/HeroHoursCard";
-import OpeningModal from "@/components/OpeningModal";
 
 /* ─── DATA ─────────────────────────────────────────────────────────── */
 
@@ -109,7 +108,6 @@ const mikroloetStats = [
 export default function Home() {
   return (
     <>
-      <OpeningModal />
 
       {/* ══ HERO ══════════════════════════════════════════════════════ */}
       {/* VERKAUFSPSYCHOLOGIE: Headline adressiert den Hauptschmerzpunkt
