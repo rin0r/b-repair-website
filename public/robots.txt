@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Next.js legt neben jeder Seite eine index.txt mit demselben Inhalt ab.
+# Die ist nur für die Navigation im Browser da, nicht für Besucher.
+Disallow: /index.txt
+Disallow: /*/index.txt
+
 Sitemap: https://b-repair.ch/sitemap.xml
