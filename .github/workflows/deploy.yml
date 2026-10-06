@@ -1,0 +1,50 @@
+name: Deploy nach Hostinger
+
+# Jeder Push auf main baut die Seite und lädt sie nach public_html.
+# Manuell auslösbar über den Reiter "Actions" auf GitHub.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Ohne die Variable zeigen Sitemap und Canonical auf die Vercel-Domain.
+      - run: npx next build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://b-repair.ch
+
+      # Abbruch, falls der Export leer blieb – sonst würde der Upload
+      # public_html leerräumen.
+      - name: Export prüfen
+        run: |
+          test -f out/index.html
+          test -f out/.htaccess
+          test -f out/sitemap.xml
+          echo "Dateien im Export: $(find out -type f | wc -l)"
+
+      - name: Upload per FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /public_html/
+          # Nur geänderte Dateien gehen hoch; der Stand wird serverseitig vermerkt.
+          state-name: .ftp-deploy-state.json
