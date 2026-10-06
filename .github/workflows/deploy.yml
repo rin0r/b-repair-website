@@ -45,6 +45,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: /public_html/
+          # Der FTP-Zugang landet auf Plan-Ebene, nicht im Ordner der Domain.
+          # /public_html/ wäre dort ein anderes, ungenutztes Verzeichnis.
+          server-dir: /domains/b-repair.ch/public_html/
           # Nur geänderte Dateien gehen hoch; der Stand wird serverseitig vermerkt.
           state-name: .ftp-deploy-state.json
