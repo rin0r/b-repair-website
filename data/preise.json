@@ -63,12 +63,12 @@
     {"modell": "iPad Mini 3", "display": 129, "displayPremium": 69, "rueckseite": null, "batterie": 99, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true},
     {"modell": "iPad Mini 2", "display": 129, "displayPremium": 69, "rueckseite": null, "batterie": 99, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true},
     {"modell": "iPad Mini 1", "display": 129, "displayPremium": 69, "rueckseite": null, "batterie": 99, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true},
-    {"modell": "iPad 10", "display": 199, "displayPremium": 99, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
-    {"modell": "iPad 9", "display": 149, "displayPremium": 79, "rueckseite": null, "batterie": 150, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
-    {"modell": "iPad 8", "display": 149, "displayPremium": 79, "rueckseite": null, "batterie": 150, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
-    {"modell": "iPad 7", "display": 139, "displayPremium": 69, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
-    {"modell": "iPad 6", "display": 129, "displayPremium": 69, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
-    {"modell": "iPad 5", "display": 129, "displayPremium": 69, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true}
+    {"modell": "iPad 10", "display": 229, "displayPremium": 119, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
+    {"modell": "iPad 9", "display": 229, "displayPremium": 119, "rueckseite": null, "batterie": 150, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
+    {"modell": "iPad 8", "display": 199, "displayPremium": 99, "rueckseite": null, "batterie": 150, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
+    {"modell": "iPad 7", "display": 149, "displayPremium": 99, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
+    {"modell": "iPad 6", "display": 149, "displayPremium": 99, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
+    {"modell": "iPad 5", "display": 139, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true}
   ],
   "samsung-s": [
     {"modell": "Galaxy S25 Ultra 5G", "display": 499, "displayPremium": 249, "rueckseite": 119, "batterie": 119, "ladebuchse": 99, "kameraglas": null, "lautsprecher": 99, "datenrettung": 169, "kamera": 339, "aktuell": true},
