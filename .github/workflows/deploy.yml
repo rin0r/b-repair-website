@@ -44,6 +44,8 @@ jobs:
           echo "Dateien im Export: $(find out -type f | wc -l)"
 
       - name: Upload per FTP
+        id: upload
+        continue-on-error: true
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -55,3 +57,24 @@ jobs:
           server-dir: /domains/b-repair.ch/public_html/
           # Nur geänderte Dateien gehen hoch; der Stand wird serverseitig vermerkt.
           state-name: .ftp-deploy-state.json
+          timeout: 120000
+
+      # Hostinger drosselt FTP, wenn kurz hintereinander Verbindungen kommen.
+      # Ein zweiter Anlauf nach kurzer Pause genügt dann.
+      - name: Kurz warten
+        if: steps.upload.outcome == 'failure'
+        run: |
+          echo "Erster Upload fehlgeschlagen – zweiter Versuch in 60 Sekunden."
+          sleep 60
+
+      - name: Upload erneut versuchen
+        if: steps.upload.outcome == 'failure'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: /domains/b-repair.ch/public_html/
+          state-name: .ftp-deploy-state.json
+          timeout: 120000
