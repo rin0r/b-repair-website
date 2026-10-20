@@ -68,7 +68,7 @@
     {"modell": "iPad 8", "display": 199, "displayPremium": 99, "rueckseite": null, "batterie": 150, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
     {"modell": "iPad 7", "display": 149, "displayPremium": 99, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
     {"modell": "iPad 6", "display": 149, "displayPremium": 99, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null},
-    {"modell": "iPad 5", "display": 139, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true}
+    {"modell": "iPad 5", "display": 139, "displayPremium": 89, "rueckseite": null, "batterie": 119, "ladebuchse": null, "kameraglas": null, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aelter": true}
   ],
   "samsung-s": [
     {"modell": "Galaxy S25 Ultra 5G", "display": 499, "displayPremium": 249, "rueckseite": 119, "batterie": 119, "ladebuchse": 99, "kameraglas": null, "lautsprecher": 99, "datenrettung": 169, "kamera": 339, "aktuell": true},
@@ -111,7 +111,7 @@
     {"modell": "Galaxy A52", "display": 189, "displayPremium": 99, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 129},
     {"modell": "Galaxy A51", "display": 179, "displayPremium": 89, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 119},
     {"modell": "Galaxy A50", "display": 169, "displayPremium": 89, "rueckseite": 89, "batterie": 99, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 109},
-    {"modell": "Galaxy A42", "display": 179, "displayPremium": 89, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 9, "lautsprecher": 89, "datenrettung": 169, "kamera": 109},
+    {"modell": "Galaxy A42", "display": 179, "displayPremium": 89, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 109},
     {"modell": "Galaxy A41", "display": 189, "displayPremium": 99, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 129},
     {"modell": "Galaxy A34", "display": 199, "displayPremium": 99, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 129},
     {"modell": "Galaxy A33", "display": 189, "displayPremium": 99, "rueckseite": 89, "batterie": 89, "ladebuchse": 89, "kameraglas": 89, "lautsprecher": 89, "datenrettung": 169, "kamera": 109},
@@ -143,7 +143,7 @@
     {"modell": "Google Pixel 9 Pro", "display": 289, "displayPremium": 199, "rueckseite": 259, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199, "aktuell": true},
     {"modell": "Google Pixel 9", "display": 299, "displayPremium": 179, "rueckseite": 159, "batterie": 129, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149, "aktuell": true},
     {"modell": "Google Pixel 9a", "display": 289, "displayPremium": 169, "rueckseite": null, "batterie": 159, "ladebuchse": null, "kameraglas": 99, "lautsprecher": null, "datenrettung": 169, "kamera": null, "aktuell": true},
-    {"modell": "Google Pixel 8 Pro", "display": 2999, "displayPremium": 149, "rueckseite": null, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199},
+    {"modell": "Google Pixel 8 Pro", "display": 299, "displayPremium": 149, "rueckseite": null, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199},
     {"modell": "Google Pixel 8", "display": 279, "displayPremium": 139, "rueckseite": 219, "batterie": 99, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
     {"modell": "Google Pixel 8a", "display": 299, "displayPremium": 149, "rueckseite": 229, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 149},
     {"modell": "Google Pixel 7 Pro", "display": 349, "displayPremium": 179, "rueckseite": 129, "batterie": 159, "ladebuchse": 129, "kameraglas": 99, "lautsprecher": 99, "datenrettung": 169, "kamera": 199},

@@ -22,6 +22,11 @@ jobs:
           node-version: 20
           cache: npm
 
+      # Zuerst, noch vor der Installation: so steht ein Preisfehler nach
+      # wenigen Sekunden ganz oben im Protokoll statt hinter dem Build.
+      - name: Preise prüfen
+        run: node scripts/preise-pruefen.mjs
+
       - run: npm ci
 
       # Ohne die Variable zeigen Sitemap und Canonical auf die Vercel-Domain.
